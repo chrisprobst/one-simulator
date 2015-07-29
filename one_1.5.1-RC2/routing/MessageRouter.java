@@ -426,7 +426,6 @@ public abstract class MessageRouter {
 	 */
 	protected void addToMessages(Message m, boolean newMessage) {
 		this.messages.put(m.getId(), m);
-		
 		if (newMessage) {
 			for (MessageListener ml : this.mListeners) {
 				ml.newMessage(m);
