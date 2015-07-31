@@ -1,9 +1,14 @@
 package routing;
 
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
+import util.Priority;
 import core.DTNHost;
 import core.Message;
 import core.MessageListener;
@@ -15,6 +20,12 @@ import core.Settings;
  * @author Andre Ippisch
  */
 public class ProphetV2RouterWithGTCH extends ProphetV2Router {
+	private static final QUEUING_STRATEGY_POSSIBILITIES QUEUING_STRATEGY = QUEUING_STRATEGY_POSSIBILITIES.TTL;
+
+	private enum QUEUING_STRATEGY_POSSIBILITIES {
+		TTL, HOPCOUNT, SIZE
+	}
+
 	/**
 	 * mapping from id of Message ({@link core.Message.id}) to Message itself (@link {@link core.Message}
 	 */
@@ -53,5 +64,41 @@ public class ProphetV2RouterWithGTCH extends ProphetV2Router {
 		this.forwardTimes.remove(this.mapIdMessage.get(id));
 		this.mapIdMessage.remove(id);
 		return super.removeFromMessages(id);
+	}
+
+	@Override
+	protected boolean makeRoomForMessage(int size) {
+		if (size > this.getBufferSize()) {
+			return false; // message too big for the buffer
+		}
+			
+		int freeBuffer = this.getFreeBufferSize();
+		if(freeBuffer > size) {
+			return true;
+		}
+		int sizeToDelete = size - freeBuffer;
+		
+		Comparator<Message> comparator;
+		switch(QUEUING_STRATEGY) {
+		case TTL:
+			comparator = Priority.getRemainingTimeToLiveComparator(true);
+			break;
+		case HOPCOUNT:
+			comparator = Priority.getHopCountComparator(true);
+			break;
+		default:
+			return super.makeRoomForMessage(size);
+		}
+		
+		Collection<Message> unsortedMessages = this.getMessageCollection();
+		Queue<Message> sortedMessages = Priority.getMessageQueue(unsortedMessages, comparator);
+		Collection<String> messagesToDrop = Priority.getCollectionOfMessagesToDropForSize(sortedMessages, sizeToDelete);
+		
+		Iterator<String> iterator = messagesToDrop.iterator();
+		while(iterator.hasNext()) {
+			deleteMessage(iterator.next(), true);
+		}
+		
+		return true;
 	}
 }

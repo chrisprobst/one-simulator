@@ -1,6 +1,5 @@
 package util;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -49,22 +48,11 @@ public class Priority {
 
 	public static Collection<String> getCollectionOfMessagesToDropForSize(Collection<Message> orderedCollection, int size) {
 		Collection<String> dropList = new HashSet<String>();
-		Collection<Message> considerationList = new ArrayList<Message>();
-		Queue<Message> queue;
 		Message message;
-		int currentSize;
-		
+		int currentSize = 0;
 		Iterator<Message> iterator = orderedCollection.iterator();
-		currentSize = 0;
 		while (iterator.hasNext() && (currentSize < size)) {
 			message = iterator.next();
-			currentSize += message.getSize();
-			considerationList.add(message);
-		}
-
-		queue = getMessageQueue(considerationList, getSizeComparator(false));
-		currentSize = 0;
-		while (((message = queue.poll()) != null) && (currentSize < size)) {
 			currentSize += message.getSize();
 			dropList.add(message.getId());
 		}
