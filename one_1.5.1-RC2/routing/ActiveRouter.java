@@ -4,14 +4,13 @@
  */
 package routing;
 
-import gtch.MessageRouterExtended;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import routing.gtch.MessageRouterExtended;
 import routing.util.EnergyModel;
 import routing.util.MessageTransferAcceptPolicy;
 import routing.util.RoutingInfo;

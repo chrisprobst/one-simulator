@@ -6,7 +6,6 @@
  */
 package routing;
 
-import gtch.ActiveRouterExtended;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,6 +17,7 @@ import java.util.Map;
 
 import java.util.Random;
 
+import routing.gtch.ActiveRouterExtended;
 import routing.util.RoutingInfo;
 
 import core.Connection;
