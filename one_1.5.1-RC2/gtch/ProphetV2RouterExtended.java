@@ -12,12 +12,10 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 
 	public ProphetV2RouterExtended(Settings s) {
 		super(s);
-		// TODO Auto-generated constructor stub
 	}
 
 	public ProphetV2RouterExtended(ProphetV2Router r) {
 		super(r);
-		// TODO Auto-generated constructor stub
 	}
 
 }

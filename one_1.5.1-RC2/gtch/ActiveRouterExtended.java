@@ -1,7 +1,6 @@
 package gtch;
 
 import routing.ActiveRouter;
-import routing.MessageRouter;
 import core.Settings;
 
 /**
@@ -9,7 +8,7 @@ import core.Settings;
  * 
  * @author Andre Ippisch
  */
-public class ActiveRouterExtended extends ActiveRouter {
+public abstract class ActiveRouterExtended extends ActiveRouter {
 
 	public ActiveRouterExtended(Settings s) {
 		super(s);
@@ -18,10 +17,4 @@ public class ActiveRouterExtended extends ActiveRouter {
 	public ActiveRouterExtended(ActiveRouter r) {
 		super(r);
 	}
-
-	@Override
-	public MessageRouter replicate() {
-		return null;
-	}
-
 }

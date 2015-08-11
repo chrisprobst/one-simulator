@@ -609,7 +609,6 @@ public abstract class ActiveRouter extends MessageRouterExtended {
 		}
 
 		if (energy != null) {
-			/* TODO: add support for other interfaces */
 			NetworkInterface iface = getHost().getInterface(1);
 			energy.update(iface, getHost().getComBus());
 		}
