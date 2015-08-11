@@ -1,5 +1,6 @@
-package routing;
+package gtch;
 
+import routing.MessageRouter;
 import core.Connection;
 import core.Settings;
 
