@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import routing.ProphetV2Router;
+import core.Connection;
 import core.DTNHost;
 import core.Message;
 import core.MessageListener;
@@ -55,6 +56,7 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 	protected void addToMessages(Message m, boolean newMessage) {
 		this.maxForwardTimesCalculated.put(m, getCalculatedForwardTime(m));
 		this.maxHopCountCalculated.put(m, getCalculatedHopCount(m));
+		something();
 		super.addToMessages(m, newMessage);
 	}
 
@@ -87,5 +89,12 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 			maxHopCountCalculatedTemp = 0; // TODO: calculate max forward times
 		}
 		return maxHopCountCalculatedTemp;
+	}
+
+	private void something() {
+		List<Connection> connections = this.getConnections();
+		for (Connection connection : connections) {
+			System.out.println(this.getHost().toString() + ", " + connection.toString());
+		}
 	}
 }
