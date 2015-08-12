@@ -1,6 +1,13 @@
 package routing.gtch;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import routing.ProphetV2Router;
+import core.DTNHost;
+import core.Message;
+import core.MessageListener;
 import core.Settings;
 
 /**
@@ -16,16 +23,62 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 	/**
 	 * maximum amount of forwarding times alltogether of any messages to other hosts;
 	 */
-	protected int maxForward;
+	protected int maxForwardTimes;
+	/**
+	 * mapping from message (@link {@link Message}) to maximal calculated forwarding time amount of the message
+	 */
+	protected Map<Message, Integer> maxForwardTimesCalculated;
+	/**
+	 * mapping from message (@link {@link Message}) to maximal calculated hop count amount of the message
+	 */
+	protected Map<Message, Integer> maxHopCountCalculated;
 
 	public ProphetV2RouterExtended(Settings s) {
 		super(s);
 		Settings prophetSettings = new Settings(PROPHET_NS);
-		maxForward = prophetSettings.getInt(MAX_FORWARD_S);
+		maxForwardTimes = prophetSettings.getInt(MAX_FORWARD_S);
 	}
 
 	public ProphetV2RouterExtended(ProphetV2RouterExtended r) {
 		super(r);
-		this.maxForward = r.maxForward;
+		this.maxForwardTimes = r.maxForwardTimes;
+	}
+
+	@Override
+	public void init(DTNHost host, List<MessageListener> mListeners) {
+		super.init(host, mListeners);
+		this.maxForwardTimesCalculated = new HashMap<Message, Integer>();
+		this.maxHopCountCalculated = new HashMap<Message, Integer>();
+	}
+
+	@Override
+	protected void addToMessages(Message m, boolean newMessage) {
+		this.maxForwardTimesCalculated.put(m, getCalculatedForwardTime(m));
+		this.maxHopCountCalculated.put(m, getCalculatedHopCount(m));
+		super.addToMessages(m, newMessage);
+	}
+
+	private int getCalculatedForwardTime(Message m) {
+		int maxForwardTimesCalculatedTemp;
+		if (this.getHost().equals(m.getFrom())) { // host is sender of message
+			maxForwardTimesCalculatedTemp = 0; // TODO: calculate max forward times
+		} else if (this.getHost().equals(m.getTo())) { // host is receiver of message
+			maxForwardTimesCalculatedTemp = 0;
+		} else { // host is relay
+			maxForwardTimesCalculatedTemp = 0; // TODO: calculate max forward times
+		}
+		return maxForwardTimesCalculatedTemp;
+	}
+
+	private int getCalculatedHopCount(Message m) {
+		int maxHopCountCalculatedTemp;
+		if (this.getHost().equals(m.getFrom())) { // host is sender of message
+			maxHopCountCalculatedTemp = 0; // TODO: calculate max forward times
+		} else if (this.getHost().equals(m.getTo())) { // host is receiver of message
+			maxHopCountCalculatedTemp = 0;
+		} else { // host is relay
+			maxHopCountCalculatedTemp = 0; // TODO: calculate max forward times
+		}
+		return maxHopCountCalculatedTemp;
 	}
 }
