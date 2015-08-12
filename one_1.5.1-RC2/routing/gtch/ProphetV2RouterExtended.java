@@ -58,6 +58,13 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 		super.addToMessages(m, newMessage);
 	}
 
+	@Override
+	protected Message removeFromMessages(String id) {
+		this.maxForwardTimesCalculated.remove(this.mapIdMessage.get(id));
+		this.maxHopCountCalculated.remove(this.mapIdMessage.get(id));
+		return super.removeFromMessages(id);
+	}
+
 	private int getCalculatedForwardTime(Message m) {
 		int maxForwardTimesCalculatedTemp;
 		if (this.getHost().equals(m.getFrom())) { // host is sender of message

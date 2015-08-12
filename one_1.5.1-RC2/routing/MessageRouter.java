@@ -37,8 +37,8 @@ public abstract class MessageRouter {
 	 */
 	public static final String MSG_TTL_S = "msgTtl";
 	/**
-	 * Message/fragment sending queue type -setting id ({@value} ). This setting affects the order the messages and fragments are sent if the routing protocol doesn't define any particular order (e.g, if more than one message can be sent
-	 * directly to the final recipient). Valid values are<BR>
+	 * Message/fragment sending queue type -setting id ({@value} ). This setting affects the order the messages and fragments are sent if the routing protocol
+	 * doesn't define any particular order (e.g, if more than one message can be sent directly to the final recipient). Valid values are<BR>
 	 * <UL>
 	 * <LI/>1 : random (message order is randomized every time; default option)
 	 * <LI/>2 : FIFO (most recently received messages are sent last)
@@ -52,8 +52,9 @@ public abstract class MessageRouter {
 	public static final int Q_MODE_FIFO = 2;
 
 	/*
-	 * Return values when asking to start a transmission: RCV_OK (0) means that the host accepts the message and transfer started, values < 0 mean that the receiving host will not accept this particular message (right now), values > 0 mean
-	 * the host will not right now accept any message. Values in the range [-100, 100] are reserved for general return values (and specified here), values beyond that are free for use in implementation specific cases
+	 * Return values when asking to start a transmission: RCV_OK (0) means that the host accepts the message and transfer started, values < 0 mean that the
+	 * receiving host will not accept this particular message (right now), values > 0 mean the host will not right now accept any message. Values in the range
+	 * [-100, 100] are reserved for general return values (and specified here), values beyond that are free for use in implementation specific cases
 	 */
 	/** Receive return value for OK */
 	public static final int RCV_OK = 0;
@@ -94,7 +95,8 @@ public abstract class MessageRouter {
 	private HashMap<String, Collection<Application>> applications = null;
 
 	/**
-	 * Constructor. Creates a new message router based on the settings in the given Settings object. Size of the message buffer is read from {@link #B_SIZE_S} setting. Default value is Integer.MAX_VALUE.
+	 * Constructor. Creates a new message router based on the settings in the given Settings object. Size of the message buffer is read from {@link #B_SIZE_S}
+	 * setting. Default value is Integer.MAX_VALUE.
 	 * 
 	 * @param s
 	 *            The settings object
@@ -210,8 +212,8 @@ public abstract class MessageRouter {
 	}
 
 	/**
-	 * Returns <code>true</code> if the message has been blacklisted. Messages get blacklisted when an application running on the node wants to drop it. This ensures the peer doesn't try to constantly send the same message to this node,
-	 * just to get dropped by an application every time.
+	 * Returns <code>true</code> if the message has been blacklisted. Messages get blacklisted when an application running on the node wants to drop it. This
+	 * ensures the peer doesn't try to constantly send the same message to this node, just to get dropped by an application every time.
 	 * 
 	 * @param id
 	 *            id of the message
@@ -222,8 +224,8 @@ public abstract class MessageRouter {
 	}
 
 	/**
-	 * Returns a reference to the messages of this router in collection. <b>Note:</b> If there's a chance that some message(s) from the collection could be deleted (or added) while iterating through the collection, a copy of the collection
-	 * should be made to avoid concurrent modification exceptions.
+	 * Returns a reference to the messages of this router in collection. <b>Note:</b> If there's a chance that some message(s) from the collection could be
+	 * deleted (or added) while iterating through the collection, a copy of the collection should be made to avoid concurrent modification exceptions.
 	 * 
 	 * @return a reference to the messages of this router in collection
 	 */
@@ -250,7 +252,8 @@ public abstract class MessageRouter {
 	}
 
 	/**
-	 * Returns the amount of free space in the buffer. May return a negative value if there are more messages in the buffer than should fit there (because of creating new messages).
+	 * Returns the amount of free space in the buffer. May return a negative value if there are more messages in the buffer than should fit there (because of
+	 * creating new messages).
 	 * 
 	 * @return The amount of free space (Integer.MAX_VALUE if the buffer size isn't defined)
 	 */
@@ -313,7 +316,8 @@ public abstract class MessageRouter {
 	 *            Message to put in the receiving buffer
 	 * @param from
 	 *            Who the message is from
-	 * @return Value zero if the node accepted the message (RCV_OK), value less than zero if node rejected the message (e.g. DENIED_OLD), value bigger than zero if the other node should try later (e.g. TRY_LATER_BUSY).
+	 * @return Value zero if the node accepted the message (RCV_OK), value less than zero if node rejected the message (e.g. DENIED_OLD), value bigger than zero
+	 *         if the other node should try later (e.g. TRY_LATER_BUSY).
 	 */
 	public int receiveMessage(Message m, DTNHost from) {
 		Message newMessage = m.replicate();
@@ -329,7 +333,8 @@ public abstract class MessageRouter {
 	}
 
 	/**
-	 * This method should be called (on the receiving host) after a message was successfully transferred. The transferred message is put to the message buffer unless this host is the final recipient of the message.
+	 * This method should be called (on the receiving host) after a message was successfully transferred. The transferred message is put to the message buffer
+	 * unless this host is the final recipient of the message.
 	 * 
 	 * @param id
 	 *            Id of the transferred message
@@ -488,7 +493,8 @@ public abstract class MessageRouter {
 	 * @param id
 	 *            Identifier of the message to delete
 	 * @param drop
-	 *            If the message is dropped (e.g. because of full buffer) this should be set to true. False value indicates e.g. remove of message because it was delivered to final destination.
+	 *            If the message is dropped (e.g. because of full buffer) this should be set to true. False value indicates e.g. remove of message because it
+	 *            was delivered to final destination.
 	 */
 	public void deleteMessage(String id, boolean drop) {
 		Message removed = removeFromMessages(id);
@@ -501,7 +507,8 @@ public abstract class MessageRouter {
 	}
 
 	/**
-	 * Sorts/shuffles the given list according to the current sending queue mode. The list can contain either Message or Tuple<Message, Connection> objects. Other objects cause error.
+	 * Sorts/shuffles the given list according to the current sending queue mode. The list can contain either Message or Tuple<Message, Connection> objects.
+	 * Other objects cause error.
 	 * 
 	 * @param list
 	 *            The list to sort or shuffle
