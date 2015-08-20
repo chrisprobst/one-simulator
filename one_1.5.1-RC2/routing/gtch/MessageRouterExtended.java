@@ -75,6 +75,11 @@ public abstract class MessageRouterExtended extends MessageRouter {
 	}
 
 	private final void setQueuingStrategy(Settings s) {
+		if (!s.contains(QUEUING_STRATEGY_S)) {
+			this.QUEUING_STRATEGY = QUEUING_STRATEGY_POSSIBILITIES.AGE;
+			return;
+		}
+		
 		String queuingStrategy = s.getSetting(QUEUING_STRATEGY_S);
 		if (queuingStrategy.equals("TTL")) {
 			this.QUEUING_STRATEGY = QUEUING_STRATEGY_POSSIBILITIES.TTL;

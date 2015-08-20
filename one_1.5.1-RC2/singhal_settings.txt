@@ -1,5 +1,5 @@
 #
-# Default settings for the simulation
+# Singhal settings for the simulation
 #
 
 ## Scenario settings
