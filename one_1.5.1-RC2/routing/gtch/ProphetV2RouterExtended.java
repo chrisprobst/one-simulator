@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import routing.MessageRouter;
 import routing.ProphetV2Router;
 import core.Connection;
 import core.DTNHost;
@@ -96,5 +97,11 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 		for (Connection connection : connections) {
 			System.out.println(this.getHost().toString() + ", " + connection.toString());
 		}
+	}
+
+	@Override
+	public MessageRouter replicate() {
+		ProphetV2RouterExtended r = new ProphetV2RouterExtended(this);
+		return r;
 	}
 }
