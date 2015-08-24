@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import java.util.Random;
+//import java.util.Random;
 
 import routing.gtch.ActiveRouterExtended;
 import routing.util.RoutingInfo;
@@ -43,7 +43,7 @@ public class ProphetV2Router extends ActiveRouterExtended {
 	public static final double DEFAULT_BETA = 0.9;
 	/** delivery predictability aging constant */
 	public static final double GAMMA = 0.999885791;
-	Random randomGenerator = new Random();
+	//Random randomGenerator = new Random();
 
 	/** Prophet router's setting namespace ({@value} ) */
 	public static final String PROPHET_NS = "ProphetV2Router";

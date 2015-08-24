@@ -20,10 +20,6 @@ import core.Settings;
  */
 public abstract class MessageRouterExtended extends MessageRouter {
 	/**
-	 * mapping from id of Message ({@link core.Message.id}) to Message itself (@link {@link core.Message}
-	 */
-	protected Map<String, Message> mapIdMessage;
-	/**
 	 * mapping from message (@link {@link Message}) to forwarding time amount of this node
 	 */
 	protected Map<Message, Integer> forwardTimes;
@@ -56,21 +52,18 @@ public abstract class MessageRouterExtended extends MessageRouter {
 	public void init(DTNHost host, List<MessageListener> mListeners) {
 		super.init(host, mListeners);
 		this.forwardTimes = new HashMap<Message, Integer>();
-		this.mapIdMessage = new HashMap<String, Message>();
 		this.priorityQueue = new PriorityQueue<Message>(1, getQueuingStrategyComparator());
 	}
 
 	@Override
 	protected void addToMessages(Message m, boolean newMessage) {
-		this.mapIdMessage.put(m.getId(), m);
 		this.forwardTimes.put(m, 0);
 		super.addToMessages(m, newMessage);
 	}
 
 	@Override
 	protected Message removeFromMessages(String id) {
-		this.forwardTimes.remove(this.mapIdMessage.get(id));
-		this.mapIdMessage.remove(id);
+		this.forwardTimes.remove(getMessage(id));
 		return super.removeFromMessages(id);
 	}
 
@@ -79,7 +72,7 @@ public abstract class MessageRouterExtended extends MessageRouter {
 			this.QUEUING_STRATEGY = QUEUING_STRATEGY_POSSIBILITIES.AGE;
 			return;
 		}
-		
+
 		String queuingStrategy = s.getSetting(QUEUING_STRATEGY_S);
 		if (queuingStrategy.equals("TTL")) {
 			this.QUEUING_STRATEGY = QUEUING_STRATEGY_POSSIBILITIES.TTL;
@@ -100,28 +93,52 @@ public abstract class MessageRouterExtended extends MessageRouter {
 			return new Comparator<Message>() {
 				public int compare(Message o1, Message o2) {
 					// least remaining time to live first
-					return (int) Math.signum(o1.getTtl() - o2.getTtl());
+					if (o1.getResidualTtl() > o2.getResidualTtl()) {
+						return 1;
+					} else if (o1.getResidualTtl() < o2.getResidualTtl()) {
+						return -1;
+					} else {
+						return (o1.hashCode() / 2 + o2.hashCode() / 2) % 3 - 1;
+					}
 				}
 			};
 		case HOPCOUNT:
 			return new Comparator<Message>() {
 				public int compare(Message o1, Message o2) {
 					// highest hop count first
-					return (int) -Math.signum(o1.getHopCount() - o2.getHopCount());
+					if (o1.getHopCount() > o2.getHopCount()) {
+						return -1;
+					} else if (o1.getHopCount() < o2.getHopCount()) {
+						return 1;
+					} else {
+						return (o1.hashCode() / 2 + o2.hashCode() / 2) % 3 - 1;
+					}
 				}
 			};
 		case MOFO:
 			return new Comparator<Message>() {
 				public int compare(Message o1, Message o2) {
 					// most forwarded first
-					return (int) -Math.signum(forwardTimes.get(o1) - forwardTimes.get(o2));
+					if (forwardTimes.get(o1) > forwardTimes.get(o2)) {
+						return -1;
+					} else if (forwardTimes.get(o1) < forwardTimes.get(o2)) {
+						return 1;
+					} else {
+						return (o1.hashCode() / 2 + o2.hashCode() / 2) % 3 - 1;
+					}
 				}
 			};
 		case SIZE:
 			return new Comparator<Message>() {
 				public int compare(Message o1, Message o2) {
 					// biggest message first
-					return (int) -Math.signum(o1.getSize() - o2.getSize());
+					if (o1.getSize() > o2.getSize()) {
+						return -1;
+					} else if (o1.getSize() < o2.getSize()) {
+						return 1;
+					} else {
+						return (o1.hashCode() / 2 + o2.hashCode() / 2) % 3 - 1;
+					}
 				}
 			};
 		case AGE:
@@ -129,7 +146,13 @@ public abstract class MessageRouterExtended extends MessageRouter {
 			return new Comparator<Message>() {
 				public int compare(Message o1, Message o2) {
 					// oldest message first
-					return (int) Math.signum(o1.getReceiveTime() - o2.getReceiveTime());
+					if (o1.getReceiveTime() > o2.getReceiveTime()) {
+						return 1;
+					} else if (o1.getReceiveTime() < o2.getReceiveTime()) {
+						return -1;
+					} else {
+						return (o1.hashCode() / 2 + o2.hashCode() / 2) % 3 - 1;
+					}
 				}
 			};
 		}

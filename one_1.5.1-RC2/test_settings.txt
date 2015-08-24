@@ -3,7 +3,7 @@ Scenario.name = test_scenario
 Scenario.simulateConnections = true
 Scenario.updateInterval = 0.1
 # 12h = 43200s, 1min = 60s
-Scenario.endTime = 43200
+Scenario.endTime = 600
 
 # Wi-Fi interface
 wifiInterface.type = SimpleBroadcastInterface

@@ -57,14 +57,14 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 	protected void addToMessages(Message m, boolean newMessage) {
 		this.maxForwardTimesCalculated.put(m, getCalculatedForwardTime(m));
 		this.maxHopCountCalculated.put(m, getCalculatedHopCount(m));
-		something();
+		//something();
 		super.addToMessages(m, newMessage);
 	}
 
 	@Override
 	protected Message removeFromMessages(String id) {
-		this.maxForwardTimesCalculated.remove(this.mapIdMessage.get(id));
-		this.maxHopCountCalculated.remove(this.mapIdMessage.get(id));
+		this.maxForwardTimesCalculated.remove(getMessage(id));
+		this.maxHopCountCalculated.remove(getMessage(id));
 		return super.removeFromMessages(id);
 	}
 
