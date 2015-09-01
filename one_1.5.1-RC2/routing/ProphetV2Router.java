@@ -66,7 +66,7 @@ public class ProphetV2Router extends ActiveRouterExtended {
 	private Map<DTNHost, Double> preds;
 
 	/** last encouter timestamp (sim)time */
-	private Map<DTNHost, Double> lastEncouterTime;
+	protected Map<DTNHost, Double> lastEncouterTime;
 
 	/** last delivery predictability update (sim)time */
 	private double lastAgeUpdate;

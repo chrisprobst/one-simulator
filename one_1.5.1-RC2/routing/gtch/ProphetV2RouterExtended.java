@@ -6,11 +6,12 @@ import java.util.Map;
 
 import routing.MessageRouter;
 import routing.ProphetV2Router;
-import core.Connection;
+import util.GTCH;
 import core.DTNHost;
 import core.Message;
 import core.MessageListener;
 import core.Settings;
+import core.SimScenario;
 
 /**
  * This is an extension of the ProphetV2Router
@@ -54,10 +55,16 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 	}
 
 	@Override
+	public MessageRouter replicate() {
+		ProphetV2RouterExtended r = new ProphetV2RouterExtended(this);
+		return r;
+	}
+
+	@Override
 	protected void addToMessages(Message m, boolean newMessage) {
+		System.out.println("addToMessages: " + m.getId() + ", TTL: " + m.getMessageTtl() + ", TTLe: " + m.getElapsedTtl() + ", TTLr: " + m.getResidualTtl());
 		this.maxForwardTimesCalculated.put(m, getCalculatedForwardTime(m));
 		this.maxHopCountCalculated.put(m, getCalculatedHopCount(m));
-		//something();
 		super.addToMessages(m, newMessage);
 	}
 
@@ -68,23 +75,57 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 		return super.removeFromMessages(id);
 	}
 
+	@Override
+	public void update() {
+		super.update();
+		dropSomeMessages();
+	}
+
 	private int getCalculatedForwardTime(Message m) {
+		if (this.getHost().equals(m.getTo())) { // host is receiver of message
+			System.out.println("This should not be called when used in addToMessages");
+			return 0;
+		}
+
+		double ratio_R_E = GTCH.getRatioOfResidualTtlToElapsedTtl(m);
+		boolean HDS = ratio_R_E > 1;
+		DTNHost neighbour = GTCH.getLastHopOfMessage(m);
+		boolean destinationKnownByNeighbour = GTCH.isDestinationKnownByNeighbour(neighbour, m.getTo());
+		boolean LDS = (ratio_R_E < 1) && destinationKnownByNeighbour;
+		boolean isSource = this.getHost().equals(m.getFrom());
+
+		if (true) {
+			return GTCH.get_Nm_HDS_Source(this.lastEncouterTime.size());
+		}
+
 		int maxForwardTimesCalculatedTemp;
+
 		if (this.getHost().equals(m.getFrom())) { // host is sender of message
-			maxForwardTimesCalculatedTemp = 0; // TODO: calculate max forward times
+			maxForwardTimesCalculatedTemp = GTCH.get_Nm_HDS_Source(this.lastEncouterTime.size());
 		} else if (this.getHost().equals(m.getTo())) { // host is receiver of message
+			System.out.println("This should not be called when used in addToMessages");
 			maxForwardTimesCalculatedTemp = 0;
 		} else { // host is relay
 			maxForwardTimesCalculatedTemp = 0; // TODO: calculate max forward times
+
 		}
 		return maxForwardTimesCalculatedTemp;
 	}
 
-	private int getCalculatedHopCount(Message m) {
+	private int getCalculatedHopCount(Message m) {	
+		if (this.getHost().equals(m.getTo())) { // host is receiver of message
+			System.out.println("This should not be called when used in addToMessages");
+			return 0;
+		}
+		
+		
+		
+		
 		int maxHopCountCalculatedTemp;
 		if (this.getHost().equals(m.getFrom())) { // host is sender of message
-			maxHopCountCalculatedTemp = 0; // TODO: calculate max forward times
+			maxHopCountCalculatedTemp = ;
 		} else if (this.getHost().equals(m.getTo())) { // host is receiver of message
+			System.out.println("This should not be called when used in addToMessages");
 			maxHopCountCalculatedTemp = 0;
 		} else { // host is relay
 			maxHopCountCalculatedTemp = 0; // TODO: calculate max forward times
@@ -92,16 +133,18 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 		return maxHopCountCalculatedTemp;
 	}
 
-	private void something() {
-		List<Connection> connections = this.getConnections();
-		for (Connection connection : connections) {
-			System.out.println(this.getHost().toString() + ", " + connection.toString());
-		}
-	}
+	/**
+	 * Drops messages that have been forwarded often enough according to forward times and hop count
+	 */
+	protected void dropSomeMessages() {
+		Message[] messages = getMessageCollection().toArray(new Message[0]);
+		for (int i = 0; i < messages.length; i++) {
+			boolean forward = forwardTimes.get(messages[i]) >= maxForwardTimesCalculated.get(messages[i]);
+			boolean hopcount = messages[i].getHopCount() >= maxHopCountCalculated.get(messages[i]);
 
-	@Override
-	public MessageRouter replicate() {
-		ProphetV2RouterExtended r = new ProphetV2RouterExtended(this);
-		return r;
+			if (forward || hopcount) {
+				deleteMessage(messages[i].getId(), true);
+			}
+		}
 	}
 }

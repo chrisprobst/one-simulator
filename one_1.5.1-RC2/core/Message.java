@@ -187,15 +187,6 @@ public class Message implements Comparable<Message> {
 	}
 
 	/**
-	 * Renaming of {@link #getTtl()}
-	 * 
-	 * @author Andre Ippisch
-	 */
-	public int getResidualTtl() {
-		return getTtl();
-	}
-
-	/**
 	 * Sets the initial TTL (time-to-live) for this message. The initial TTL is the TTL when the original message was created. The current TTL is calculated
 	 * based on the time of
 	 * 
@@ -411,4 +402,37 @@ public class Message implements Comparable<Message> {
 		this.appID = appID;
 	}
 
+	/**
+	 * Returns the residual (remaining) TTL of the message
+	 * 
+	 * @author Andre Ippisch
+	 */
+	public double getResidualTtl() {
+		if (this.initTtl == INFINITE_TTL) {
+			return Double.MAX_VALUE;
+		} else {
+			if (ttlAsSeconds) {
+				return (this.initTtl - (SimClock.getTime() - this.timeCreated));
+			} else {
+				return (((this.initTtl * 60) - (SimClock.getTime() - this.timeCreated)) / 60.0);
+			}
+		}
+	}
+
+	/**
+	 * Returns the elapsed TTL of the message
+	 * 
+	 * @author Andre Ippisch
+	 */
+	public double getElapsedTtl() {
+		if (ttlAsSeconds) {
+			return SimClock.getTime() - this.timeCreated;
+		} else {
+			return (SimClock.getTime() - this.timeCreated) / 60.0;
+		}
+	}
+	
+	public double getMessageTtl() {
+		return this.initTtl;
+	}
 }
