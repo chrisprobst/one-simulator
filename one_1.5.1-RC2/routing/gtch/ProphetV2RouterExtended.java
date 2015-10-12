@@ -118,12 +118,9 @@ public class ProphetV2RouterExtended extends ProphetV2Router {
 			return 0;
 		}
 		
-		
-		
-		
 		int maxHopCountCalculatedTemp;
 		if (this.getHost().equals(m.getFrom())) { // host is sender of message
-			maxHopCountCalculatedTemp = ;
+			maxHopCountCalculatedTemp = 0;
 		} else if (this.getHost().equals(m.getTo())) { // host is receiver of message
 			System.out.println("This should not be called when used in addToMessages");
 			maxHopCountCalculatedTemp = 0;
