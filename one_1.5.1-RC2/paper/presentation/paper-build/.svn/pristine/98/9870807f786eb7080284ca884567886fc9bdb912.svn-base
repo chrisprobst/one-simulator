@@ -1,0 +1,1 @@
+ruby shortnames.rb conferences-crossref.bib > conferences-crossref-short.bib

@@ -19,14 +19,14 @@ import core.Settings;
  * @author teemuk
  */
 public class ModifiedRandomDirection
-extends RandomDirection {
+        extends RandomDirection {
 
-    public ModifiedRandomDirection( Settings settings ) {
-        super( settings );
+    public ModifiedRandomDirection(Settings settings) {
+        super(settings);
     }
 
-    public ModifiedRandomDirection( ModifiedRandomDirection other ) {
-        super( other );
+    public ModifiedRandomDirection(ModifiedRandomDirection other) {
+        super(other);
     }
 
     @Override
@@ -38,7 +38,7 @@ extends RandomDirection {
 
     @Override
     public MovementModel replicate() {
-        return new ModifiedRandomDirection( this );
+        return new ModifiedRandomDirection(this);
     }
 
 }

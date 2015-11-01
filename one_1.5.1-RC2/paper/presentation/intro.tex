@@ -1,0 +1,103 @@
+\section{Introduction}
+
+\begin{frame}
+  \frametitle{Motivation}  
+  \begin{itemize}
+    \item Mobile Web not always available
+    \vspace{0.3cm}
+    \begin{itemize}
+      \item Outside of cities
+      \vspace{0.1cm}
+      \item Third World countries
+      \vspace{0.1cm}
+      \item Even in cities, in case of congestion
+    \end{itemize}
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{itemize}
+    \item Mobile Web is centralized
+    \vspace{0.3cm}
+    \begin{itemize}
+      \item Single point of failure
+      \vspace{0.1cm}
+      \item Missing privacy
+      \vspace{0.1cm}
+      \item Expensive infrastructure => end-users pay
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Possible Solution}  
+  \begin{itemize}
+    \item Mobile devices communicate with each other
+    \vspace{0.3cm}
+    \begin{itemize}
+      \item WiFi, Bluetooth, IR, NFC, etc.
+      \vspace{0.1cm}
+      \item Range and bandwidth determined by interface type
+      \vspace{0.1cm}
+      \item Independent of Mobile Web
+    \end{itemize}    
+
+    \vspace{0.3cm}
+
+    \item Message delivery
+    \vspace{0.3cm}
+    \begin{itemize}
+      \item Hop-by-hop routing
+      \vspace{0.1cm}
+      \item Indeterministic, churn, overhead
+      \vspace{0.1cm}
+      \item More anonymous than Mobile Web
+    \end{itemize} 
+  \end{itemize}
+
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Challenges}  
+
+  \begin{itemize}  
+    \item Routing Protocol
+    \vspace{0.3cm}
+    \begin{itemize}
+      \item Network topology constantly changing
+      \vspace{0.1cm}
+      \item Origin and destination might be isolated
+      \vspace{0.1cm}
+      \item Node selection for routing
+      \vspace{0.1cm}
+      \item Different routing strategies      
+      \begin{itemize}
+        \item Epidemic (used for evaluation)
+        \vspace{0.1cm}
+        \item PRoPHET
+        \vspace{0.1cm}
+        \item etc.
+      \end{itemize}    
+    \end{itemize}    
+  \end{itemize}
+
+  \vspace{0.3cm}
+
+  \begin{itemize}  
+    \item Buffer Management
+    \vspace{0.3cm}
+    \begin{itemize}
+      \item Queue policy: Buffers messages in send queue
+      \vspace{0.1cm}
+      \item Drop policy: Drops messages, if queue exhausted
+      \vspace{0.1cm}
+      \item Effect on routing performance ?
+    \end{itemize} 
+  \end{itemize}
+
+\end{frame}
+

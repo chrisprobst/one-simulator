@@ -45,7 +45,7 @@ Synopsis:
 
 Options:
   -b Run simulation in batch mode. Doesn't start GUI but prints
-information about the progress to terminal. The option must be followed 
+information about the progress to terminal The option must be followed
 by the number of runs to perform in the batch mode or by a range of runs 
 to perform, delimited with a colon (e.g, value 2:4 would perform runs 2, 
 3 and 4). See section "Run indexing" for more information.

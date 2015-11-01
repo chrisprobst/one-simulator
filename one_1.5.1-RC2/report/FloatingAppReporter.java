@@ -16,29 +16,31 @@ import core.DTNHost;
  *
  * This is only used for the "flux" mode of operation to assess how many nodes
  * enter and leave a single anchor zone.
- * 
+ *
  * @author jo
  */
 public class FloatingAppReporter extends Report implements ApplicationListener {
-	
+
     public void gotEvent(String event, Object params, Application app,
-			 DTNHost host) {
-	// Check that the event is sent by correct application type
-	if (!(app instanceof FloatingApplication)) return;
-	
-	// Increment the counters based on the event type
-	if (event.equals("enter")) {
-	    write (format (getSimTime ()) + " ENTER " + host.toString () + " " + (String) params);
-	} else if (event.equals("leave")) {
-	    write (format (getSimTime ()) + " LEAVE " + host.toString () + " " + (String) params);
-	} else if (event.equals("in")) {
-	    write (format (getSimTime ()) + " IN " + host.toString () + " " + (String) params);
-	}
+                         DTNHost host) {
+        // Check that the event is sent by correct application type
+        if (!(app instanceof FloatingApplication)) {
+            return;
+        }
+
+        // Increment the counters based on the event type
+        if (event.equals("enter")) {
+            write(format(getSimTime()) + " ENTER " + host.toString() + " " + (String) params);
+        } else if (event.equals("leave")) {
+            write(format(getSimTime()) + " LEAVE " + host.toString() + " " + (String) params);
+        } else if (event.equals("in")) {
+            write(format(getSimTime()) + " IN " + host.toString() + " " + (String) params);
+        }
     }
-	
+
     @Override
-	public void done() {
-	write ("\n");
-	super.done();
+    public void done() {
+        write("\n");
+        super.done();
     }
 }

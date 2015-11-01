@@ -1,0 +1,1834 @@
+@proceedings{ainaw07,
+  booktitle = {AINAW~'07},
+  year = 2007,
+  month = may,
+  location = {Niagara Falls, ON, Canada},
+}
+
+@proceedings{allerton02,
+  booktitle = {Allerton~'02},
+  year = 2002,
+  month = oct,
+  location = {Urbana-Champaign, IL, USA},
+}
+
+@proceedings{allerton04,
+  booktitle = {Allerton~'04},
+  year = 2004,
+  month = sep,
+  location = {Urbana-Champaign, IL, USA},
+}
+
+@proceedings{allerton05,
+  booktitle = {Allerton~'05},
+  year = 2005,
+  month = sep,
+  location = {Urbana-Champaign, IL, USA},
+}
+
+@proceedings{allerton07,
+  booktitle = {Allerton~'07},
+  year = 2007,
+  month = sep,
+  location = {Urbana-Champaign, IL, USA},
+}
+
+
+@proceedings{anss06,
+  booktitle = {ANSS~'06},
+  year = 2006,
+  month = apr,
+  location = {Huntsville, AL, USA},
+}
+
+
+@proceedings{aofa05,
+  booktitle = {AofA~'05},
+  year = 2005,
+  month = jun,
+  location = {Barcelona, Spain},
+}
+
+@proceedings{aofa07,
+  booktitle = {AofA~'07},
+  year = 2007,
+  month = jun,
+  location = {Juan-les-pins, France},
+}
+
+
+@proceedings{asian04,
+  booktitle = {ASIAN~'04},
+  year = 2004,
+  month = dec,
+  location = {Chiang Mai, Thailand},
+}
+
+
+@proceedings{aswn04,
+  booktitle = {ASWN~'04},
+  year = 2004,
+  month = aug,
+  location = {Boston, MA, USA},
+}
+
+@proceedings{autonet06,
+  booktitle = {AutoNet~'06},
+  year = 2006,
+  month = dec,
+  location = {San Francisco, CA, USA},
+}
+
+@proceedings{cas02,
+  booktitle = {CAS~'02},
+  year = 2002,
+  month = sep,
+  location = {Pasadena, CA, USA},
+}
+
+
+@proceedings{ccnc08,
+  booktitle = {CCNC~'08},
+  year = 2008,
+  month = jan,
+  location = {Las Vegas, NV, USA},
+  ISSN={0197-2618},
+}
+
+
+@proceedings{ccw03,
+  booktitle = {CCW~'03},
+  year = 2003,
+  month = oct,
+  location = {Dana Point, CA, USA},
+}
+
+
+@proceedings{ciss05,
+  booktitle = {CISS~'05},
+  year = 2005,
+  month = mar,
+  location = {Baltimore, MD, USA},
+}
+
+
+@proceedings{chants07,
+  booktitle = {CHANTS~'07},
+  year = 2007,
+  month = sep,
+  location = {Montreal, QC, Canada},
+}
+
+
+@proceedings{comsware06,
+  booktitle = {COMSWARE~'06},
+  year = 2006,
+  month = jan,
+  location = {New Delhi, India},
+}
+
+
+@proceedings{conext07,
+  booktitle = {CoNEXT~'07},
+  year = 2007,
+  month = dec,
+  location = {New York City, NY, USA},
+}
+
+
+@proceedings{csn06,
+  booktitle = {CSN~'06},
+  year = 2006,
+  month = aug,
+  location = {Palma de Mallorca, Spain},
+}
+
+
+@proceedings{dads03,
+  booktitle = {DADS~'03},
+  year = 2003,
+  month = mar,
+  location = {Orlando, FL, USA},
+}
+
+
+@proceedings{dbisp2p04,
+  booktitle = {DBISP2P~'04},
+  year = 2004,
+  month = aug,
+  location = {Toronto, ON, Canada},
+}
+
+
+@proceedings{dialm99,
+  booktitle = {DIALM~'99},
+  year = 1999,
+  month = aug,
+  location = {Seattle, WA, USA},
+}
+
+@proceedings{dialm02,
+  booktitle = {DIALM~'02},
+  year = 2002,
+  month = sep,
+  location = {Atlanta, GA, USA},
+}
+
+@proceedings{dialmpomc07,
+  booktitle = {Dial M-POMC~'07},
+  year = 2007,
+  month = aug,
+  location = {Portland, OR, USA},
+}
+
+
+@proceedings{dimva04,
+  booktitle = {DIMVA~'04},
+  year = 2004,
+  month = jul,
+  location = {Dortmund, Germany},
+}
+
+
+@proceedings{dms04,
+  booktitle = {DMS~'04},
+  year = 2004,
+  month = sep,
+  location = {San Francisco, California, USA},
+}
+
+
+@proceedings{esa03,
+  booktitle = {ESA~'03},
+  year = 2003,
+  month = sep,
+  location = {Budapest, Hungary},
+}
+
+
+@proceedings{esas04,
+  booktitle = {ESAS~'04},
+  year = 2004,
+  month = aug,
+  location = {Heidelberg, Germany},
+}
+
+
+@proceedings{esorics05,
+  booktitle = {ESORICS~'05},
+  year = 2005,
+  month = sep,
+  location = {Milan, Italy},
+}
+
+
+@proceedings{ewind05,
+   booktitle = {E-WIND~'05},
+   year = 2005,
+   month = aug,
+   location = {Philadelphia, USA},
+}
+
+
+@proceedings{exponwireless08,
+   booktitle = {EXPONWIRELESS~'08},
+   year = 2008,
+   month = jun,
+   location = {Newport Beach, CA, USA},
+}
+
+
+@proceedings{fm03,
+  booktitle = {FM~'03},
+  year = 2003,
+  month = sep,
+  location = {Pisa, Italy},
+}
+
+
+@proceedings{fmws08,
+  booktitle = {FMWS~'08},
+  year = 2008,
+  month = aug,
+  location = {Toronto, ON, Canada},
+}
+
+
+@proceedings{gi07,
+  booktitle = {Proceedings of 10th IEEE Global Internet Symposium},
+},
+  year = 2007,
+  month = may,
+  location = {Anchorage, AK, USA},
+}
+
+
+@proceedings{globecom01,
+  booktitle = {GLOBECOM~'01},
+  year = 2001,
+  month = nov,
+  location = {San Antonio, TX, USA},
+}
+
+@proceedings{globecom02,
+  booktitle = {GLOBECOM~'02},
+  year = 2002,
+  month = nov,
+  location = {Teipei, Taiwan, R.\,O.\,C.},
+}
+
+@proceedings{globecom03,
+  booktitle = {GLOBECOM~'03},
+  year = 2003,
+  month = dec,
+  location = {San Francisco, CA, USA},
+}
+
+@proceedings{globecom04,
+  booktitle = {GLOBECOM~'04},
+  year = 2004,
+  month = dec,
+  location = {Dallas, TX, USA},
+}
+
+@proceedings{globecom06,
+  booktitle = {GLOBECOM~'06},
+  year = 2006,
+  month = nov,
+  location = {San Francisco, CA, USA},
+}
+
+
+@proceedings{globecom-w07,
+  booktitle = {GLOBECOM~'07},
+  year = 2007,
+  month = nov,
+  location = {Washington, DC, USA},
+}
+
+
+@proceedings{hicss00,
+  booktitle = {HICSS~'00},
+  year = 2000,
+  month = jan,
+  location = {Maui, HI, USA},
+}
+
+@proceedings{hicss05,
+  booktitle = {HICSS~'05},
+  year = 2005,
+  month = jan,
+  location = {Big Island, HI, USA},
+}
+
+@proceedings{hicss06,
+  booktitle = {HICSS~'06},
+  year = 2006,
+  month = jan,
+  location = {Kaual, HI, USA},
+}
+
+
+@proceedings{hotnets02,
+  booktitle = {HotNets~'02},
+  year = 2002,
+  month = oct,
+  location = {Princeton, NJ, USA},
+}
+
+@proceedings{hotnets05,
+  booktitle = {HotNets~'05},
+  year = 2005,
+  month = nov,
+  location = {College Park, MD, USA},
+}
+
+@proceedings{hotnets07,
+  booktitle = {HotNets~'07},
+  year = 2007,
+  month = nov,
+  location = {Atlanta, GA, USA},
+}
+
+@proceedings{hotmobile08,
+  booktitle = {HotMobile~'08},
+  year = 2008,
+  month = feb,
+  location = {Napa Valley, CA, USA},
+}
+
+
+@proceedings{icalp92,
+  booktitle = {ICALP '92},
+  year = 1992,
+  month = jul,
+  location = {Vienna, Austria},
+}
+
+
+@proceedings{icc00,
+  booktitle = {ICC~'00},
+  year = 2000,
+  month = jun,
+  location = {New Orleans, LA, USA},
+}
+
+@proceedings{icc03,
+  booktitle = {ICC~'03},
+  year = 2003,
+  month = may,
+  location = {Anchorage, AK, USA},
+}
+
+@proceedings{icc04,
+  booktitle = {ICC~'04},
+  year = 2004,
+  month = jun,
+  location = {Paris, France},
+}
+
+@proceedings{icc07,
+  booktitle = {ICC~'07},
+  year = 2007,
+  month = jun,
+  location = {Glasgow, Scotland, UK},
+}
+
+@proceedings{icc08,
+  booktitle = {ICC~'08},
+  year = 2008,
+  month = may,
+  location = {Beijing, China},
+}
+
+
+@proceedings{icccn98,
+  booktitle = {ICCCN~'98},
+  year = 1998,
+  month = oct,
+  location = {Lafayette, LA, USA},
+}
+
+@proceedings{icccn02,
+  booktitle = {ICCCN~'02},
+  year = 2002,
+  month = oct,
+  location = {Miami, FL, USA},
+}
+
+@proceedings{icccn05,
+  booktitle = {ICCCN~'05},
+  year = 2005,
+  month = oct,
+  location = {San Diego, CA, USA},
+}
+
+
+@proceedings{icct06,
+  booktitle = {ICCT~'06},
+  year = 2006,
+  month = nov,
+  location = {Guilin, China},
+}
+
+
+@proceedings{icdcs87,
+  booktitle = {ICDCS~'87},
+  year = 1987,
+  month = sep,
+  location = {Berlin, Germany},
+}
+
+@proceedings{icdcs98,
+  booktitle = {ICDCS~'98},
+  year = 1998,
+  month = may,
+  location = {Amsterdam, Netherlands},
+}
+
+
+@proceedings{icdcsw02,
+  booktitle = {ICDCSW~'02},
+  year = 2002,
+  month = jul,
+  location = {Vienna, Austria},
+}
+
+
+@proceedings{icdcsw04,
+  booktitle = {ICDCSW~'04},
+  year = 2004,
+  OPTmonth = mar,
+  location = {Tokyo, Japan},
+}
+
+
+@proceedings{icde04,
+  booktitle = {ICDE~'04},
+  year = 2004,
+  month = mar,
+  location = {Boston, MA, USA},
+}
+
+
+@proceedings{icnp02,
+  booktitle = {ICNP~'02},
+  year = 2002,
+  month = nov,
+  location = {Paris, France},
+}
+
+
+@proceedings{icpp04,
+  booktitle = {ICPP~'04},
+  year = 2004,
+  month = aug,
+  location = {Montreal, QC, Canada},
+}
+
+
+@proceedings{icps05,
+  booktitle = {ICPS~'05},
+  year = 2005,
+  month = jul,
+  location = {Santorini, Greece},
+}
+
+
+@proceedings{icsmc06,
+  booktitle = {ICSMC~'06},
+  year = 2006,
+  month = oct,
+  location = {Taipei, Taiwan},
+}
+
+
+@proceedings{ict08,
+  booktitle = {ICT~'08},
+  year = 2008,
+  month = jun,
+  location = {St. Petersburg, Russia},
+}
+
+
+@proceedings{icwn02,
+  booktitle = {ICWN~'02},
+  year = 2002,
+  month=jun,
+  location = {Las Vegas, NV, USA},
+}
+
+
+@proceedings{imc03,
+  booktitle = {IMC~'03},
+  year = 2003,
+  month = oct,
+  location = {Miami Beach, FL, USA},
+}
+
+@proceedings{imc04,
+  booktitle = {IMC~'04},
+  year = 2004,
+  month = oct,
+  location = {Taormina, Italy},
+}
+
+
+@proceedings{infocom99,
+  booktitle = {INFOCOM~'99},
+  year = 1999,
+  month = mar,
+  location = {New York, NY, USA},
+}
+
+@proceedings{infocom00,
+  booktitle = {INFOCOM~'00},
+  year = 2000,
+  month = mar,
+  location = {Tel-Aviv, Israel},
+}
+
+@proceedings{infocom02,
+  booktitle = {INFOCOM~'02},
+  year = 2002,
+  month = jun,
+  location = {New York, NY, USA},
+}
+
+@proceedings{infocom03,
+  booktitle = {INFOCOM~'03},
+  year = 2003,
+  month = mar,
+  location = {San Francisco, CA, USA},
+}
+
+@proceedings{infocom04,
+  booktitle = {INFOCOM~'04},
+  year = 2004,
+  month = mar,
+  location = {Hong Kong, China},
+}
+
+@proceedings{infocom05,
+  booktitle = {INFOCOM~'05},
+  year = 2005,
+  month = mar,
+  location = {Miami, FL, USA},
+}
+
+@proceedings{infocom06,
+  booktitle = {INFOCOM~'06},
+  year = 2006,
+  month = apr,
+  location = {Barcelona, Spain},
+}
+
+@proceedings{infocom07,
+  booktitle = {INFOCOM~'07},
+  year = 2007,
+  month = may,
+  location = {Anchorage, AK, USA},
+}
+
+@proceedings{infocom08,
+  booktitle = {INFOCOM~'08},
+  year = 2008,
+  month = apr,
+  location = {Phoenix, AZ, USA},
+}
+
+
+@proceedings{iptps02,
+  booktitle = {IPTPS~'02},
+  year = 2002,
+  month = mar,
+  location = {Cambridge, MA, USA},
+}
+
+@proceedings{iptps05,
+  booktitle = {IPTPS~'05},
+  year = 2005,
+  month = feb,
+  location = {Ithaca, NY, USA},
+}
+
+
+@proceedings{iscc02,
+  booktitle = {ISCC~'02},
+  year = 2002,
+  month = jul,
+  location = {Taormina, Italy},
+}
+
+@proceedings{iscc03,
+  booktitle = {ISCC~'03},
+  year = 2003,
+  month = jul,
+  location = {Antalya, Turkey},
+}
+
+@proceedings{iscc04,
+  booktitle = {ISCC~'04},
+  year = 2004,
+  month = jul,
+  location = {Alexandria, Greece},
+}
+
+@proceedings{iscc05,
+  booktitle = {ISCC~'05},
+  year = 2005,
+  month = jun,
+  location = {La Manga del Mar Menor, Spain},
+}
+
+
+@proceedings{iswcs06,
+  booktitle = {ISWCS~'06},
+  year = 2006,
+  month = sep,
+  location = {Valencia, Spain},
+}
+
+
+@proceedings{itsc02,
+  booktitle = {ITSC~'02},
+  year = 2002,
+  month = sep,
+  location = {Singapore},
+}
+
+@proceedings{itsc03,
+  booktitle = {ITSC~'03},
+  year = 2003,
+  month = oct,
+  location = {Shanghai, China},
+}
+
+@proceedings{itsc04,
+  booktitle = {ITSC~'04},
+  year = 2004,
+  month = oct,
+  location = {Washington, DC, USA},
+}
+
+@proceedings{itsc05,
+  booktitle = {ITSC~'05},
+  year = 2005,
+  month = sep,
+  location = {},
+}
+
+@proceedings{itsc06,
+  booktitle = {ITSC~'06},
+  year = 2006,
+  month = sep,
+  location = {Toronto, ON, Cananda},
+}
+
+@proceedings{itsc07,
+  booktitle = {ITSC~'07},
+  year = 2007,
+  month = sep,
+  location = {Seattle, WA, USA},
+}
+
+
+@proceedings{itse05,
+  booktitle = {ITS~'05},
+  year = 2005,
+  month = jun,
+  location = {Hannover, Germany},
+}
+
+
+@proceedings{itst05,
+  booktitle = {ITST~'05},
+  year = 2005,
+  month = jun,
+  location = {Brest, France},
+}
+
+
+@proceedings{iv00,
+  booktitle = {IV~'00},
+  year = {2000},
+  month = oct,
+  location = {Dearborn, MI, USA},
+}
+
+@proceedings{iv03,
+  booktitle = {IV~'03},
+  year = {2003},
+  month = jun,
+  location = {Columbus, OH, USA},
+}
+
+@proceedings{iv07,
+  booktitle = {IV~'07},
+  year = {2007},
+  month = jun,
+  location = {Istanbul, Turkey},
+}
+
+
+@proceedings{iwqos05,
+  booktitle = {IWQoS~'05},
+  year = 2005,
+  month = jun,
+  location = {Passau, Germany},
+}
+
+
+@proceedings{kdd02,
+  booktitle = {KDD~'02},
+  year = 2002,
+  month = jul,
+  location = {Edmonton, AB, Canada},
+}
+
+
+@proceedings{latin04,
+  booktitle = {LATIN~'04},
+  year = 2004,
+  month = apr,
+  location = {Buenos Aires, Argentina},
+}
+
+
+@proceedings{lcn02,
+  booktitle = {LCN~'02},
+  year = 2002,
+  month = nov,
+  location = {Tampa, FL, USA}
+}
+
+@proceedings{lcn04,
+  booktitle = {LCN~'04},
+  year = 2004,
+  month = nov,
+  location = {Tampa, FL, USA}
+}
+
+@proceedings{lcn06,
+  booktitle = {LCN~'06},
+  year = 2006,
+  month = nov,
+  location = {Tampa, FL, USA}
+}
+
+
+@proceedings{mascots04,
+  booktitle = {MASCOTS~'04},
+  year = {2004},
+  month = oct,
+  location = {Volendam, Netherlands}
+}
+
+
+@proceedings{mass04,
+  booktitle = {MASS~'04},
+  year = 2004,
+  month = oct,
+  location = {Fort Lauderdale, FL, USA},
+}
+
+
+@proceedings{mdm04,
+  booktitle = {{MDM}~'04},
+  year = 2004,
+  month = jan,
+  location = {Berkeley, CA, USA},
+}
+
+@proceedings{mdm06,
+  booktitle = {{MDM}~'06},
+  year = 2006,
+  month = may,
+  location = {Nara, Japan},
+}
+
+
+@proceedings{medhocnet04,
+  booktitle = {MedHocNet~'04},
+  year = 2004,
+  month = jun,
+  location = {Bodrum, Turkey},
+}
+
+@proceedings{medhocnet06,
+  booktitle = {MedHocNet~'06},
+  year = 2006,
+  month = jun,
+  location = {Lipari, Italy},
+}
+
+@proceedings{medhocnet07,
+  booktitle = {MedHocNet~'07},
+  year = 2007,
+  month = jun,
+  location = {Corfu, Greece},
+}
+
+
+@proceedings{meshnets05,
+booktitle = {MeshNets~'05},
+year = {2005},
+month = jul,
+location = {Budapest, Hungary},
+}
+
+
+@proceedings{milcom82,
+  booktitle = {MILCOM~'82},
+  year = 1982,
+  month = oct,
+  location = {Boston, MA, USA},
+}
+
+@proceedings{milcom90,
+  booktitle = {MILCOM~'90},
+  year = 1990,
+  month = sep,
+  location = {},
+}
+
+@proceedings{milcom97,
+  booktitle = {MILCOM~'97},
+  year = 1997,
+  month = nov,
+  location = {Monterey, CA, USA}
+}
+
+@proceedings{milcom02,
+  booktitle = {MILCOM~'02},
+  year = 2002,
+  month = 	oct,
+  location = {Anaheim, CA, USA},
+}
+
+@proceedings{milcom03,
+  booktitle = {MILCOM~'03},
+  year = 2003,
+  month = 	oct,
+  location = {Boston, MA, USA},
+}
+
+@proceedings{milcom04,
+  booktitle = {MILCOM~'04},
+  year = 2004,
+  month = oct,
+  location = {Monterey, CA, USA},
+}
+
+
+@proceedings{mmns03,
+  booktitle = {MMNS~'03},
+  year = 2003,
+  month = sep,
+  location = {Belfast, Northern Ireland},
+}
+
+@proceedings{mmt99,
+  booktitle = {MMT~'99},
+  year = 1999,
+  month = oct,
+  location = {Venice, Italy},
+}
+
+
+%MobiCom
+@proceedings{mobicom97,
+  booktitle = {MobiCom~'97},
+  year = 1997,
+  month = sep,
+  location = {Budapest, Hungary},
+}
+
+@proceedings{mobicom98,
+  booktitle = {MobiCom~'98},
+  year = 1998,
+  month = oct,
+  location = {Dallas, TX, USA},
+}
+
+@proceedings{mobicom99,
+  booktitle = {MobiCom~'99},
+  year = 1999,
+  month = jul,
+  location = {Seattle, WA, USA},
+  isbn = {1-58113-142-9},
+}
+
+@proceedings{mobicom00,
+  booktitle = {MobiCom~'00},
+  year = 2000,
+  month = aug,
+  location = {Boston, MA, USA},
+}
+
+@proceedings{mobicom01,
+  booktitle = {MobiCom~'01},
+  year = 2001,
+  month = jul,
+  location = {Rome, Italy},
+}
+
+@proceedings{mobicom02,
+  booktitle = {MobiCom~'02},
+  year = 2002,
+  month = sep,
+  location = {Atlanta, GA, USA},
+}
+
+@proceedings{mobicom03,
+  booktitle = {MobiCom~'03},
+  year = 2003,
+  month = sep,
+  location = {San Diego, CA, USA},
+}
+
+@proceedings{mobicom04,
+  booktitle = {MobiCom~'04},
+  year = 2004,
+  month = sep,
+  location = {Philadelphia, PA, USA},
+}
+
+@proceedings{mobicom05,
+  booktitle = {MobiCom~'05},
+  year = 2005,
+  month = sep,
+  location = {Cologne, Germany},
+}
+
+@proceedings{mobicom06,
+  booktitle = {MobiCom~'06},
+  year = 2006,
+  month = sep,
+  location = {Los Angeles, CA, USA},
+}
+
+@proceedings{mobicom07,
+  booktitle = {MobiCom~'07},
+  year = 2007,
+  month = sep,
+  location = {Montreal, QC, Canada},
+}
+
+@proceedings{mobicom08,
+  booktitle = {MobiCom~'08},
+  year = 2008,
+  month = sep,
+  location = {San Francisco, CA, USA},
+}
+
+
+%Mobihoc
+@proceedings{mobihoc01,
+  booktitle = {MobiHoc~'01},
+  year = 2001,
+  month = jun,
+  location = {Long Beach, CA, USA},
+}
+
+@proceedings{mobihoc02,
+  booktitle = {MobiHoc~'02},
+  year = 2002,
+  month = jun,
+  location = {Lausanne, Switzerland},
+  isbn = {1-58113-501-7},
+}
+
+@proceedings{mobihoc03,
+  booktitle = {MobiHoc~'03},
+  year = 2003,
+  month = jun,
+  location = {Annapolis, MD, USA},
+}
+
+@proceedings{mobihoc04,
+  booktitle = {MobiHoc~'04},
+  year = 2004,
+  month = may,
+  location = {Tokyo, Japan},
+}
+
+@proceedings{mobihoc05,
+  booktitle = {MobiHoc~'05},
+  year = 2005,
+  month = may,
+  location = {Urbana-Champaign, IL, USA},
+}
+
+@proceedings{mobihoc06,
+  booktitle = {MobiHoc~'06},
+  year = 2006,
+  month = may,
+  location = {Florence, Italy},
+}
+
+@proceedings{mobihoc07,
+  booktitle = {MobiHoc~'07},
+  year = 2007,
+  month = sep,
+  location = {Montreal, QC, Canada},
+}
+
+@proceedings{mobihoc08,
+  booktitle = {MobiHoc~'08},
+  year = 2008,
+  month = may,
+  location = {Hong Kong, Hong Kong, China},
+  isbn = {978-1-60558-073-9},
+}
+
+
+%MobiQuitous
+@proceedings{mobiquitous06,
+  booktitle = {MobiQuitous~'06},
+  year = 2006,
+  month = jul,
+  location = {San Jose, CA, USA},
+}
+
+@proceedings{mobiquitous06w,
+  booktitle = {MobiQuitous~'06},
+  year = 2006,
+  month = jul,
+  location = {San Jose, CA, USA},
+}
+
+%MobiOpp
+@proceedings{mobiopp07,
+  booktitle = {MobiOpp~'07},
+  year = 2007,
+  month = jun,
+  location = {San Juan, Puerto Rico},
+  isbn = {978-1-59593-688-2},
+}
+
+
+
+%MobiSys
+@proceedings{mobisys03,
+  booktitle = {MobiSys~'03},
+  year = 2003,
+  month = may,
+  location = {San Francisco, CA, USA},
+}
+
+@proceedings{mobisys04,
+  booktitle = {MobiSys~'04},
+  year = 2004,
+  month = jun,
+  location = {Boston, MA, USA},
+}
+@proceedings{mobisys05,
+  booktitle = {MobiSys~'05},
+  year = 2005,
+  month = jun,
+  location = {Seattle, WA, USA},
+}
+
+@proceedings{mobisys06,
+  booktitle = {MobiSys~'06},
+  year = 2006,
+  month = jun,
+  location = {Uppsala, Sweden},
+}
+
+@proceedings{mobisys07,
+  booktitle = {MobiSys~'07},
+  year = 2007,
+  month = jun,
+  location = {San Juan, Puerto Rico},
+}
+
+@proceedings{mobisys08,
+  booktitle = {MobiSys~'08},
+  year = 2008,
+  month = jun,
+  location = {Breckenridge, CO, USA},
+}
+
+
+@proceedings{mobishare06,
+  booktitle = {MobiShare~'06},
+  year = 2006,
+  month = jul,
+  location = {Los Angeles, CA, USA},
+}
+
+@proceedings{move07,
+  booktitle = {MOVE~'07},
+  year = 2007,
+  month = may,
+  location = {Anchorage, AK, USA},
+}
+
+@proceedings{move08,
+  booktitle = {MOVE~'08},
+  year = 2008,
+  month = apr,
+  location = {Phoenix, AZ, USA},
+}
+
+@proceedings{movenet08,
+  booktitle = {MoVeNet~'08},
+  year = 2008,
+  month = sep,
+  location = {Atlanta, GA, USA},
+}
+
+
+@proceedings{momuc00,
+  booktitle = {MoMuC~'00},
+  year = 2000,
+  month = oct,
+  location = {Tokyo, Japan},
+}
+
+
+@proceedings{mpac06,
+  booktitle = {MPAC~'06},
+  year = 2006,
+  month = nov,
+  location = {Melbourne, Australia}
+}
+
+@proceedings{mswim02,
+  booktitle = {MSWiM~'02},
+  year = 2002,
+  month = sep,
+  location = {Atlanta, Georgia, USA},
+}
+
+@proceedings{mswim04,
+  booktitle = {MSWiM~'04},
+  year = 2004,
+  month = oct,
+  location = { Venice, Italy},
+}
+
+@proceedings{mswim05,
+  booktitle = {MSWiM~'05},
+  year = 2005,
+  month = oct,
+  location = {Montreal, QC, Canada},
+}
+
+@proceedings{mswim08,
+  booktitle = {MSWiM~'08},
+  year = 2008,
+  month = oct,
+  location = {Vancouver, BC, Canada},
+}
+
+
+@proceedings{mwcn05,
+  booktitle = {MWCN~'05},
+  year = 2005,
+  month = sep,
+  location = {Marrakech, Morocco},
+}
+
+
+@proceedings{networking04,
+  booktitle = {NETWORKING~'04},
+  year = 2004,
+  month = may,
+  location = {Athens, Greece},
+}
+
+@proceedings{networking05,
+  booktitle = {NETWORKING~'05},
+  year = 2005,
+  month = may,
+  location = {Waterloo, Canada},
+}
+
+
+@inproceedings{nossdav03,
+  booktitle = {NOSSDAV~'03},
+  year = 2003,
+  month = jun,
+  location = {Monterey, CA, USA},
+}
+
+
+@proceedings{osdi02,
+  booktitle = {OSDI~'02},
+  year = 2002,
+  month = dec,
+  location = {Boston, MA, USA},
+}
+
+
+@proceedings{p2p02,
+  booktitle = {P2P~'02},
+  year = 2002,
+  month = aug,
+  location = {Link\"oping, Sweden},
+}
+
+@proceedings{p2p05,
+  booktitle = {P2P~'05},
+  year = 2005,
+  month = aug,
+  location = {Konstanz, Germany},
+}
+
+
+@proceedings{pads04,
+  booktitle = {PADS~'04},
+  year = 2004,
+  month = may,
+  location = {Kufstein, Austria},
+}
+
+
+@proceedings{pam06,
+  booktitle = {PAM~'06},
+  year = 2006,
+  month = mar,
+  location = {Adelaide, Australia},
+}
+
+
+@proceedings{pda89,
+  booktitle = {Proceedings of the International Workshop on Parallel and Distributed Algorithms},
+},
+  year = 1989,
+  month = may,
+  location = {Gers, France},
+}
+
+@proceedings{pewasun08,
+  booktitle = {PE-WASUN~'08},
+  year = 2008,
+  month = oct,
+  location = {Vancouver, BC, Canada},
+}
+
+@proceedings{pimrc97,
+  booktitle = {PIMRC~'97},
+  year = 1997,
+  month = sep,
+  location = {Helsinki, Finland},
+}
+
+@proceedings{pimrc02,
+  booktitle = {PIMRC~'02},
+  year = 2002,
+  month = sep,
+  location = {Lisbon, Portugal},
+}
+
+@proceedings{pimrc03,
+  booktitle = {PIMRC~'03},
+  year = 2003,
+  month = sep,
+  location = {Beijing, China},
+}
+
+@proceedings{pimrc04,
+  booktitle = {PIMRC~'04},
+  year = 2004,
+  month = sep,
+  location = {Barcelona, Spain},
+}
+
+@proceedings{pimrc06,
+  booktitle = {PIMRC~'06},
+  year = 2006,
+  month = sep,
+  location = {Helsinki, Finland},
+}
+
+
+@proceedings{pwc03,
+  booktitle = {PWC~'03},
+  year = 2003,
+  month = sep,
+  location = {Venice, Italy},
+}
+
+
+@proceedings{realman05,
+  booktitle = {REALMAN~'05},
+  year = 2005,
+  month = jul,
+  location = {Santorini, Greece},
+}
+
+@proceedings{realman06,
+  booktitle = {REALMAN~'06},
+  year = 2006,
+  month = may,
+  location = {Florence, Italy},
+}
+
+
+@proceedings{ridesdma05,
+  booktitle = {RIDE-SDMA~'05},
+  year = 2005,
+  month = apr,
+  location = {Tokyo, Japan},
+}
+
+@proceedings{rtcsa05,
+  booktitle = {RTCSA~'05},
+  year = 2005,
+  month = aug,
+  location = {Hong Kong, China},
+}
+
+
+
+@proceedings{scn08,
+booktitle            =   {SCN~'08: Proceedings of the 6th Conference on Security and Cryptography for Networks},
+year                 =   2008,
+month                =   sep,
+location              =  {Amalfi, Italy},
+}
+
+@proceedings{sanpa04,
+booktitle            =   {SANPA~'04: Proceedings of the 2nd International Workshop on
+Sensor and Actor Network Protocols and Applications},
+year                 =   2004,
+month                =   aug,
+location              =  {Boston, MA, USA},
+}
+
+@proceedings{sarnoff08,
+booktitle            =   {SARNOFF~'08: Proceedings of the IEEE Sarnoff Symposium},
+year                 =   2008,
+month                =   apr,
+location             =   {Princeton, NJ, USA},
+}
+
+
+
+@proceedings{secon04,
+booktitle = {SECON~'04},
+year = 2004,
+month = oct,
+location =  {Santa Clara, CA, USA},
+}
+
+@proceedings{secon06,
+booktitle = {SECON~'06},
+year = 2006,
+month = sep,
+location =  {Reston, VA, USA},
+}
+
+
+
+@proceedings{sensys03,
+  booktitle = {SenSys~'03},
+  year = 2003,
+  month = nov,
+  location = {Los Angeles, CA, USA},
+}
+
+@proceedings{sensys04,
+  booktitle = {SenSys~'04},
+  year = 2004,
+  month = nov,
+  location = {Baltimore, MD, USA},
+}
+
+@proceedings{sensys06,
+ booktitle = {SenSys '06},
+ year = 2006,
+ month = oct,
+ location = {Boulder, Colorado, USA},
+}
+
+
+@proceedings{sigcomm88,
+  booktitle = {SIGCOMM~'88},
+  year = 1988,
+  month = aug,
+  location = {Stanford, CA, USA},
+}
+
+@proceedings{sigcomm95,
+  booktitle = {SIGCOMM~'95},
+  year = 1995,
+  month = aug,
+  location = {Cambridge, MA, USA},
+}
+
+@proceedings{sigcomm00,
+  booktitle = {SIGCOMM~'00},
+  year = 2000,
+  month = aug,
+  location = {Stockholm, Sweden},
+}
+
+@proceedings{sigcomm01,
+  booktitle = {SIGCOMM~'01},
+  year = 2001,
+  month = aug,
+  location = {San Diego, CA, USA},
+}
+
+@proceedings{sigcomm02,
+  booktitle = {SIGCOMM~'02},
+  year = 2002,
+  month = aug,
+  location = {Pittsburgh, PA, USA},
+}
+
+@proceedings{sigcomm04,
+  booktitle = {SIGCOMM~'04},
+  year = 2004,
+  month = sep,
+  location = {Portland, OR, USA},
+}
+
+@proceedings{sigcomm05,
+  booktitle = {SIGCOMM~'05},
+  year = 2005,
+  month = aug,
+  location = {Philadelphia, PA, USA},
+}
+
+@proceedings{sigcomm06,
+  booktitle = {SIGCOMM~'06},
+  year = 2006,
+  month = sep,
+  location = {Pisa, Italy},
+}
+
+
+@proceedings{sigmetric02,
+  booktitle = {SIGMETRICS~'02},
+  year = 2002,
+  month = jun,
+  location = {Marina Del Rey, CA, USA},
+}
+
+@proceedings{sigmetrics05,
+  booktitle = {SIGMETRICS~'05},
+  year = 2005,
+  month = jun,
+  location = {Banff, AB, Canada},
+  isbn = {1-59593-022-1},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+}
+
+
+@proceedings{sigmod06,
+  booktitle = {SIGMOD~'06},
+  year = 2006,
+  month = jun,
+  location = {Chicago, IL, USA},
+}
+
+
+@proceedings{srds00,
+  booktitle = {SRDS~'00},
+  year = 2000,
+  month = oct,
+  location = {N{\"u}rnberg, Germany},
+}
+
+
+@proceedings{trb06,
+  booktitle = {TRB~'06},
+  year = 2006,
+  month = jan,
+  location = {Washington, DC, USA},
+}
+
+
+@proceedings{tridentcom05,
+  booktitle = {TRIDENTCOM~'05},
+  year = 2005,
+  month = feb,
+  location = {Trento, Italy},
+}
+
+@proceedings{tridentcom07,
+  booktitle = {TRIDENTCOM~'07},
+  year = 2007,
+  month = may,
+  location = {Orlando, FL, USA},
+}
+
+
+@proceedings{vanet04,
+  booktitle = {VANET~'04},
+  year = 2004,
+  month = oct,
+  location = {Philadelphia, PA, USA},
+}
+
+@proceedings{vanet05,
+  booktitle = {VANET~'05},
+  year = 2005,
+  month = sep,
+  location = {Cologne, Germany},
+}
+
+@proceedings{vanet06,
+  booktitle = {VANET~'06},
+  year = 2006,
+  month = sep,
+  location = {Los Angeles, CA, USA},
+}
+
+@proceedings{vanet07,
+  booktitle = {VANET~'07},
+  year = 2007,
+  month = sep,
+  location = {Montreal, QC, Canada},
+}
+
+@proceedings{vanet08,
+  booktitle = {VANET~'08},
+  year = 2008,
+  month = sep,
+  location = {San Francisco, CA, USA},
+}
+
+
+@proceedings{vtc93,
+  booktitle = {VTC~'93},
+  year = 2003,
+  month = may,
+  location = {Secaucus, NJ, USA},
+}
+
+@proceedings{vtc97,
+  booktitle = {VTC~'97},
+  year = 1997,
+  month = may,
+  location = {Phoenix, AZ, USA},
+}
+
+@proceedings{vtc02f,
+  booktitle = {VTC~'02-Fall},
+  year = 2002,
+  month = sep,
+  location = {Vancouver, BC, Canada},
+}
+
+@proceedings{vtc03s,
+  booktitle = {VTC~'03-Spring},
+  year = 2003,
+  month = apr,
+  location = {Cheju, Korea},
+}
+
+@proceedings{vtc03f,
+  booktitle = {VTC~'03-Fall},
+  year = 2003,
+  month = oct,
+  location = {Orlando, FL, USA},
+}
+
+@proceedings{vtc04s,
+  booktitle = {VTC~'04-Spring},
+  year = 2004,
+  month = may,
+  location = {Milan, Italy},
+}
+
+@proceedings{vtc04f,
+  booktitle = {VTC~'04-Fall},
+  year = 2004,
+  month = sep,
+  location = {Los Angeles, CA, USA},
+}
+
+
+@proceedings{vtc07s,
+  booktitle = {VTC~'07-Spring},
+  year = 2007,
+  month = apr,
+  location = {Dublin, Ireland},
+}
+
+@proceedings{vtc07f,
+  booktitle = {VTC~'07-Fall},
+  year = 2007,
+  month = oct,
+  location = {Baltimore, MD, USA},
+}
+
+
+@proceedings{vtc08s,
+  booktitle = {VTC~'08-Spring},
+  year = 2008,
+  month = may,
+  location = {Singapore},
+}
+
+
+@proceedings{wames04,
+  booktitle = {WAMES~'04},
+  year = 2004,
+  month = jun,
+  location = {Boston, MA, USA},
+}
+
+
+
+@proceedings{wea07,
+  booktitle = {WEA~'07},
+  year = 2007,
+  month = jun,
+  location = {Rome, Italy},
+}
+
+
+@proceedings{wcnc99,
+  booktitle = {WCNC~'99},
+  year = 1999,
+  month = sep,
+  location = {New Orleans, LA, USA},
+}
+
+@proceedings{wcnc00,
+  booktitle = {WCNC~'00},
+  year = 2000,
+  month = sep,
+  location = {Chicago, IL,  USA},
+}
+
+
+@proceedings{wcnc02,
+  booktitle = {WCNC~'02},
+  year = 2002,
+  month = mar,
+  location = {Orlando, FL, USA},
+}
+
+@proceedings{wcnc03,
+  booktitle = {WCNC~'03},
+  year = 2003,
+  month = mar,
+  location = {New Orleans, LA, USA},
+}
+
+@proceedings{wcnc04,
+  booktitle = {WCNC~'04},
+  year = 2004,
+  month = mar,
+  location = {Atlanta, GA, USA},
+}
+
+@proceedings{wcnc05,
+  booktitle = {WCNC~'05},
+  year = 2005,
+  month = mar,
+  location = {New Orleans, LA, USA},
+}
+
+@proceedings{winmee05,
+  booktitle = {WiNMee~'05},
+  year = 2005,
+  month = apr,
+  location = {Riva del Garda, Italy}
+}
+
+@proceedings{winmee06,
+  booktitle = {WiNMee~'06},
+  year = 2006,
+  month = apr,
+  location = {Boston, MA, USA}
+}
+
+@proceedings{winmee07,
+  booktitle = {WiNMee~'07},
+  year = 2007,
+  month = apr,
+  location = {Limassol, Cyprus}
+}
+
+
+@proceedings{wit04,
+  booktitle = {WIT~'04},
+  year = 2004,
+  month = mar,
+  location = {Hamburg, Germany},
+}
+
+@proceedings{wit05,
+  booktitle = {WIT~'05},
+  year = 2005,
+  month = may,
+  location = {Hamburg, Germany},
+}
+
+
+@proceedings{wman02,
+  booktitle = {WMAN~'02},
+  year = 2002,
+  month = mar,
+  location = {Ulm, Germany},
+}
+
+@proceedings{wman07,
+  booktitle = {WMAN~'07},
+  year = 2007,
+  month = mar,
+  location = {Bern, Switzerland},
+}
+
+
+@proceedings{wmanfg08,
+  booktitle = {WMAN-FG~'08},
+  year = 2008,
+  month = apr,
+  location = {Ulm, Germany},
+}
+
+
+@proceedings{wmcsa99,
+  booktitle = {WMCSA~'99},
+  year = 1999,
+  month = feb,
+  location = {New Orleans, LA, USA},
+}
+
+
+@proceedings{wons04,
+  booktitle = {WONS~'04},
+  year = 2004,
+  month = jan,
+  location = {Madonna di Campiglio, Italy},
+  series = {Lecture Notes in Computer Science},
+  volume    = {2928},
+  publisher = {Springer},
+}
+
+
+@proceedings{wons07,
+  booktitle = {WONS~'07},
+  year = 2007,
+  month = jan,
+  location = {Obergurgl, Austria},
+}
+
+@proceedings{wons09,
+  booktitle = {WONS~'09},
+  year = 2009,
+  month = feb,
+  location = {Snowbirg, UT, USA},
+}
+
+
+@proceedings{wowmom02,
+  booktitle = {WoWMoM~'02},
+  year = 2002,
+  month = sep,
+  location = {Atlanta, GA, USA},
+}
+
+@proceedings{wowmom05,
+  booktitle = {WoWMoM~'05},
+  year = 2005,
+  month = jun,
+  location = {Taormina, Italy},
+}
+
+
+@proceedings{wpmc02,
+  booktitle = {WPMC~'02},
+  year = 2002,
+  month = oct,
+  location = {Honolulu, HI, USA},
+}
+
+
+@proceedings{wsc00,
+  booktitle = {WSC~'00},
+  year = 2000,
+  month = dec,
+  location = {Orlando, FL, USA},
+  isbn = {0-7803-6582-8},
+  publisher = {Society for Computer Simulation International},
+  address = {San Diego, CA, USA},
+}
+
+
+@proceedings{www02,
+  booktitle = {WWW~'02},
+  year = 2002,
+  month = may,
+  location = {Honolulu, HI, USA},
+}
+
+
+@proceedings{zb05,
+  booktitle = {ZB~'05},
+  year = 2005,
+  month = apr,
+  location = {Guildford, UK},
+}

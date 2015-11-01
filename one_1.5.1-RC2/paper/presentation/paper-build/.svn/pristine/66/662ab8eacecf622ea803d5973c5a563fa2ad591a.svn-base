@@ -1,0 +1,317 @@
+@inproceedings{adler06contextadaptive,
+  author = {Christian Adler and Robert Eigner and Christoph Schroth and Markus Strassberger},
+  title = {Context-Adaptive Information Dissemination in {VANETs} -- Maximizing the Global Benefit},
+  crossref = {csn06},
+  pages = {7--12},
+}
+
+
+@inproceedings{caliskan06decentralized,
+  author    = {Murat Caliskan and Daniel Graupner and Martin Mauve},
+  title     = {Decentralized Discovery of Free Parking Places},
+  pages     = {30--39},
+  crossref  = {vanet06},
+}
+
+
+@inproceedings{considine04approximate,
+  author = {Jeffrey Considine and Feifei Li and George Kollios and John Byers},
+  title = {Approximate Aggregation Techniques for Sensor Databases},
+  crossref = {icde04},
+  pages = {449--460},
+}
+
+
+@InProceedings{doetzer05secure,
+  author = {Florian Doetzer and Florian Kohlmayer and Timo Kosch and Markus Strassberger},
+  title = {Secure Communication for Intersection Assistance},
+  crossref = {wit05},
+}
+
+
+@inproceedings{durand03loglog,
+  author = {Marianne Durand and Philippe Flajolet},
+  title = {LogLog Counting of Large Cardinalities},
+  crossref = {esa03},
+  pages = {605--617},
+}
+
+
+@article{flajolet85probabilistic,
+  author = 	 {Philippe Flajolet and G. Nigel Martin},
+  title = 	 {Probabilistic counting algorithms for data base applications},
+  journal = 	 {Journal of Computer and System Sciences},
+  year = 	 1985,
+  volume = 	 31,
+  number = 	 2,
+  pages = 	 {182--209},
+  month = 	 oct,
+}
+
+
+@inproceedings{flajolet07hyperloglog,
+  author = {Philippe Flajolet and {\'E}ric Fusy and Olivier Gandouet and Fr{\'e}d{\'e}ric Meunier},
+  title = {HyperLogLog: The Analysis of a Near-Optimal Cardinality Estimation Algorithm},
+  crossref = {aofa07},
+}
+
+
+@inproceedings{golle04detecting,
+ author = {Philippe Golle and Dan Greene and Jessica Staddon},
+ title = {Detecting and correcting malicious data in {VANETs}},
+ crossref = {vanet04},
+ pages = {29--37},
+ doi = {http://doi.acm.org/10.1145/1023875.1023881},
+ }
+
+
+@article{hubaux04security,
+  author = {Jean-Pierre Hubaux and Srdjan Capkun and Jun Luo},
+  title = {The Security and Privacy of Smart Vehicles},
+  journal = {IEEE Security and Privacy},
+  volume = 2,
+  number = 3,
+  year = 2004,
+  pages = {49--55},
+}
+
+@inproceedings{jakobsson04efficient,
+ author = {Markus Jakobsson and Susanne Wetzel},
+ title = {Efficient attribute authentication with applications to ad hoc networks},
+ crossref = {vanet04},
+ pages = {38--46},
+ doi = {http://doi.acm.org/10.1145/1023875.1023882},
+ }
+
+
+@booklet{lochert04verknuepfung,
+        author = {Christian Lochert and Andreas Barthels and Alfonso Cervantes and Martin Mauve},
+        title = {{Verkn{\"u}pfung von Matlab -- Vissim -- ns-2 mit ns-2 als zentrale Instanz}},
+        howpublished = {Abschlussberich zum Kooperationsprojekt mit der Volkswagen AG},
+        year = {2004},
+}
+
+@InProceedings{lochert05multiple,
+    author = {Christian Lochert and Murat Caliskan and Bj{\"o}rn Scheuermann and Andreas Barthels and Alfonso Cervantes and Martin Mauve},
+    title  = {{Multiple Simulator Interlinking Environment for Inter Vehicle Communication}},
+    pages  = {87--88},
+    crossref = {vanet05},
+    doi     = {10.1145/1080754.1080771},
+}
+
+@booklet{lochert06kopiv,
+        author = {Christian Lochert and Bj{\"o}rn Scheuermann and Martin Mauve},
+        title = {{Qualifizierte Machbarkeitsstudie KOPIV}},
+        howpublished = {Abschlussberich zum Kooperationsprojekt mit der Volkswagen AG},
+        year = {2006},
+}
+
+@inproceedings{lochert07feasibility,
+  author    = {Christian Lochert and Bj\"orn Scheuermann and Murat Caliskan and Martin Mauve},
+  title     = {The Feasibility of Information Dissemination in Vehicular Ad-Hoc Networks},
+  crossref = {wons07},
+  pages     = {92--99},
+}
+
+@InProceedings{lochert07probabilistic,
+  author = 	 {Christian Lochert and Bj\"orn Scheuermann and Martin Mauve},
+  title = 	 {Probabilistic Aggregation for Data Dissemination in {VANETs}},
+  crossref =  {vanet07},
+  pages = 	 {1--8},
+  OPTnote = 	 {},
+  OPTannote = 	 {},
+  doi =          {10.1145/1287748.1287750},
+}
+
+@Article{lochert08scalable,
+  author = 	 {Christian Lochert and Jedrzej Rybicki and Bj{\"o}rn Scheuermann and Martin Mauve},
+  title = 	 {Scalable Data Dissemination for Inter-Vehicle-Communication: Aggregation versus Peer-to-Peer},
+  journal = 	 {Oldenbourg it -- Information Technology},
+  year = 	 {2008},
+  OPTkey = 	 {},
+  volume = 	 {50},
+  number = 	 {4},
+  pages = 	 {237--242},
+  month = 	 aug,
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@InProceedings{lochert2008aggregation,
+    author = {Christian Lochert and Bj\"orn Scheuermann and Christian Wewetzer and Andreas Luebke and Martin Mauve},
+    title  = {{Data Aggregation and Roadside Unit Placement for a VANET Traffic Information System}},
+    pages = {58--65},
+    crossref={vanet08}
+}
+
+
+
+
+
+@inproceedings{nadeem04trafficview_mdm,
+  title = {{TrafficView}: A Scalable Traffic Monitoring System},
+  author = {Tamer Nadeem and Sasan Dashtinezhad and Chunyuan Liao and Liviu Iftode},
+  crossref = {mdm04},
+  pages = {13--26},
+}
+
+
+@article{nadeem04trafficview_mc2r,
+  author = {Tamer Nadeem and Sasan Dashtinezhad and Chunyuan Liao and Liviu Iftode},
+  title = {{TrafficView:} Traffic data dissemination using car-to-car communication},
+  journal = {ACM SIGMOBILE Mobile Computing and Communications Review},
+  volume = 8,
+  number = 3,
+  month = jul,
+  year = 2004,
+  pages = {6--19},
+}
+
+
+@Booklet{ns2,
+        key = {ns2},
+        title = {The Network Simulator ns-2},
+        howpublished = {\href{http://www.isi.edu/nsnam/ns/}{http://www.isi.edu/nsnam/ns/}},
+}
+
+@inproceedings{palmer02anf,
+  author = {Christopher R. Palmer and Phillip B. Gibbons and Christos Faloutsos},
+  title = {{ANF}: A Fast and Scalable Tool for Data Mining in Massive Graphs},
+  crossref = {kdd02},
+  pages = {81--90},
+}
+
+
+@inproceedings{picconi06probabilistic,
+  author = {Fabio Picconi and Nishkam Ravi and Marco Gruteser and Liviu Iftode},
+  title = 	 {Probabilistic Validation of Aggregated Data in Vehicular Ad-Hoc Networks},
+  crossref = {vanet06},
+  pages = {76--85},
+}
+
+
+@inproceedings{piorkowski06mobile,
+  author = {Michal Piorkowski and Matthias Grossglauser and Aristidis Papaioannou},
+  title = {Mobile User Navigation Supported by {WSAN}: Full-fledge demo of the {SmartPark} system},
+  crossref = {mobihoc06},
+  note = {{Technical Demonstration}}
+}
+
+
+@InProceedings{raya06efficient,
+  author = 	 {Maxim Raya and Adel Aziz and Jean-Pierre Hubaux},
+  title = 	 {Efficient Secure Aggregation in {VANETs}},
+  crossref =  {vanet06},
+  pages = 	 {67--75},
+}
+
+@InProceedings{rybicki2009peertis,
+    author = {Jedrzej Rybicki and Bj\"orn Scheuermann and Markus Koegel and Martin Mauve},
+    title  = {{PeerTIS - A Peer-to-Peer Traffic Information System}},
+    crossref = {vanet09},
+    pages  = {23--32},
+}
+
+@InProceedings{rybicki07challenge,
+  author = 	 {Jedrzej Rybicki and Bj\"orn Scheuermann and Wolfgang Kiess and Christian Lochert and Pezhman Fallahi and Martin Mauve},
+  title = 	 {Challenge: Peers on Wheels -- A Road to New Traffic Information Systems},
+  crossref =  {mobicom07},
+  OPTkey = 	 {},
+  OPTbooktitle = {},
+  pages = 	 {215--221},
+  OPTyear = 	 {},
+  OPTeditor = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTaddress = 	 {},
+  OPTmonth = 	 {},
+  OPTorganization = {},
+  OPTpublisher = {},
+  OPTnote = 	 {},
+  OPTannote = 	 {},
+  doi =          {10.1145/1287853.1287879},
+}
+
+
+@inproceedings{tao04spatiotemporal,
+  title = {Spatio-Temporal Aggregation Using Sketches},
+  author = {Yufei Tao and George Kollios and Jeffrey Considine and Feifei Li and Dimitris Papadias},
+  crossref = {icde04},
+  pages = {214--226},
+}
+
+
+@Booklet{vissim,
+  title =        {The {VISSIM} Traffic Simulator},
+  key =          {Vissim},
+  author =       {{PTV AG}},
+  OPThowpublished = {\href{http://www.english.ptv.de/cgi-bin/traffic/traf_vissim.pl}%
+{http://www.english.ptv.de/cgi-bin/traffic/traf\_vissim.pl}},
+  howpublished = {\href{http://www.ptvag.com/software/transportation-planning-traffic-engineering/software-system-solutions/vissim/}{http://www.ptvag.com/software/transportation-planning-traffic-engineering/software-system-solutions/vissim/}},
+  OPTaddress =   {},
+  OPTmonth =     {},
+  OPTyear =      {},
+  OPTnote =      {},
+  OPTannote =    {}
+}
+
+@inproceedings{wischhof03sotis,
+  title = {{SOTIS} -- A Self-Organizing Traffic Information System},
+  author = {Lars Wischhof and Andr{\'e} Ebner and Hermann Rohling and Matthias Lott and R{\"u}diger Halfmann},
+  crossref = {vtc03s},
+  pages={2442--2446},
+}
+
+
+@inproceedings{wischhof04selforganizing,
+  author = {Lars Wischhof and Andr{\'e} Ebner and Hermann Rohling},
+  title = {Self-Organizing Traffic Information System based on Car-to-Car Communication: Prototype Implementation},
+  crossref = {wit04},
+  pages = {49--53},
+}
+
+
+@article{wischhof05information,
+  author = {Lars Wischhof and Andr{\'e} Ebner and Hermann Rohling},
+  title = {Information Dissemination in Self-Organizing Intervehicle Networks},
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  volume = 6,
+  number = 1,
+  month = mar,
+  year = 2005,
+  pages = {90--101},
+}
+
+
+
+@article{witten87arithmetic,
+  title = {Arithmetic Coding for Data Compression},
+  author = {Ian H. Witten and Radford M. Neal and John G. Cleary},
+  journal = {Communications of the ACM},
+  volume = 30,
+  number = 6,
+  year = 1987,
+  month = jun,
+  pages = {520--540},
+}
+
+
+@inproceedings{xu04vehicle,
+  author = {Qing Xu and Tony Mak and Jeff Ko and Raja Sengupta},
+  title = {Vehicle-to-vehicle safety messaging in {DSRC}},
+  crossref = {vanet04},
+  pages = {19--28},
+}
+
+
+@inproceedings{yin04performance,
+  author = {Jijun Yin and Tamer ElBatt and Gavin Yeung and Bo Ryu and Stephen Habermas and Hariharan Krishnan and Timothy Talty},
+  title = {Performance evaluation of safety applications over {DSRC} vehicular ad hoc networks},
+  crossref = {vanet04},
+  pages = {1--9},
+}
+
+
+
+

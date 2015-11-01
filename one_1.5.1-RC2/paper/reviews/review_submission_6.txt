@@ -1,0 +1,64 @@
+Review of paper:
+"MANET Testbed with Raspberry PIs"
+
+
+Summary:
+The paper investigates the impact of using real devices (Raspberry PIs) instead of a simulator, when building MANETs.
+Active research concentrates too much on using simulators or only a single routing algorithm.
+Therefore, in this paper a testbed consisting of three scenarios is created, which are tested with two different routing algorithms.
+The scenarios differ in terms of locality and barriers, which could influence WiFi performance.
+In all scenarios, a node tries to download a file from the internet over the remaining nodes, which are all connected in a row.
+The authors achieve this by keeping the distance between the nodes high enough, so that a node is only connected to its predecessor and sucessor.
+This way, the impact of the hop count on the bandwidth can easily be measured.
+For comparison, the authors considered the Babel and OLSR routing protocol, whose pros and cons are explained in detail.
+Evaluation shows, that obstacles like humans or even rain can heavily influence WiFi connectivity and routing performance.
+Also, the bandwidth often drops rapidly during the first hop, the reason is still unknown.
+
+
+Improvements:
+- Authors did only single measurements per scenario
+-- Running each scenario multiple times + Mean/Min/Max/Standard-Deviation should deliver more scientific value
+
+- Although there is a plan of the building, there is no way to extrapolate real distances from it.
+-- Therefore: Maybe a more detailed plan of the individual scenarios (meter, obstacles, multiple runs) ?
+
+
+Language:
+- Sentence construction seems to be heavily influenced by German. (Lots of sentences are not very idiomatic)
+
+- Sometimes, words like "isn't" or "doesn't" are used. However, "is not" / "does not" should be used for formal writing.
+
+- He/She/It - das 's' muss mit ;), the rest of the personal pronouns do not get a trailing 's' =(
+-- So nodes _go_ up or down, not "goes"
+-- Happend very often, hard to list all of them ;)
+
+- Some sentences are sometimes too long and/or complex, keep it simple and precise (if possible).
+
+- Some sentences seem very strange (in terms of syntax)
+
+- Numbers below 13 should be written as words (one, twelve instead of 1, 12), if they are used outside of _an_ enumeration ;).
+
+- Formal writing:
+-- IMHO references like "section xyz" should start with capital S
+
+- Plain TYPOS:
+-- twice "form" instead of "from"
+-- similiar mistakes
+
+- IMHO: Sometimes the time is not correct
+-- "Since 2015 OSLR will not be developed furthermore" - it sounds wrong somehow =P
+
+
+Layout:
+- Good and logical structure
+- Font of figures could have been larger (preferable same size as text, if possible)
+- Overall very well composed
+
+
+Overall:
+- Very good and interesting paper
+- Very good presentation of problem, solution, related work and evaluation
+- Room for improvements: Language (minor to medium), Layout (minor to nothing), Content (minor)
+
+
+Good luck during presentation!

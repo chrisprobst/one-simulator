@@ -143,6 +143,14 @@ MapBasedMovement.mapFile2 = data/main_roads.wkt
 MapBasedMovement.mapFile3 = data/pedestrian_paths.wkt
 MapBasedMovement.mapFile4 = data/shops.wkt
 
+
+
+
+
+
+
+
+
 ## Reports - all report names have to be valid report classes
 
 # how many reports to load

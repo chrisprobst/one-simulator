@@ -1,0 +1,34 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Routing in Opportunistic Networks}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Routing Protocols}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Buffer Management Policies}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Random}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Arrival-time \(ascending\)}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Replications \(ascending\)}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.4}{Relayed-nodes \(ascending\)}{subsection.2.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.2.5}{Time-to-live \(ascending\)}{subsection.2.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.2.6}{Message-size \(ascending\)}{subsection.2.2}% 10
+\BOOKMARK [3][-]{subsubsection.2.2.7}{Arrival-time \(descending\)}{subsection.2.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.2.8}{Replications \(descending\)}{subsection.2.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.2.9}{Relayed-nodes \(descending\)}{subsection.2.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.2.10}{Time-to-live \(descending\)}{subsection.2.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.2.11}{Message-size \(descending\)}{subsection.2.2}% 15
+\BOOKMARK [1][-]{section.3}{Simulation Setup}{}% 16
+\BOOKMARK [2][-]{subsection.3.1}{Simulator Changes}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.2}{Methodology}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Delivery Ratio}{subsection.3.2}% 19
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Overhead Factor}{subsection.3.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Average Delay}{subsection.3.2}% 21
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Composite}{subsection.3.2}% 22
+\BOOKMARK [1][-]{section.4}{Scenarios}{}% 23
+\BOOKMARK [2][-]{subsection.4.1}{Scenario 1}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.2}{Scenario 2}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.3}{Scenario 3}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.4}{Composite Scenario Evaluation}{section.4}% 27
+\BOOKMARK [1][-]{section.5}{Evaluation}{}% 28
+\BOOKMARK [2][-]{subsection.5.1}{Scenario 1}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.2}{Scenario 2}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.3}{Scenario 3}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.4}{Composite Scenario Evaluation}{section.5}% 32
+\BOOKMARK [1][-]{section.6}{Conclusion And Future Work}{}% 33
+\BOOKMARK [1][-]{section*.1}{References}{}% 34

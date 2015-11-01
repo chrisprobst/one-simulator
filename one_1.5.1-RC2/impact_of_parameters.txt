@@ -1,0 +1,59 @@
+------------------------------------------------------------------------
+------------------ Local Info: -----------------------------------------
+------------------------------------------------------------------------
+
+Arrival-time:
+-------------
+The arrival time says something about the new-ness of messages.
+Messages with old arrival times should be transferred with a higher
+probability, so they can eventually reach their destination.
+
+
+
+Message/buffer-size:
+--------------------
+If buffer size is high, large messages should be forwarded first,
+so that there is more room for further messages, but smaller messages
+should also be forwarded frequently.
+
+
+
+Delay-time:
+-----------
+Not sure, what this parameter was about.
+
+
+TTL:
+----
+Messages with a high ttl should be forwarded with less probability,
+since these messages are obviously in transit for a long time.
+
+
+
+------------------------------------------------------------------------
+------------------ Network Info: ---------------------------------------
+------------------------------------------------------------------------
+
+Number of nodes (global / local):
+---------------------------------
+Not sure, how this information can positively influence the active queuing.
+
+
+Number of forwarding times:
+---------------------------
+Says something about the frequency of a given message. Higher forwarding times
+means higher frequency in the network. Messages with a high forwarding frequency
+should be transferred with less probability.
+
+
+
+
+
+------------------------------------------------------------------------
+------------------ Long-term taks: -------------------------------------
+------------------------------------------------------------------------
+
+- Evaluate impact of parameters
+- Modell custom algorithm
+- Implement MOFO [done?], own algorithm
+- Write paper

@@ -1,0 +1,7 @@
+# This file contains a list of files
+# Each of these files then contains a list of expressions with Strings that
+# are matched as to be avoided
+# To deactivate one of the files, it is sufficient to comment the filename
+# here
+latex_checks
+spelling_conventions

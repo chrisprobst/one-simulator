@@ -1,0 +1,20 @@
+Message stats for scenario qm@3_9
+sim_time: 43200.1000
+created: 19205
+started: 1043257
+relayed: 1034995
+aborted: 8259
+dropped: 988130
+removed: 0
+delivered: 15714
+delivery_prob: 0.8182
+response_prob: 0.0000
+overhead_ratio: 64.8645
+latency_avg: 2967.2954
+latency_med: 2238.6000
+hopcount_avg: 3.3142
+hopcount_med: 3
+buffertime_avg: 1688.7327
+buffertime_med: 416.7000
+rtt_avg: NaN
+rtt_med: NaN

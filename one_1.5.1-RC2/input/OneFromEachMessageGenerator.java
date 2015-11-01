@@ -4,12 +4,12 @@
  */
 package input;
 
+import core.Settings;
+import core.SettingsError;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import core.Settings;
-import core.SettingsError;
 
 /**
  * Message creation -external events generator. Creates one message from
@@ -23,53 +23,53 @@ import core.SettingsError;
  * @see MessageEventGenerator
  */
 public class OneFromEachMessageGenerator extends MessageEventGenerator {
-	private List<Integer> fromIds;
-	
-	public OneFromEachMessageGenerator(Settings s) {
-		super(s);
-		this.fromIds = new ArrayList<Integer>();
-		
-		if (toHostRange == null) {
-			throw new SettingsError("Destination host (" + TO_HOST_RANGE_S + 
-					") must be defined");
-		}
-		for (int i = hostRange[0]; i < hostRange[1]; i++) {
-			fromIds.add(i);
-		}
-		Collections.shuffle(fromIds, rng);
-	}
-	
-	/** 
-	 * Returns the next message creation event
-	 * @see input.EventQueue#nextEvent()
-	 */
-	public ExternalEvent nextEvent() {
-		int responseSize = 0; /* no responses requested */
-		int from;
-		int to;
-		
-		from = this.fromIds.remove(0);	
-		to = drawToAddress(toHostRange, -1);
-		
-		if (to == from) { /* skip self */
-			if (this.fromIds.size() == 0) { /* oops, no more from addresses */
-				this.nextEventsTime = Double.MAX_VALUE;
-				return new ExternalEvent(Double.MAX_VALUE);
-			} else {
-				from = this.fromIds.remove(0);
-			}
-		}
+    private List<Integer> fromIds;
 
-		if (this.fromIds.size() == 0) {
-			this.nextEventsTime = Double.MAX_VALUE; /* no messages left */
-		} else {
-			this.nextEventsTime += drawNextEventTimeDiff();
-		}
-				
-		MessageCreateEvent mce = new MessageCreateEvent(from, to, getID(), 
-				drawMessageSize(), responseSize, this.nextEventsTime);
-		
-		return mce;
-	}
+    public OneFromEachMessageGenerator(Settings s) {
+        super(s);
+        this.fromIds = new ArrayList<Integer>();
+
+        if (toHostRange == null) {
+            throw new SettingsError("Destination host (" + TO_HOST_RANGE_S +
+                                    ") must be defined");
+        }
+        for (int i = hostRange[0]; i < hostRange[1]; i++) {
+            fromIds.add(i);
+        }
+        Collections.shuffle(fromIds, rng);
+    }
+
+    /**
+     * Returns the next message creation event
+     * @see input.EventQueue#nextEvent()
+     */
+    public ExternalEvent nextEvent() {
+        int responseSize = 0; /* no responses requested */
+        int from;
+        int to;
+
+        from = this.fromIds.remove(0);
+        to = drawToAddress(toHostRange, -1);
+
+        if (to == from) { /* skip self */
+            if (this.fromIds.size() == 0) { /* oops, no more from addresses */
+                this.nextEventsTime = Double.MAX_VALUE;
+                return new ExternalEvent(Double.MAX_VALUE);
+            } else {
+                from = this.fromIds.remove(0);
+            }
+        }
+
+        if (this.fromIds.size() == 0) {
+            this.nextEventsTime = Double.MAX_VALUE; /* no messages left */
+        } else {
+            this.nextEventsTime += drawNextEventTimeDiff();
+        }
+
+        MessageCreateEvent mce = new MessageCreateEvent(from, to, getID(),
+                                                        drawMessageSize(), responseSize, this.nextEventsTime);
+
+        return mce;
+    }
 
 }

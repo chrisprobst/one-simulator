@@ -1,0 +1,55 @@
+Review of paper:
+"Simple Replication in Structured Peer-to-Peer Networks"
+
+
+Summary:
+The paper discusses, how to increase availability of data in a p2p-based DHT(Distributed Hash Table), when nodes, which carry unique data, randomly go offline or online (churn).
+To provide high data availability, nodes usually replicate data onto other nodes.
+The paper presents a replication strategy applicable for p2p-based DHT's, called "simple replication protocol", where data is replicated on a configurable number of nodes, whose ID's are computed by (re-)hashing the initial hash of the data.
+Instead of a single Master-Replication-Node, the protocol uses a Multi-Master-Replication-Node model, where each Replication-Node is considered a Master-Node.
+Therefore, all Replication-Nodes care about replication (No single point of failure).
+This protocol supports the common (CRUD) create-read-update-delete operations.
+In case of concurrent data updates, consistency is maintained using a version counter.
+Due to simplicity, this mechanism is also used for creating and deleting data, by using zero or infinity as version counters respectively.
+Evaluation shows, a replication degree of three is often enough to provide high availability.
+
+
+Improvements:
+- Authors compare their solution to the PAST protocol, based on Pastry.
+While relevant, maybe there would have been more interesting (newer?) solutions for comparison.
+
+- Using the update mechanism for creating and deleting seems practical.
+However, for deleting the meta data + version counter have to stay in the network.
+Otherwise, uninformed nodes, which were offline during the deletion phase and are going online again, could re-create the data.
+Maybe authors could be more specific, which counter-measures could be applied (besides timeouts), to reliably delete data.
+
+- Overall, the evaluation parameters are well chosen and the results are easy to understand.
+However, the data size was consistently set to 15KB, which is not very much.
+The evaluation shows, that the overhead is inherently influenced by the replication degree and the data size.
+So, simulating different data sizes would definitely be of interest. (But Authors already consider this for future work)
+
+- Security was never mentioned. Maybe this could be mentioned somehow ?
+
+
+Language:
+- Sentence construction seems to be heavily influenced by German. (Lots of sentences are not very idiomatic)
+- In Section 3.A the word "isnt" is used. However, "is not" should be used for formal writing.
+- Often words like (obviously, etc.) are used, but scientists should obviously never claim, that something is obvious ;)
+- Some sentences are just too long and complex, keep it simple and precise.
+- Probably personal taste: I would not use the first person too often. Using third person and simple present seem more appropriate.
+
+
+Layout:
+- Good and logical structure
+- Font of figures could have been larger (preferable same size as text, if possible)
+- The result table would probably benefit from choosing another visualization (maybe multiple tables..?)
+- Half-blank pages often look incomplete (last page). It is difficult to finish a paper evenly, but maybe there is a way to fill the last page ?
+
+
+Overall:
+- Good and interesting paper
+- Good presentation of problem, solution, related work and evaluation
+- Room for improvements: Language (medium), Layout (minor), Content (minor)
+
+
+Good luck during presentation!

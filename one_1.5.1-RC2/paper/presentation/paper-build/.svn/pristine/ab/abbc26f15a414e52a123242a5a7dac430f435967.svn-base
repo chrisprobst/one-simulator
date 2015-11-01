@@ -1,0 +1,1230 @@
+@misc{ kawadia-cautionary,
+  author = "Vikas Kawadia and P. R. Kumar",
+  title = {{A Cautionary Perspective on Cross Layer Design}},
+  url = "citeseer.ist.psu.edu/703112.html"
+}
+
+
+@INPROCEEDINGS{kozat04framework,
+  AUTHOR = {U. C. Kozat and Iordanis Koutsopoulos and Leandros Tassiulas},
+  TITLE = {{A Framework for Cross-Layer Design of Energy-efficient Communication with {QoS} Provisioning in Multi-hop Wireless Networks}},
+  BOOKTITLE = infocom04,
+  location = {Hong Kong},
+  MONTH = MAR,
+  YEAR = 2004
+}
+
+
+@inproceedings{awerbuch04high,
+  author    = {Baruch Awerbuch and David Holmer and Herbert Rubens},
+  title     = {{High Throughput Route Selection in Multi-rate Ad Hoc Wireless Networks}},
+  booktitle = wons04,
+  location  = {Madonna di Campiglio, Italy},
+  month     = Jan,
+  year      = {2004},
+  pages     = {253--270},
+  publisher = {Springer},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {2928},
+}
+
+
+@misc{chinta03ilctcp,
+  author = "M. Chinta and A. Helal and E. Hernandez",
+  title = {{ILC-TCP: An Interlayer Collaboration Protocol for TCP}},
+  url = "citeseer.ist.psu.edu/chinta03ilctcp.html"
+}
+
+
+@inproceedings{varshavsky04crosslayer,
+  author    = {Alex Varshavsky and Baochun Li and Eyal de Lara},
+  title     = {{Cross-Layer Flow Control in Lightly-Loaded Multi-Hop Ad Hoc Networks}},
+  booktitle = icpp04,
+  location  = {Montreal, Quebec, Canada},
+  year      = {2004},
+  pages     = {315--321},
+  publisher = {IEEE Computer Society},
+}
+
+
+@phdthesis{heinzelman00applicationspecific,
+ author = {Wendi Beth Heinzelman},
+ title = {{Application-specific protocol architectures for wireless networks}},
+ school = {Massachusetts Institute of Technology},
+ year = {2000},
+}
+
+
+@inproceedings{perur03improving,
+  author = "Srinath Perur and Leena Chandran-Wadia and Sridhar Iyer",
+  title = {{Improving the Performance of MANET Routing Protocols using Cross-Layer Feedback}},
+  booktitle = "Proceedings of the Conference on Information Technology",
+  location = "Bhubaneswar",
+  month = Dec,
+  year = "2003",
+  url = "citeseer.ist.psu.edu/647876.html"
+}
+
+
+@InProceedings{chiang04layer,
+author = {Mung Chiang},
+title = {{To Layer or Not To Layer: Balancing Transport and Physical Layers in Wireless Multihop Networks}},
+booktitle = infocom04,
+year = {2004},
+location = {Hong Kong},
+  MONTH = MAR,
+  YEAR = 2004
+}
+
+
+@inproceedings{ yuen02simple,
+  author = "Wing Ho Yuen and Heung-no Lee and Timothy D. Andersen",
+  title = {{A simple and effective cross layer networking system for mobile ad hoc networks}},
+  booktitle = pimrc02,
+  location = "Lisbon, Portugal",
+  month = SEP,
+  year = "2002",
+}
+
+
+@inproceedings{fu03impact,
+  author    = {Zhenghua Fu and Petros Zerfos and Haiyun Luo and Songwu Lu and Lixia Zhang and Mario Gerla},
+  title     = {{The Impact of Multihop Wireless Channel on TCP Throughput and Loss}},
+  booktitle = infocom03,
+  month     = Apr,
+  year      = {2003},
+  location  = {San Francisco, California, USA},
+  volume    = {3},
+  pages     = {1744--1753},
+}
+  
+@article{gupta00capacity,
+    author = {Piyush Gupta and P. R. Kumar},
+    title = {{The Capacity of Wireless Networks}},
+    year = {2000},
+    journal = {IEEE Transactions on Information Theory},
+    month = Mar,
+    pages = {388--404},
+    volume = {IT-46},
+    number = {2}
+}
+
+
+@InProceedings{fuessler03novel,
+   author    = {Holger F\"u\ss{}ler and Martin Mauve and Hannes Hartenstein and J\"org Widmer},
+   booktitle = ccw03,
+   location  = {Dana Point, CA},
+   pages     = {194--200},
+   title     = {{A novel forwarding paradigm for position-based routing (with implicit addressing)}},
+   year      = 2003
+}
+
+
+@Article{fuessler03contention,
+   author   = {Holger F\"u\ss{}ler and Michael K\"asemann and Martin Mauve and Hannes Hartenstein and J\"org Widmer},
+   journal  = {Elsevier`s Ad Hoc Networks},
+   number   = {4},
+   pages    = {351--369},
+   title    = {{Contention-based forwarding for mobile ad-hoc networks}},
+   volume   = {1},
+   year     = 2003
+}
+
+
+@InProceedings{fuessler04contention,
+   author    = {Holger F\"u\ss{}ler and Hannes Hartenstein and Martin Mauve and Wolfgang Effelsberg and J\"org Widmer},
+   booktitle = {WIT '04: Proceedings of the 1st International Workshop in Intelligent Transportation},
+   location  = {Hamburg, Germany},
+   title     = {{Contention-based forwarding for street scenarios}},
+   year      = 2004
+}
+
+
+@inproceedings{kaesemann02analysis,
+ author = {Michael K\"asemann and Hannes Hartenstein and Holger F\"u\ss{}ler and Martin Mauve},
+ title = {{Analysis of a Location Service for Position-Based Routing in Mobile Ad Hoc Networks}},
+ booktitle = {WMAN '02: Proceedings of the 1. deutscher Workshop \"uber Mobile Ad-Hoc Netzwerke},
+ year = {2002},
+ pages = {121--133},
+ publisher = {GI},
+}
+
+
+@inproceedings{karp00gpsr,
+    author = "Brad Karp and H. T. Kung",
+    title = {{GPSR: greedy perimeter stateless routing for wireless networks}},
+    booktitle = mobicom00,
+    pages = "243--254",
+    year = "2000",
+    doi = {http://doi.acm.org/10.1145/345910.345953},
+    month = aug,
+}
+
+
+@inproceedings{ li00scalable,
+    author = "Jinyang Li and John Jannotti and Douglas S. J. {De Couto} and David R. Karger and Robert Morris",
+    title = {{A scalable location service for geographic ad-hoc routing}},
+    booktitle = mobicom00,
+    year = "2000",
+    month = aug,
+    pages = {120--130},
+ }
+
+ 
+@TechReport{kaesemann02reactive,
+author = {Michael K\"asemann and Holger F\"u\ss{}ler and Hannes Hartenstein and Martin Mauve},
+title = {{A Reactive Location Service for Mobile Ad Hoc Networks}},
+institution = {Department of Computer Science, University of Mannheim},
+year = {2002},
+number = {14},
+month = NOV,
+}
+
+
+@InProceedings{blazevic00selforganizing,
+   author    = {Ljubica Blazevic and Silvia Giordano and Jean-Yves Le Boudec},
+   booktitle = {Proceedings of SCI 2000/ISAS 2000},
+   location  = {Orlando},
+   title     = {{Self-Organizing Wide-Area Routing}},
+   year      = 2000
+}
+
+@misc{ peng-multicast,
+  author = "Jun Peng and Biplab Sikdar",
+  title = {{A Multicast Congestion Control Scheme for Mobile Ad-Hoc Networks}},
+  url = "citeseer.ist.psu.edu/705097.html"
+}
+
+
+@article{boukerche01analysis,
+ author = {Azzedine Boukerche and Sajal K. Das and Alessandro Fabbri},
+ title = {{Analysis of a randomized congestion control scheme with DSDV routing in ad Hoc wireless networks}},
+ journal = {Journal of Parallel and Distributed Computing},
+ volume = {61},
+ number = {7},
+ year = {2001},
+ pages = {967--995},
+ publisher = {Academic Press, Inc.},
+ }
+
+ 
+@inproceedings{chen04utility,
+  author = {Kai Chen and Klara Nahrstedt and Nitin Vaidya},
+  title = {{The Utility of Explicit Rate-based Flow Control in Mobile Ad Hoc Networks}},
+  booktitle = wcnc04,
+  location = {Atlanta, Georgia, USA},
+  month = Mar,
+  year = 2004,
+  pages = {1921--1926},
+  volume = 3,
+}
+
+@techreport{chen02exact,
+  author = {Kai Chen and Klara Nahrstedt},
+  title = {{EXACT: An Explicit Rate-based Flow Control Framework in MANET (extended version)}},
+  institution = {Department of Computer Science, University of Illinois at Urbana-Champaign},
+  number = {UIUCDCS-R-2002-2286/UILU-ENG-2002-1730},
+  month = Jul,
+  year = 2002,
+}
+
+
+@inproceedings{cordeiro02copas,
+  author = "Carlos de M. Cordeiro and Samir R. Das and Dharma P. Agrawal",
+  title = {{COPAS: Dynamic contention-balancing to enhance the performance of TCP over multi-hop wireless networks}},
+  booktitle = icccn02,
+  location ="Miami, USA",
+  month = Oct,
+  year = "2002",
+  doi = {10.1109/ICCCN.2002.1043095},
+  pages = {382--387},
+}
+
+
+@inproceedings{ holland99analysis,   
+author="Gavin Holland and Nitin H. Vaidya",
+title={{Analysis of TCP Performance Over Mobile Ad Hoc Networks}},
+booktitle=mobicom99,
+month = Aug,
+year="1999",
+pages="219--230",
+doi = {http://doi.acm.org/10.1145/313451.313540},
+}
+
+
+@inproceedings{sundaresan03atp,
+ author = {Karthikeyan Sundaresan and Vaidyanathan Anantharaman and Hung-Yun Hsieh and Raghupathy Sivakumar},
+ title = {{ATP: A Reliable Transport Protocol for Ad-hoc Networks}},
+ booktitle = mobihoc03,
+ year = {2003},
+ month = jun,
+ pages = {64--75},
+ location = {Annapolis, Maryland, USA},
+ doi = {http://doi.acm.org/10.1145/778415.778424},
+}
+
+
+@inproceedings{chandran98feedback,
+ author = {Kartik Chandran and Sudarshan Raghunathan and S. Venkatesan and Ravi Prakash},
+ title = {{A Feedback Based Scheme for Improving TCP Performance in Ad-Hoc Wireless Networks}},
+ booktitle = icdcs98,
+ month = May,
+ year = {1998},
+ pages = {472--479},
+}
+
+
+@inproceedings{wang02improving,
+ author = {Feng Wang and Yongguang Zhang},
+ title = {{Improving TCP Performance over Mobile Ad-Hoc Networks with Out-of-Order Detection and Response}},
+ booktitle = mobihoc02,
+ year = {2002},
+ pages = {217--225},
+ location = {Lausanne, Switzerland},
+ doi = {http://doi.acm.org/10.1145/513800.513827},
+}
+ 
+
+@inproceedings{sun01enic,
+  author = {Dong Sun and Hong Man},
+  title = {{ENIC -- An Improved Reliable Transport Scheme for Mobile Ad Hoc Networks}},
+  booktitle = globecom01,
+  year = "2001",
+  location = {San Antonio, Texas, USA},
+  month = Nov,
+  pages = {2852--2856},
+  volume = "5",
+  doi = {10.1109/GLOCOM.2001.965950},
+}
+
+
+@inproceedings{kim00tcpbus,
+  author    = {Dongkyun Kim and Chai-Keong Toh and Yanghee Choi},
+  title     = {{TCP-Bus: Improving TCP Performance in Wireless Ad-Hoc Networks}},
+  booktitle = icc00,
+  month = Jun,
+  year      = {2000},
+  pages     = {1707--1713},
+  volume = 3,
+  doi = {10.1109/ICC.2000.853785},
+  location = {New Orleans, LA, USA},
+}
+
+
+@inproceedings{fu03tcp,
+  author = {Zhenghua Fu and Xiaoqiao Meng and Songwu Lu},
+  title = {TCP Friendly Rate Adaptation for Multimedia Streaming in Mobile Ad-hoc Networks},
+  booktitle = {IEEE International Conference on Management of Multimedia Networks and Services (MMNS'03) 2003},
+  location = {Ireland},
+  year = {2003},
+}
+
+
+@article{fu03transport,
+  author = {Zhenghua Fu and Xiaoqiao Meng and Songwu Lu},
+  title = {{A Transport Protocol for Supporting Multimedia Streaming in Mobile Ad-hoc Networks}},
+  journal = {IEEE Journal on Selected Areas in Communications},
+  volume = 21,
+  number = 10,
+  pages = {1615--1626},
+  month = Dec,
+  year = {2003},
+  doi = {10.1109/JSAC.2003.816461},
+}
+
+
+@article{ floyd00equationbased,
+    author = "Sally Floyd and Mark Handley and Jitendra Padhye and J{\"o}rg Widmer",
+    title = {{Equation-Based Congestion Control for Unicast Applications}},
+journal = {ACM SIGCOMM Computer Communication Review},
+ volume = {30},
+ number = {4},
+ year = {2000},
+ issn = {0146-4833},
+ pages = {43--56},
+ doi = {http://doi.acm.org/10.1145/347057.347397},
+ publisher = {ACM Press},
+ address = {New York, NY, USA},
+}
+
+
+@InProceedings{rama00topctrl,
+  author = 	 {Ram Ramanathan and Regina Rosales-Hain},
+  title = 	 {Topology control of multihop wireless networks using transmit power adjustment},
+  OPTcrossref =  {},
+  OPTkey = 	 {},
+  booktitle = infocom00,
+  pages = 	 {404--413},
+  year = 	 {2000},
+  OPTeditor = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTaddress = 	 {},
+  month = 	 Mar,
+  OPTorganization = {},
+  OPTpublisher = {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+    
+@inproceedings{ monks00limitations,
+  author = "Jeffrey P. Monks and Prasun Sinha and Vaduvur Bharghavan",
+  title = {{Limitations of TCP-ELFN for Ad Hoc Networks}},
+  booktitle = momuc00,
+  year = "2000",
+  location = "Tokyo, Japan"
+}
+
+
+@inproceedings{ gerla99tcp,
+  author = "Mario Gerla and Ken Tang and Rajive Bagrodia",
+  title = {{TCP Performance in Wireless Multi-hop Networks}},
+  booktitle = wmcsa99,
+  location = "New Orleans, LA, USA",
+  month = Feb,
+  year = "1999",
+  isbn = {0-7695-0025-0},
+  pages = {41},
+  doi = {http://doi.ieeecomputersociety.org/10.1109/MCSA.1999.749276},
+}
+
+
+@inproceedings{su05wxcp,
+  author = {Yang Su and Thomas Gross},
+  title = {{WXCP: Explicit Congestion Control for Wireless Multi-hop Networks}},
+  booktitle = iwqos05,
+  location = {Passau, Germany},
+  month = Jun,
+  year = {2005},
+}
+
+
+@inproceedings{ katabi02internet,
+  author = {Dina Katabi and Mark Handley and Charlie Rohrs},
+ title = {Congestion control for high bandwidth-delay product networks},
+ booktitle = sigcomm02,
+ year = {2002},
+ isbn = {1-58113-570-X},
+ pages = {89--102},
+ location = {Pittsburgh, Pennsylvania, USA},
+ doi = {http://doi.acm.org/10.1145/633025.633035},
+ publisher = {ACM Press},
+ address = {New York, NY, USA},
+ }
+
+
+@inproceedings{elrakabawy05tcp,
+ author = {Sherif M. ElRakabawy and Alexander Klemm and Christoph Lindemann},
+ title = {{TCP with Adaptive Pacing for Multihop Wireless Networks}},
+ booktitle = mobihoc05,
+ year = {2005},
+ month = may,
+ isbn = {1-59593-004-3},
+ pages = {288--299},
+ location = {Urbana-Champaign, IL, USA},
+ doi = {http://doi.acm.org/10.1145/1062689.1062726},
+}
+
+
+@InProceedings{ berger04selfcontention,
+  author = 	 {Dan Berger and Zhenqiang Ye and Prasun Sinha and Srikanth Krishnamurthy and Michaelis Faloutsos and Satish K. Tripathi},
+  title = 	 {{TCP-Friendly Medium Access Control for Ad-Hoc
+  Wireless Networks: Alleviating Self-Contention}},
+  OPTcrossref =  {},
+  OPTkey = 	 {},
+  booktitle = {Proceedings of the 1st IEEE International Conference on Mobile Ad-hoc and Sensor Systems},
+  pages = 	 {214--223},
+  year = 	 {2004},
+  OPTeditor = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  address = 	 {Fort Lauderdale, Florida, USA},
+  month = 	 Oct,
+  OPTorganization = {},
+  OPTpublisher = {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+
+@article{DBLP:journals/adhoc/KlemmYKT05,
+  author    = {Fabius Klemm and
+               Zhenqiang Ye and
+               Srikanth V. Krishnamurthy and
+               Satish K. Tripathi},
+  title     = {{Improving TCP Performance in Ad Hoc Networks using Signal
+               Strength based Link Management}},
+  journal   = {Elsevier Ad Hoc Networks},
+  volume    = {3},
+  number    = {2},
+  year      = {2005},
+  pages     = {175-191},
+  doi       = {10.1016/j.adhoc.2004.07.005},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+
+@Article{yuki04improvement,
+author = {Taichi Yuki and Takayuki Yamamoto and Masashi Sugano and Masayuki Murata and Hideo Miyahara and Takaaki Hatauchi},
+title = {{Improvement of TCP Throughput by Combination of Data and ACK Packets in Ad Hoc Networks}},
+journal = {IEICE Transactions on Communications},
+year = {2004},
+volume = {87},
+number = {9},
+month = Sep,
+pages = {2493--2499},
+}
+
+@inproceedings{ kopparty02splittcp,
+  author = "S. Kopparty and S. Krishnamurthy and M. Faloutsos and S. Tripathi",
+  title = {{Split-TCP for Mobile Ad Hoc Networks}},
+  booktitle=globecom02,
+  volume={1},
+  pages = {138--142},
+  month = Nov,
+  year={2002},
+  location = {Taipei, Taiwan},
+}
+
+@inproceedings{li04performance,
+  author = {Mingzhe Li and Choong-Soo Lee and Emmanuel Agu and Mark Claypool and Robert Kinicki},
+  title = {{Performance Enhancement of TFRC in Wireless Ad Hoc Networks}},
+  booktitle = dms04,
+  location = {San Francisco, California, USA},
+  month = Sep,
+  year = {2004},
+}
+
+@inproceedings{anastasi05tpa,
+  author = {Guiseppe Anastasi and Emilio Ancillotti and Marco Conti and Andrea Passarella},
+  title = {{TPA: A Transport Protocol for Ad Hoc Networks}},
+  booktitle = iscc05,
+  location = {La Manga del Mar Menor, Spain},
+  month = Jun,
+  year = {2005},
+  pages = {51--56},
+  doi = {10.1109/ISCC.2005.147},
+}
+
+@INCOLLECTION{johnson96dynamic,
+   TITLE = {{Dynamic Source Routing in Ad Hoc Wireless Networks}},
+   AUTHOR = {David B. Johnson and David A. Maltz},
+   BOOKTITLE = {Mobile Computing},
+   EDITOR = {Thomasz Imielinski and Hank Korth},
+   PUBLISHER = {Kluwer Academic Publishers},
+   VOLUME = {353},
+   CHAPTER = {5},
+   PAGES = {153--181},
+   YEAR = {1996},
+}
+
+@inproceedings{zhai05ratebased,
+  author = {Hongqiang Zhai and Xiang Chen and Yuguang Fang},
+  title = {{Rate-Based Transport Control for Mobile Ad Hoc Networks}},
+  booktitle = wcnc05,
+  month = Mar,
+  year = {2005},
+  location = {New Orleans, LA, USA},
+  doi = {10.1109/WCNC.2005.1424868},
+  volume = 4,
+  pages = {2264--2269},
+}
+
+@inproceedings{guenes02performance,
+  author    = {Mesut G\"une\c{s} and Donald Vlahovic},
+  title     = {{The Performance of the TCP/RCWE Enhancement for Ad-Hoc Networks}},
+  booktitle = iscc02,
+  year      = {2002},
+  pages     = {43--48},
+  location  = {Taormina, Italy},
+  doi = {10.1109/ISCC.2002.1021656},
+}
+
+@inproceedings{fu02design,
+ author = {Zhenghua Fu and Benjamin Greenstein and Xiaoqiao Meng and Songwu Lu},
+ title = {{Design and Implementation of a TCP-Friendly Transport Protocol for Ad Hoc Wireless Networks}},
+ booktitle = icnp02,
+ year = {2002},
+ month = Nov,
+ pages = {216--225},
+}
+
+@inproceedings{bechler05optimized,
+  author    = {Marc Bechler and Sven Jaap and Lars C. Wolf},
+  title     = {{An Optimized TCP for Internet Access of Vehicular Ad Hoc Networks}},
+  booktitle     = {Proceedings of NETWORKING 2005: 4th International IFIP-TC6 Networking Conference},
+  year      = {2005},
+  month = May,
+  location = {Waterloo, Canada},
+  pages     = {869--880},
+}
+
+@inproceedings{oliveira03edgebased,
+author    = "Ruy {de Oliveira} and Torsten Braun and Marc Heissenb{\"u}ttel",
+title     = {{An Edge-based Approach for Improving TCP in Wireless Mobile Ad Hoc Networks}},
+booktitle = dads03,
+address   = "Orlando, USA",
+month     = Mar,
+year      = "2003",
+}
+
+@inproceedings{sugano03performance,
+author = {Masashi Sugano and Masayuki Murata},
+title = {{Performance Improvement of TCP on a Wireless Ad Hoc Network}},
+booktitle = vtc03s,
+location = {Cheju, Korea},
+month = Apr,
+year = {2003},
+doi = {10.1109/VETECS.2003.1208794},
+volume = 4,
+pages = {2276--2280 },
+}
+
+@inproceedings{liu99atp,
+author = {Jian Liu and Suresh Singh},
+title = {{ATP: Application controlled Transport Protocol for Mobile Ad Hoc Networks}},
+booktitle = wcnc99,
+location = {New Orleans, LA, USA},
+volume = {3},
+pages = {1318--1322},
+month = Sep,
+year = {1999},
+doi = {10.1109/WCNC.1999.796951},
+}
+
+@InProceedings{chen04multipath,
+  author = 	 {Jiwei Chen and Kaixin Xu and Mario Gerla},
+  title = 	 {{Multipath TCP in Lossy Wireless Environment}},
+  OPTcrossref =  {},
+  OPTkey = 	 {},
+  booktitle = {Proceedings of the Third Annual Mediterranean Ad Hoc Networking Workshop (Med-Hoc-Net) 2004},
+  pages = 	 {263--270},
+  year = 	 {2004},
+  OPTeditor = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  address = 	 {Bodrum, Turkey},
+  month = 	 Jun,
+  OPTorganization = {},
+  OPTpublisher = {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@inproceedings{nahm05tcp,
+ author = {Kitae Nahm and Ahmed Helmy and C.-C. Jay Kuo},
+ title = {{TCP over Multihop 802.11 Networks: Issues and Performance Enhancement}},
+ booktitle = mobihoc05,
+ year = {2005},
+ pages = {277--287},
+ location = {Urbana-Champaign, IL, USA},
+ doi = {http://doi.acm.org/10.1145/1062689.1062725},
+}
+
+
+@article{papanastasiou04tcp,
+  author = {Stylianos Papanastasiou and Mohamed Ould-Khaoua},
+  title = {{TCP congestion window evolution and spatial reuse in MANETs}},
+  journal = {Journal of Wireless Communications and Mobile Computing},
+  volume = {4},
+  number = {6},
+  year = {2004},
+  month = Sep,
+  publisher = {Wiley},
+  pages = {669--682},
+  doi = {10.1002/wcm.236},
+}
+
+
+@inproceedings{chen03setting,
+author = "Kai Chen and Yuan Xue and Klara Nahrstedt",
+title = {{On Setting TCP's Congestion Window Limit in Mobile Ad Hoc Networks}},
+booktitle = icc03,
+address = "Anchorage, Alaska",
+month = May,
+year = "2003",
+doi  = "10.1109/ICC.2003.1204525",	
+}
+
+
+@inproceedings{biaz98distinguishing,
+    author = "Saad Biaz and Nitin H. Vaidya",
+    title = "Distinguishing Congestion Losses from Wireless Transmission Losses: {A} Negative Result",
+    booktitle = icccn98,
+    year = "1998",
+    location = "New Orleans, LA, USA",
+}
+
+
+@inproceedings{altman03novel,
+  author    = {Eitan Altman and Tania Jim{\'e}nez},
+  title     = {{Novel Delayed ACK Techniques for Improving TCP Performance in Multihop Wireless Networks}},
+  booktitle     = pwc03,
+  location = {Venice, Italy},
+  month = Sep,
+  year      = {2003},
+  pages     = {237--250},
+  isbn      = {3-540-20123-8},
+  doi        = {10.1007/b12004},
+}
+
+
+@inproceedings{oliveira04delaybased,
+  author = {Ruy de Oliveira and Torsten Braun},
+  title = {{A Delay-based Approach Using Fuzzy Logic to Improve TCP Error Detection in Ad Hoc Networks}},
+  booktitle = wcnc04,
+  location = {Atlanta, USA},
+  month = Mar,
+  year = {2004},
+  pages = {1666--1671},
+  volume = {3},
+}
+
+
+@inproceedings{oliveira05dynamic,
+  author = {Ruy de Oliveira and Torsten Braun},
+  title = {{A Dynamic Adaptive Acknowledgment Strategy for TCP over Multihop Wireless Networks}},
+  booktitle = infocom05,
+  location = {Miami, FL, USA},
+  month = Mar,
+  volume = 3,
+  year = {2005},
+  pages = {1863--1874},
+  doi = {10.1109/INFCOM.2005.1498465},
+}
+
+
+@article{zadeh65fuzzy,
+  author = {Lofti A. Zadeh},
+  title = {Fuzzy Sets},
+  journal = {Information and Control},
+  volume = {8},
+  year = {1965},
+  pages = {338--353},
+}
+
+
+@article{zadeh68fuzzy,
+  author = {Lofti A. Zadeh},
+  title = {Fuzzy Algorithms},
+  journal = {Information and Control},
+  volume = {12},
+  year = {1968},
+  pages = {94--102},
+}
+
+
+@article{anantharaman04tcp,
+  author = {Vaidyanathan Anantharaman and Seung-Jong Park and Karthikeyan Sundaresan and Raghupathy Sivakumar},
+  title = {{TCP performance over mobile ad-hoc networks: a quantitative study}},
+  journal = {Wireless Communications and Mobile Computing},
+  volume = 4,
+  number = 2,
+  year = 2004,
+  pages = {203--222},
+  doi = {10.1002/wcm.172},
+}
+
+
+@inproceedings{anantharaman02microscopic,
+  author = {Vaidyanath Anantharaman and Raghupathy Sivakumar},
+  title = {A Microscopic Analysis of TCP Performance over Wireless Ad-hoc Networks},
+  booktitle = sigmetrics02,
+  month = Jun,
+  year = {2002},
+  location = {Marina Del Rey, CA, USA},
+}
+
+
+@inproceedings{zhai04distributed,
+  author = {Hongqiang Zhai and Jianfeng Wang and Yuguang Fang},
+  title = {{Distributed Packet Scheduling for Multihop Flows in Ad Hoc Networks}},
+  booktitle = wcnc04,
+  month = Mar,
+  year = {2004},
+  location = {Atlanta, GA, USA},
+  pages = {1081--1086},
+  volume = 2,
+}
+
+
+@inproceedings{zhai04alleviating,
+  author = {Hongqiang Zhai and Xiang Chen and Yuguang Fang},
+  title = {{Alleviating Intra-Flow and Inter-Flow Contentions for Reliable Service in Mobile Ad Hoc Networks}},
+  booktitle = milcom04,
+  month = Oct,
+  year = {2004},
+  location = {Monterey, CA, USA},
+  pages = {1640--1646},
+  doi = {10.1109/MILCOM.2004.1495184},
+  volume = 3,
+}
+
+
+@inproceedings{dyer01comparison,
+ author = {Thomas D. Dyer and Rajendra V. Boppana},
+ title = {{A Comparison of TCP Performance over Three Routing Protocols for Mobile Ad Hoc Networks}},
+ booktitle = mobihoc01,
+ year = {2001},
+ isbn = {1-58113-428-2},
+ pages = {56--66},
+ location = {Long Beach, CA, USA},
+ doi = {10.1145/501422.501425},
+}
+
+@inproceedings{zhou03improve,
+  author = {JianXin Zhou and BingXin Shi and Ling Zou},
+  title = {{Improve TCP performance in Ad hoc network by TCP-RC}},
+  booktitle = pimrc03,
+  month = Sep,
+  year = {2003},
+  pages = {216--220},
+  location = {Beijing, China},
+  volume = 1,
+  doi = {10.1109/PIMRC.2003.1264264},
+}
+
+
+@article{floyd93random,
+ author = {Sally Floyd and Van Jacobson},
+ title = {{Random Early Detection Gateways for Congestion Avoidance}},
+ journal = {IEEE/ACM Transactions on Networking},
+ volume = {1},
+ number = {4},
+ year = {1993},
+ issn = {1063-6692},
+ pages = {397--413},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ doi = {10.1109/90.251892},
+}
+
+
+@article{xu05tcp,
+  author = {Kaixin Xu and Mario Gerla and Lantao Qi and Yantai Shu},
+  title = {{TCP Unfairness in Ad Hoc Wireless Networks and a Neighborhood RED Solution}},
+  journal = {Wireless Networks},
+  volume = 11,
+  number = 4,
+  month = Jul,
+  year = 2005,
+  pages = {383--399},
+  doi = {10.1007/s11276-005-1764-1},
+}
+
+
+@inproceedings{chen04limitations,
+ author = {Kai Chen and Klara Nahrstedt},
+ title = {{Limitations of Equation-Based Congestion Control in Mobile Ad Hoc Networks}},
+ booktitle = {ICDCSW '04: Proceedings of the 24th International Conference on Distributed Computing Systems Workshops - W7: EC},
+ year = {2004},
+ isbn = {0-7695-2087-1},
+ pages = {756--761},
+  location = {Tokyo, Japan},
+ doi = {10.1109/ICDCSW.2004.1284118},
+ }
+
+
+@inproceedings{yang03improving,
+  author = {Luqing Yang and Winston K. G. Seah and Qinghe Yin},
+  title = {{Improving Fairness among TCP Flows crossing Wireless Ad Hoc and Wired Networks}},
+booktitle = mobihoc03,
+ year = {2003},
+ isbn = {1-58113-684-6},
+ pages = {57--63},
+ location = {Annapolis, Maryland, USA},
+ doi = {http://doi.acm.org/10.1145/778415.778423},
+ publisher = {ACM Press},
+ address = {New York, NY, USA},
+  month = Jun,
+}
+
+
+@article{goff03preemptive,
+  author = {Tom Goff and Nael B. Abu-Ghazaleh and Dhananjay S. Phatak and Ridvan Kahvecioglu},
+  title = {{Preemptive Routing in Ad Hoc Networks}},
+  journal = {Elsevier Journal of Parallel and Distributed Computing},
+  year = 2003,
+  volume = 63,
+  number = 2,
+  month = Feb,
+  pages = {123--140},
+  doi = {10.1016/S0743-7315(02)00059-X},
+}
+
+
+@inproceedings{lim03tcp,
+  author = {Haejung Lim and Kaixin Xu and Mario Gerla},
+  title = {{TCP Performance over Multipath Routing in Mobile Ad Hoc Networks}},
+  booktitle = icc03,
+  pages = {1064--1068},
+  volume = 2,
+  year = {2003},
+  month = May,
+  location = {Anchorage, AK, USA},
+}
+
+
+@inproceedings{ragunathan05counterexample,
+  author = {Vivek Raghunathan and P. R. Kumar},
+  title = {{A Counterexample in Congestion Control of Wireless Networks}},
+  booktitle = mswim05,
+  year = 2005,
+  month = Oct,
+  location = {Montreal, QC, Canada},
+  pages = {290--297},
+  doi = {http://doi.acm.org/10.1145/1089444.1089496},
+}
+
+
+@article{xu01ieee80211,
+  author =       {Shugong Xu and Tarek Saadawi},
+  title =        {{Does the IEEE 802.11 MAC protocol work well in multihop wireless ad hoc network}},
+  journal =      {IEEE Communications Magazine},
+  year =         {2001},
+  volume =       {39},
+  number =       {6},
+  pages =        {130--137},
+  month =        Jun,
+  doi = {10.1109/35.925681},
+}
+
+
+@inproceedings{tang99fair,
+  author = "Ken Tang and Mario Gerla",
+  title = {{Fair Sharing of MAC under TCP in Wireless Ad Hoc Networks}},
+  booktitle = mmt99,
+  year = "1999",
+  month = Oct,
+  location = {Venice, Italy},
+}
+
+
+@inproceedings{fu02howbad,
+  author = {Zhenghua Fu and Xiaoqiao Meng and Songwu Lu},
+  title = {{How Bad TCP Can Perform In Mobile Ad Hoc Networks}},
+  booktitle = iscc02,
+  pages = {298--303},
+  year = 2002,
+  month = Jul,
+  location = {Taormina, Italy},
+  doi = {10.1109/ISCC.2002.1021693},
+}
+
+@article{biaz05derandomizing,
+ author = {Sa\^ad Biaz and Nitin H. Vaidya},
+ title = {{"De-randomizing" congestion losses to improve TCP performance over wired-wireless networks}},
+ journal = {IEEE/ACM Transactions on Networking},
+ volume = {13},
+ number = {3},
+ year = {2005},
+ pages = {596--608},
+ publisher={IEEE Press Piscataway, NJ, USA},
+ doi = {10.1109/TNET.2005.850205},
+ }
+
+@inproceedings{yi04hop-by-hop,
+  author    = {Yung Yi and Sanjay Shakkottai},
+  title     = {{Hop-by-hop Congestion Control over a Wireless Multi-hop
+               Network}},
+  booktitle = infocom04,
+  year      = {2004},
+  ee        = {http://www.ieee-infocom.org/2004/Papers/53_3.PDF},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  pages     = {2548--2558},
+}
+
+@article{ jacobson88congestion,
+    author = "Van Jacobson and Michael J. Karels",
+    title = {{Congestion Avoidance and Control}},
+    journal = "Proceedings of SIGCOMM '88",
+    volume = "18",
+    number = 4,
+    pages = "314--329",
+    year = "1988",
+    url = "citeseer.ist.psu.edu/article/jacobson88congestion.html",
+    doi = {http://doi.acm.org/10.1145/205447.205462},
+}
+
+@Article{kliazovich05,
+  author = 	 {Dzmitry Kliazovich and Fabrizio Granelli},
+  title = 	 {{Cross-layer congestion control in ad hoc wireless networks}},
+  journal = 	 {Ad Hoc Networks},
+  year = 	 {2006},
+  OPTkey = 	 {},
+  volume = 	 {4},
+  number = 	 {6},
+  pages = 	 {687--708},
+  month = 	 Nov,
+  OPTnote = 	 {In Press, Corrected Proof, Available online 31 August 2005},
+  OPTannote = 	 {},
+  doi = {10.1016/j.adhoc.2005.08.001},
+  publisher = {Elsevier},
+}
+
+@inproceedings{ talucci97macabi,
+  author = "Fabrizio Talucci and Mario Gerla and Luigi Fratta",
+  title = {{MACABI (MACA By Invitation): A Receiver Oriented Access Protocol for Wireless Multiple Networks}},
+  booktitle = pimrc97,
+  location = "Helsinki, Finland",
+  month = Sep,
+  year = "1997",
+}
+  
+    
+@inproceedings{garcia99reversing,
+ author = {Jose Joaquin Garcia-Luna-Aceves and Asimakis Tzamaloukas},
+ title = {{Reversing the collision-avoidance handshake in wireless networks}},
+ booktitle = mobicom99,
+ year = {1999},
+ pages = {120--131},
+ location = {Seattle, Washington, USA},
+ publisher = {ACM Press},
+}
+
+
+@article{garcia02receiver,
+ author = {Jose Joaquin Garcia-Luna-Aceves and Asimakis Tzamaloukas},
+ title = {Receiver-initiated collision avoidance in wireless networks},
+ journal = {Wireless Networking},
+ volume = {8},
+ number = {2/3},
+ year = {2002},
+ issn = {1022-0038},
+ pages = {249--263},
+ publisher = {Kluwer Academic Publishers},
+}
+
+
+@inproceedings{hull04mitigating,
+ author = {Bret Hull and Kyle Jamieson and Hari Balakrishnan},
+ title = {{Mitigating Congestion in Wireless Sensor Networks}},
+ booktitle = sensys04,
+ year = {2004},
+ isbn = {1-58113-879-2},
+ pages = {134--147},
+ location = {Baltimore, MD, USA},
+ doi = {http://doi.acm.org/10.1145/1031495.1031512},
+}
+
+@Unpublished{wang05sentcp,
+  author = 	 {Chonggang Wang and Kazem Sohraby and Bo Li},
+  title = 	 {{SenTCP: A Hop-by-Hop Congestion Control Protocol for Wireless Sensor Networks}},
+  note = 	 {{IEEE INFOCOM 2005 (Poster Paper)}},
+  OPTkey = 	 {},
+  month = 	 Mar,
+  year = 	 {2005},
+  OPTannote = 	 {}
+}
+
+@TechReport{oliveira02tcp,
+author = {Ruy de Oliveira and Torsten Braun},
+title = {{TCP in Wireless Mobile Ad Hoc Networks}},
+institution = {Institute of Computer Science and Applied Mathematics,
+University of Berne},
+year = {2002},
+number = {IAM-02-003},
+month = Jul,
+}
+
+
+@Article{jubin87packetradio,
+author = {John Jubin and Janet D. Tornow},
+title = {The DARPA Packet Radio Network Protocols},
+journal = {Proceedings of the IEEE},
+year = {1987},
+volume = {75},
+number = {1},
+pages = {21--32},
+month = Jan,
+}
+
+@inproceedings{ woo01transmission,
+ author = {Alec Woo and David E. Culler},
+ title = {{A Transmission Control Scheme for Media Access in Sensor Networks}},
+ booktitle = mobicom01,
+ year = {2001},
+ isbn = {1-58113-422-3},
+ pages = {221--235},
+ location = {Rome, Italy},
+ doi = {http://doi.acm.org/10.1145/381677.381699},
+ }
+
+
+@article{mersenne-twister,
+ author = {Makoto Matsumoto and Takuji Nishimura},
+ title = {Mersenne twister: a 623-dimensionally equidistributed uniform pseudo-random number generator},
+ journal = {ACM Transactions on Modeling and Computer Simulation (TOMACS)},
+ volume = {8},
+ number = {1},
+ year = {1998},
+ issn = {1049-3301},
+ pages = {3--30},
+ doi = {http://doi.acm.org/10.1145/272991.272995},
+ publisher = {ACM Press},
+ address = {New York, NY, USA},
+ }
+
+@InProceedings{gower82congestion,
+author = {Neil Gower and John Jubin},
+title = {{Congestion Control Using Pacing in a Packet Radio Network}},
+booktitle = milcom82,
+year = {1982},
+month = Oct,
+pages = {23.1.1--23.1.6},
+location = {Boston, MA, USA},
+}
+
+@article{plesse05olsr,
+  author = {Thierry Plesse and Cedric Adjih and Pascale Minet and Anis
+            Laouiti and Adoko{\'e} Plakoo and Marc Badel and Paul
+            M{\"u}hlethaler and Philippe Jacquet and J{\'e}r{\^o}me Lecomte},
+  title = {{OLSR} performance measurement in a military mobile ad hoc network},
+  journal = {Elsevier Ad Hoc Networks},
+  volume = {3},
+  number = {5},
+  year = {2005},
+  pages = {575--588},
+}
+
+@article{crovella97selfsimilarity,
+    author = "Mark E. Crovella and Azer Bestavros",
+    title = "Self-similarity in {World Wide Web} traffic: evidence and possible
+causes",
+    journal = "IEEE/ACM Transactions on Networking",
+    volume = "5",
+    number = "6",
+    pages = "835--846",
+    year = "1997",
+}
+
+
+@Misc{ ScatterWeb,
+author = {{Freie Universität Berlin, Computer Systems Telematics}},
+title = {{ScatterWeb Project}},
+howpublished =
+{\href{http://www.inf.fu-berlin.de/inst/ag-tech/scatterweb_net}{
+http://www.inf.fu-berlin.de/inst/ag-tech/scatterweb\_net}}
+}
+
+
+@article{lochert06survey,
+  author = {Christian Lochert and Bj\"orn Scheuermann and Martin Mauve},
+  title = {{A Survey on Congestion Control for Mobile Ad-Hoc Networks}},
+  journal = {Wiley Wireless Communications and Mobile Computing},
+  year   = {2007},
+  pages  = {655--676},
+  month  = Jun,
+  volume = {7},
+  number  = {5},
+  publisher = {John Wiley & Sons, Ltd.},
+  doi     = {10.1002/wcm.524},
+}
+
+@inproceedings{wan03coda,
+  author = {Chieh-Yih Wan and Shane B. Eisenman and Andrew T. Campbell},
+  title = {{CODA: Congestion Detection and Avoidance in Sensor Networks}},
+  booktitle = sensys03,
+  year = {2003},
+  location = {Los Angeles, CA, USA},
+  pages = {266--279},
+}
+
+@inproceedings{zhang05reliable,
+  author = {Hongwei Zhang and Anish Arora and {Young-ri} Choi and Mohamed G.
+Gouda},
+  title = {{Reliably Bursty Convergecast in Wireless Sensor Networks}},
+  booktitle = mobihoc05,
+  year = {2005},
+  location = {Urbana-Champaign, IL, USA},
+  pages = {266--276},
+}
+
+@InProceedings{jerschow06realworld,
+    author = {Yves Igor Jerschow and Bj\"orn Scheuermann and Christian Lochert
+and Martin Mauve},
+    title  = {{A Real-World Framework to Evaluate Cross-Layer Protocols for
+Wireless Multihop Networks}},
+    year   = {2006},
+    pages  = {1--6},
+    month  = May,
+    booktitle = realman06,
+    location = {Florence, Italy},
+}
+
+@inproceedings{xu02effective,
+  author = {Kaixin Xu and Mario Gerla and Sang Bae},
+  title = {{How Effective is the IEEE 802.11 RTS/CTS Handshake in Ad Hoc
+Networks?}},
+  booktitle = globecom02,
+  year = {2002},
+  pages = {72--76},
+  location = {Taipei, Taiwan, R.\,O.\,C.},
+}
+
+@inproceedings{ray03rtscts,
+  author = {Saikat Ray and Jeffrey B. Carruthers and David Starobinski},
+  title = {{RTS/CTS-Induced Congestion in Ad Hoc Wireless LANs}},
+  booktitle = wcnc03,
+  year = {2003},
+  pages = {1516--1521},
+  location = {New Orleans, LA, USA},
+}
+
+@article{wang06survey,
+	author = {Chonggang Wang and Kazem Sohraby and Bo Li and Mahmoud Daneshmand
+and Yueming Hu},
+	journal = {IEEE Network Magazine},
+	number = {3},
+	pages = {34--40},
+	title = {{A Survey of Transport Protocols for Wireless Sensor Networks}},
+	OPTurl = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1637930},
+	volume = {20},
+	year = {2006},
+	doi = {10.1109/MNET.2006.1637930},
+}
+
+@article{scheuermann06implicit,
+author = {Bj\"orn Scheuermann and Christian Lochert and Martin Mauve},
+title = {{Implicit Hop-by-Hop Congestion Control in Wireless Multihop Networks}},
+journal = "Elsevier Ad Hoc Networks",
+year = 2008,
+volume = 6,
+number = 2,
+pages = {260--286},
+}
+
+@inproceedings{pandey07repair,
+author = {Manoj Pandey and Roger Pack and Lei Wang and Quiyi Duan and Daniel Zappala},
+title = {{To Repair or Not To Repair: Helping Routing Protocols to Distinguish Mobility from Congestion}},
+booktitle = {INFOCOM '07 Mini Symposia},
+year = 2007,
+month = may,
+location = {Anchorage, AK, USA},
+note = {to appear},
+}
+
+@inproceedings{perkins99aodv,
+  author = "Charles E. Perkins and Elizabeth M. Royer",
+  title = {{Ad-hoc On-Demand Distance Vector Routing}},
+  booktitle = wmcsa99,
+  month = feb,
+  year = 1999,
+  pages = "90--100",
+  location = "New Orleans, LA, USA",
+}
+
+@inproceedings{desilva04impact,
+author = {Saman Desilva and Rajendra V. Boppana},
+title = {{On the Impact of Noise Sensitivity on Performance in 802.11 Based Ad Hoc Networks}},
+booktitle = icc04,
+year = 2004,
+month = jun,
+volume = 7,
+pages = {4372--4376},
+location = {Paris, France},
+}

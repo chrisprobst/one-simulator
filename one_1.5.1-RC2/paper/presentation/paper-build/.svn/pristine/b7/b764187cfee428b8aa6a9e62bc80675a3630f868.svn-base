@@ -1,0 +1,29 @@
+# Syntax, either with String or Regular Expression:
+# STRING,REPLACE,COMMENT 
+# REGEXP,REPLACE,COMMENT
+# String describes the match, Comment say why this is an exception,
+# Replace gives the String that should be written
+#
+"{fig:}","","no empty labels!"
+"~:", ":", "Colon always directly after a word, no space, no '~'"
+/: [A-Z]/,"","continue small after a space"
+/\\footnote\{([^\{\}]+\{[^\{\}]+\})*[^\{\}\.]*[^.]?\}/,"","footnotes always start with big caps and end with a full stop"
+/[^a-z)}]+\\footnote\{/,"","footnotes always should be directly bound to the previous word"
+/\\caption\{[^.{}]*[^.]\}/,"","caption should end with a full stop"
+/\\caption\{[^A-Z][^{}]*\}/,"","caption starts always with capital letter"
+/\s(\w+) \1\s/,"","Possible unwanted word repitition"
+/ ([1-9]|1[123]),? /,"","Numbers between 1 and 13 should be written as word (e.g. 'two' instead of '2')"	
+/( |^)an [^aeiouhAEIOUH]/,"","'an' only before consonants"	
+/( |^)a [aeiouAEIOU]/,"","Use 'an' before consonants!"
+/[1-9]+x[1-9]+/,"","use Math: \\times instead of 'x'"
+/( |[0-9]|~)MHz/,"","Per convention, before a unit there is always a '\\,' i.e. a short, bound space"
+/( |[0-9]|~)ghz/,"","Per convention, before a unit there is always a '\\,' i.e. a short, bound space"
+/( |[0-9]|~)meter/,"","Per convention, before a unit there is always a '\\,' i.e. a short, bound space"
+/( |[0-9]|~)ms/,"","Per convention, before a unit there is always a '\\,' i.e. a short, bound space"
+#/( |[0-9]|~)millisecond/,"","Per convention, before a unit there is always a '\\,' i.e. a short, bound space"
+/( |[0-9]|~)(mB|Mb|kb|mw|km)/,"","Per convention, before a unit there is always a '\\,' i.e. a short, bound space"
+/( |[0-9]|~)m[ ]/,"","Per convention, before a unit there is always a '\\,' i.e. a short, bound space" 
+/(mbit\/s|kpbs|kbit)/,"","Write 'Mb/s', neither 'Mbit/s' nor 'Mbps', same is valid for 'Kb/s'"
+/ al( |~)/,"",""
+" \\cite","~\\cite","'\\cite' should be bound to the previous word via '~\\cite'"
+/[a-zA-Z]\\cite/,"","'cite' should not directly stick to the previous word, rather use '~\\cite'"

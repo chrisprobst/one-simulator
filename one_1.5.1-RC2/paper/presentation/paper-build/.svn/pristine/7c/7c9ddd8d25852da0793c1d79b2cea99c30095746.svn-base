@@ -1,0 +1,43 @@
+### Howto use the 'checktex.rb' tool ###
+# Copyright 2006 Wolfgang Kiess
+#
+# This program is free software; you can redistribute it and/or modify it under 
+# the terms of the GNU General Public License as published by the Free Software 
+# Foundation; either version 2 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY 
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with this 
+# program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth 
+# Floor, Boston, MA 02110, USA
+#
+# Please send any comments, ... to : kiess@cs.uni-duesseldorf.de
+#
+1) Intention
+The tool is designed to check writing conventions, simple grammar 
+constructs,... in the end, anything that can be matched with a string or
+a regular expression.
+
+2) Howto use
+- call with 'ruby checktex.rb' 
+- make the file executable 'chmod 744 checktex.rb' and then './checktex.rb'
+The tool has a simple command line help.
+
+3) Adding new rules
+The file 'avoid_list' contains an number of expressions that are to be avoided in the 
+Text. The tool checks for these expressions. The syntax of one line in the file ist
+STRING,REPLACE,COMMENT 
+REGEXP,REPLACE,COMMENT
+String describes the match, Comment say why this is an exception,
+Replace gives the String that should be written
+
+4) Adding exceptions
+In the file 'exception_list', Exceptions from the 'avoid_list' rules can be given.
+If an expression in this file intersects with a match in the 'avoid_list', this will
+not be treated as error. Nevertheless, it is still possible to show those lines that
+contain exceptions. The Syntax for the file is:
+STRING,COMMENT 
+REGEXP,COMMENT
+String describes the match, Comment say why this is an exception
