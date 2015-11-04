@@ -519,7 +519,7 @@ public class MaxPropRouter extends ActiveRouter {
 				/* if costs are equal, hop count breaks ties. If even hop counts
 				   are equal, the queue ordering is used  */
                 if (hopc1 == hopc2) {
-                    return compareByQueueMode(msg1, msg2);
+                    return compareBySendQueueMode(msg1, msg2);
                 } else {
                     return hopc1 - hopc2;
                 }

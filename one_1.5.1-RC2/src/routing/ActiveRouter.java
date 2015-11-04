@@ -271,7 +271,7 @@ public abstract class ActiveRouter extends MessageRouter {
             return MessageRouter.DENIED_POLICY;
         }
 
-		/* remove oldest messages but not the ones being sent */
+		/* remove messages but not the ones being sent */
         if (!makeRoomForMessage(m.getSize())) {
             return DENIED_NO_SPACE; // couldn't fit into buffer -> reject
         }
@@ -336,20 +336,20 @@ public abstract class ActiveRouter extends MessageRouter {
 
 
     /**
-     * Returns the oldest (by receive time) message in the message buffer
-     * (that is not being sent if excludeMsgBeingSent is true).
+     * Sorts all messages using the drop policy mode and returns the first message
+     * in the sorted message buffer (that is not being sent if excludeMsgBeingSent is true).
      *
      * @param excludeMsgBeingSent If true, excludes message(s) that are
      *                            being sent from the oldest message check (i.e. if oldest message is
      *                            being sent, the second oldest message is returned)
-     * @return The oldest message or null if no message could be returned
+     * @return The message or null if no message could be returned
      * (no messages in buffer or all messages in buffer are being sent and
      * exludeMsgBeingSent is true)
      */
     protected Message getNextMessageToRemove(boolean excludeMsgBeingSent) {
         // Create copy and sort by drop mode
         List<Message> messages = new ArrayList<Message>(getMessageCollection());
-        sortByDropMode(messages);
+        sortByDropPolicyMode(messages);
 
         for (Message m : messages) {
             if (excludeMsgBeingSent && isSending(m.getId())) {
@@ -466,7 +466,7 @@ public abstract class ActiveRouter extends MessageRouter {
     /**
      * Tries to send all messages that this router is carrying to all
      * connections this node has. Messages are ordered using the
-     * {@link MessageRouter#sortByQueueMode(List)}. See
+     * {@link MessageRouter#sortBySendQueueMode(List)}. See
      * {@link #tryMessagesToConnections(List, List)} for sending details.
      *
      * @return The connections that started a transfer or null if no connection
@@ -478,9 +478,8 @@ public abstract class ActiveRouter extends MessageRouter {
             return null;
         }
 
-        List<Message> messages =
-                new ArrayList<Message>(this.getMessageCollection());
-        this.sortByQueueMode(messages);
+        List<Message> messages = new ArrayList<Message>(this.getMessageCollection());
+        this.sortBySendQueueMode(messages);
 
         return tryMessagesToConnections(messages, connections);
     }
@@ -502,8 +501,7 @@ public abstract class ActiveRouter extends MessageRouter {
         }
 
         @SuppressWarnings(value = "unchecked")
-        Tuple<Message, Connection> t =
-                tryMessagesForConnected(sortByQueueMode(getMessagesForConnected()));
+        Tuple<Message, Connection> t = tryMessagesForConnected(sortBySendQueueMode(getMessagesForConnected()));
 
         if (t != null) {
             return t.getValue(); // started transfer
@@ -517,21 +515,6 @@ public abstract class ActiveRouter extends MessageRouter {
         }
 
         return null;
-    }
-
-
-    /**
-     * Shuffles a messages list so the messages are in random order.
-     *
-     * @param messages The list to sort and shuffle
-     */
-    protected void shuffleMessages(List<Message> messages) {
-        if (messages.size() <= 1) {
-            return; // nothing to shuffle
-        }
-
-        Random rng = new Random(SimClock.getIntTime());
-        Collections.shuffle(messages, rng);
     }
 
     /**
@@ -613,11 +596,11 @@ public abstract class ActiveRouter extends MessageRouter {
         super.update();
 
 		/* in theory we can have multiple sending connections even though
-		  currently all routers allow only one concurrent sending connection */
+          currently all routers allow only one concurrent sending connection */
         for (int i = 0; i < this.sendingConnections.size(); ) {
             boolean removeCurrent = false;
             Connection con = sendingConnections.get(i);
-			
+
 			/* finalize ready transfers */
             if (con.isMessageTransferred()) {
                 if (con.getMessage() != null) {
@@ -626,7 +609,7 @@ public abstract class ActiveRouter extends MessageRouter {
                 } /* else: some other entity aborted transfer */
                 removeCurrent = true;
             }
-			/* remove connections that have gone down */
+            /* remove connections that have gone down */
             else if (!con.isUp()) {
                 if (con.getMessage() != null) {
                     transferAborted(con);
@@ -642,7 +625,7 @@ public abstract class ActiveRouter extends MessageRouter {
                 }
                 sendingConnections.remove(i);
             } else {
-				/* index increase needed only if nothing was removed */
+                /* index increase needed only if nothing was removed */
                 i++;
             }
         }

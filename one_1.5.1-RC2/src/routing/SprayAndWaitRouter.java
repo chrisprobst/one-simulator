@@ -98,7 +98,7 @@ public class SprayAndWaitRouter extends ActiveRouter {
 		
 		/* create a list of SAWMessages that have copies left to distribute */
         @SuppressWarnings(value = "unchecked")
-        List<Message> copiesLeft = sortByQueueMode(getMessagesWithCopiesLeft());
+        List<Message> copiesLeft = sortBySendQueueMode(getMessagesWithCopiesLeft());
 
         if (copiesLeft.size() > 0) {
 			/* try to send those messages */

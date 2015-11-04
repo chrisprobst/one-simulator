@@ -16,6 +16,7 @@ import core.SimError;
 import routing.util.RoutingInfo;
 import util.Tuple;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -23,11 +24,130 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * Superclass for message routers.
  */
 public abstract class MessageRouter {
+
+    private class LoggingMessageListener implements MessageListener {
+
+        private String getFromToAction(String action, Message m, DTNHost from, DTNHost to, String embed) {
+            return String.format(
+                    "{ \"Time\": %f, \"Action\": \"%s\", \"From\": \"%s\", \"To\": \"%s\", \"Message\": \"%s\"%s }\n",
+                    SimClock.getTime(),
+                    action,
+                    from.toDetailedString(),
+                    to.toDetailedString(),
+                    m.toDetailedString(),
+                    embed);
+        }
+
+        private String getFromToAction(String action, Message m, DTNHost from, DTNHost to) {
+            return getFromToAction(action, m, from, to, "");
+        }
+
+        private String getWhereAction(String action, Message m, DTNHost where) {
+            return String.format("{ \"Time\": %f, \"Action\": \"%s\", \"Where\": \"%s\", \"Message\": \"%s\" }\n",
+                                 SimClock.getTime(),
+                                 action,
+                                 where.toDetailedString(),
+                                 m.toDetailedString());
+        }
+
+        /**
+         * Method is called when a new message is created
+         *
+         * @param m Message that was created
+         */
+        public void newMessage(Message m) {
+
+        }
+
+        /**
+         * Method is called when a message's transfer is started
+         *
+         * @param m    The message that is going to be transferred
+         * @param from Node where the message is transferred from
+         * @param to   Node where the message is transferred to
+         */
+        public void messageTransferStarted(Message m, DTNHost from, DTNHost to) {
+            if (m.getFrom() == from) {
+                // SEND
+                System.err.printf(getFromToAction("StartSend", m, from, to));
+            } else if (m.getTo() == to) {
+                // DELIVER
+                System.err.printf(getFromToAction("StartDeliver", m, from, to));
+            } else {
+                // FORWARDED
+                System.err.printf(getFromToAction("StartForward", m, from, to));
+            }
+        }
+
+        /**
+         * Method is called when a message is deleted
+         *
+         * @param m       The message that was deleted
+         * @param where   The host where the message was deleted
+         * @param dropped True if the message was dropped, false if removed
+         */
+        public void messageDeleted(Message m, DTNHost where, boolean dropped) {
+            if (dropped) {
+                // DROP
+                System.err.printf(getWhereAction("Drop", m, where));
+            }
+        }
+
+        /**
+         * Method is called when a message's transfer was aborted before
+         * it finished
+         *
+         * @param m    The message that was being transferred
+         * @param from Node where the message was being transferred from
+         * @param to   Node where the message was being transferred to
+         */
+        public void messageTransferAborted(Message m, DTNHost from, DTNHost to) {
+            if (m.getFrom() == from) {
+                // ABORT_SEND
+                System.err.printf(getFromToAction("AbortSend", m, from, to));
+            } else if (m.getTo() == to) {
+                // ABORT_DELIVER
+                System.err.printf(getFromToAction("AbortDeliver", m, from, to));
+            } else {
+                // ABORT_FORWARDED
+                System.err.printf(getFromToAction("AbortForward", m, from, to));
+            }
+        }
+
+        /**
+         * Method is called when a message is successfully transferred from
+         * a node to another.
+         *
+         * @param m             The message that was transferred
+         * @param from          Node where the message was transferred from
+         * @param to            Node where the message was transferred to
+         * @param firstDelivery Was the target node final destination of the message
+         *                      and received this message for the first time.
+         */
+        public void messageTransferred(Message m, DTNHost from, DTNHost to,
+                                       boolean firstDelivery) {
+            if (m.getFrom() == from) {
+                // COMPLETE_SEND
+                System.err.printf(getFromToAction("CompletedSend", m, from, to));
+            } else if (m.getTo() == to) {
+                // COMPLETE_DELIVER
+                System.err.printf(getFromToAction("CompleteDeliver",
+                                                  m,
+                                                  from,
+                                                  to,
+                                                  String.format(", \"FirstDelivery\": %b", firstDelivery)));
+            } else {
+                // COMPLETE_FORWARDED
+                System.err.printf(getFromToAction("CompleteForward", m, from, to));
+            }
+        }
+    }
 
     /**
      * Message buffer size -setting id ({@value}). Integer value in bytes.
@@ -41,23 +161,28 @@ public abstract class MessageRouter {
     public static final String MSG_TTL_S = "msgTtl";
 
     /**
-     * Message/fragment sending queue type -setting id ({@value}).
+     * Message/fragment send queue policy type -setting id ({@value}).
      * This setting affects the order the messages and fragments are sent if the
      * routing protocol doesn't define any particular order (e.g, if more than
      * one message can be sent directly to the final recipient).
+     * <p>
+     * This works by sorting the send queue and sending the head of the queue.
+     * <p>
      * Valid values are<BR>
      * <UL>
-     * <LI/> 1 : random (message order is randomized every time; default option)
-     * <LI/> 2 : FIFO (most recently received messages are sent last)
-     * <LI/> 3 : MOFO (least forwarded messages are sent first)
-     * <LI/> 4 : ORDER_BY_HOP_COUNT
-     * <LI/> 5 : ORDER_BY_TTL
-     * <LI/> 6 : ORDER_BY_PACKET_SIZE
-     * <LI/> 7 : FIFO (most recently received messages are sent last) - DESC
-     * <LI/> 8 : MOFO (least forwarded messages are sent first) - DESC
-     * <LI/> 9 : ORDER_BY_HOP_COUNT - DESC
-     * <LI/> 10 : ORDER_BY_TTL - DESC
-     * <LI/> 11 : ORDER_BY_PACKET_SIZE - DESC
+     * <LI/> 1  : RANDOM
+     * <p>
+     * <LI/> 2  : ORDER_BY_ARRIVAL_TIME [ASC]
+     * <LI/> 3  : ORDER_BY_REPLICATIONS [ASC]
+     * <LI/> 4  : ORDER_BY_HOP_COUNT    [ASC]
+     * <LI/> 5  : ORDER_BY_TTL          [ASC]
+     * <LI/> 6  : ORDER_BY_PACKET_SIZE  [ASC]
+     * <p>
+     * <LI/> 7  : ORDER_BY_ARRIVAL_TIME [DESC]
+     * <LI/> 8  : ORDER_BY_REPLICATIONS [DESC]
+     * <LI/> 9  : ORDER_BY_HOP_COUNT    [DESC]
+     * <LI/> 10 : ORDER_BY_TTL          [DESC]
+     * <LI/> 11 : ORDER_BY_PACKET_SIZE  [DESC]
      * </UL>
      */
     public static final String SEND_QUEUE_MODE_S = "sendQueue";
@@ -65,23 +190,30 @@ public abstract class MessageRouter {
     /**
      * Message/fragment drop policy type -setting id ({@value}).
      * This setting affects the order the messages and fragments are dropped if the
-     * routing protocol doesn't define any particular order.
+     * send queue is full and more is needed.
+     * <p>
+     * This works by sorting the send queue and dropping the head of the queue.
+     * <p>
      * Valid values are<BR>
      * <UL>
-     * <LI/> 1 : random (message order is randomized every time; default option)
-     * <LI/> 2 : FIFO (most recently received messages are sent last)
-     * <LI/> 3 : MOFO (least forwarded messages are sent first)
-     * <LI/> 4 : ORDER_BY_HOP_COUNT
-     * <LI/> 5 : ORDER_BY_TTL
-     * <LI/> 6 : ORDER_BY_PACKET_SIZE
-     * <LI/> 7 : FIFO (most recently received messages are sent last) - DESC
-     * <LI/> 8 : MOFO (least forwarded messages are sent first) - DESC
-     * <LI/> 9 : ORDER_BY_HOP_COUNT - DESC
-     * <LI/> 10 : ORDER_BY_TTL - DESC
-     * <LI/> 11 : ORDER_BY_PACKET_SIZE - DESC
+     * <LI/> 1  : RANDOM
+     * <p>
+     * <LI/> 2  : ORDER_BY_ARRIVAL_TIME [ASC]
+     * <LI/> 3  : ORDER_BY_REPLICATIONS [ASC]
+     * <LI/> 4  : ORDER_BY_HOP_COUNT    [ASC]
+     * <LI/> 5  : ORDER_BY_TTL          [ASC]
+     * <LI/> 6  : ORDER_BY_PACKET_SIZE  [ASC]
+     * <p>
+     * <LI/> 7  : ORDER_BY_ARRIVAL_TIME [DESC]
+     * <LI/> 8  : ORDER_BY_REPLICATIONS [DESC]
+     * <LI/> 9  : ORDER_BY_HOP_COUNT    [DESC]
+     * <LI/> 10 : ORDER_BY_TTL          [DESC]
+     * <LI/> 11 : ORDER_BY_PACKET_SIZE  [DESC]
      * </UL>
      */
     public static final String DROP_POLICY_MODE_S = "dropPolicy";
+
+    public static final String LOG_ACTIONS_S = "logActions";
 
     /**
      * Setting value for random mode.
@@ -89,13 +221,13 @@ public abstract class MessageRouter {
     public static final int Q_MODE_RANDOM = 1;
 
     /**
-     * Setting value for the order-by modes.
+     * Setting value for the order-by-asc modes.
      */
-    public static final int Q_ORDER_BY_ARRIVAL_TIME = 2;
-    public static final int Q_ORDER_BY_REPLICATIONS = 3;
-    public static final int Q_ORDER_BY_HOP_COUNT = 4;
-    public static final int Q_ORDER_BY_TTL = 5;
-    public static final int Q_ORDER_BY_PACKET_SIZE = 6;
+    public static final int Q_ORDER_BY_ARRIVAL_TIME_ASC = 2;
+    public static final int Q_ORDER_BY_REPLICATIONS_ASC = 3;
+    public static final int Q_ORDER_BY_HOP_COUNT_ASC = 4;
+    public static final int Q_ORDER_BY_TTL_ASC = 5;
+    public static final int Q_ORDER_BY_PACKET_SIZE_ASC = 6;
 
     /**
      * Setting value for the order-by-desc modes.
@@ -106,6 +238,9 @@ public abstract class MessageRouter {
     public static final int Q_ORDER_BY_TTL_DESC = 10;
     public static final int Q_ORDER_BY_PACKET_SIZE_DESC = 11;
 
+    public static final int Q_FIRST_MODE = Q_MODE_RANDOM;
+    public static final int Q_LAST_MODE = Q_ORDER_BY_PACKET_SIZE_DESC;
+    public static final int Q_MODE_COUNT = Q_LAST_MODE - Q_FIRST_MODE + 1;
 
 	/* Return values when asking to start a transmission:
      * RCV_OK (0) means that the host accepts the message and transfer started,
@@ -185,6 +320,10 @@ public abstract class MessageRouter {
      * Drop mode for sending messages
      */
     private int dropPolicyMode;
+    /**
+     * Whether or not to log actions
+     */
+    private boolean logActions;
 
     /**
      * applications attached to the host
@@ -212,22 +351,36 @@ public abstract class MessageRouter {
         }
 
         if (s.contains(SEND_QUEUE_MODE_S)) {
-            this.sendQueueMode = s.getInt(SEND_QUEUE_MODE_S);
-            if (sendQueueMode < 1 || sendQueueMode > 11) {
-                throw new SettingsError("Invalid value for " + s.getFullPropertyName(SEND_QUEUE_MODE_S));
+            sendQueueMode = s.getInt(SEND_QUEUE_MODE_S);
+            if (sendQueueMode < Q_FIRST_MODE || sendQueueMode > Q_LAST_MODE) {
+                throw new SettingsError("Invalid value for " +
+                                        s.getFullPropertyName(SEND_QUEUE_MODE_S) +
+                                        ": " +
+                                        sendQueueMode);
             }
         } else {
             sendQueueMode = Q_MODE_RANDOM;
         }
 
         if (s.contains(DROP_POLICY_MODE_S)) {
-            this.dropPolicyMode = s.getInt(DROP_POLICY_MODE_S);
-            if (dropPolicyMode < 1 || dropPolicyMode > 11) {
-                throw new SettingsError("Invalid value for " + s.getFullPropertyName(DROP_POLICY_MODE_S));
+            dropPolicyMode = s.getInt(DROP_POLICY_MODE_S);
+            if (dropPolicyMode < Q_FIRST_MODE || dropPolicyMode > Q_LAST_MODE) {
+                throw new SettingsError("Invalid value for " +
+                                        s.getFullPropertyName(DROP_POLICY_MODE_S) +
+                                        ": " +
+                                        dropPolicyMode);
             }
         } else {
-            // Default to FIFO, if nothing is set directly. (Keep the old defaults!)
-            dropPolicyMode = Q_ORDER_BY_ARRIVAL_TIME;
+            // Default to FIFO (Q_ORDER_BY_ARRIVAL_TIME_ASC => oldest first),
+            // if nothing is set directly (Keep the old defaults!)
+            dropPolicyMode = Q_ORDER_BY_ARRIVAL_TIME_ASC;
+        }
+
+        if (s.contains(LOG_ACTIONS_S)) {
+            logActions = s.getBoolean(LOG_ACTIONS_S);
+        } else {
+            // Default to false, just as before!
+            logActions = false;
         }
     }
 
@@ -246,6 +399,16 @@ public abstract class MessageRouter {
         this.blacklistedMessages = new HashMap<String, Object>();
         this.mListeners = mListeners;
         this.host = host;
+
+        if (logActions) {
+            if (this.mListeners == null) {
+                this.mListeners = new ArrayList<>();
+            } else {
+                this.mListeners = new ArrayList<>(this.mListeners);
+            }
+
+            this.mListeners.add(new LoggingMessageListener());
+        }
     }
 
     /**
@@ -258,6 +421,7 @@ public abstract class MessageRouter {
         this.msgTtl = r.msgTtl;
         this.sendQueueMode = r.sendQueueMode;
         this.dropPolicyMode = r.dropPolicyMode;
+        this.logActions = r.logActions;
 
         this.applications = new HashMap<String, Collection<Application>>();
         for (Collection<Application> apps : r.applications.values()) {
@@ -265,6 +429,46 @@ public abstract class MessageRouter {
                 addApplication(app.replicate());
             }
         }
+    }
+
+    public boolean isLogActions() {
+        return logActions;
+    }
+
+    public int getSendQueueMode() {
+        return sendQueueMode;
+    }
+
+    public int getDropPolicyMode() {
+        return dropPolicyMode;
+    }
+
+    public List<Message> getMessagesSortedBySendQueueMode() {
+        List<Message> msgs = new ArrayList<>(getMessageCollection());
+        sortBySendQueueMode(msgs);
+        return msgs;
+    }
+
+    public List<Message> getMessagesSortedByDropPolicyMode() {
+        List<Message> msgs = new ArrayList<>(getMessageCollection());
+        sortByDropPolicyMode(msgs);
+        return msgs;
+    }
+
+
+    public String messageBufferToString() {
+        List<Message> sendQueue = getMessagesSortedBySendQueueMode();
+        List<Message> dropQueue = getMessagesSortedByDropPolicyMode();
+
+        List<String> sendQueueMessages = sendQueue.stream().map(Message::toDetailedString).collect(Collectors.toList());
+        String sendString = String.join(", ", sendQueueMessages);
+
+        List<String> dropQueueMessages = dropQueue.stream().map(Message::toDetailedString).collect(Collectors.toList());
+        String dropString = String.join(", ", dropQueueMessages);
+
+        return String.format("{ \"OrderedBySendQueueMode\": [ %s ], \"OrderedByDropPolicyMode\": [ %s ] }",
+                             sendString,
+                             dropString);
     }
 
     /**
@@ -664,28 +868,28 @@ public abstract class MessageRouter {
     }
 
     /**
-     * Sorts/shuffles the given list according to the current sending queue
+     * Sorts the given list according to the current send queue
      * mode. The list can contain either Message or Tuple<Message, Connection>
      * objects. Other objects cause error.
      *
      * @param list The list to sort or shuffle
-     * @return The sorted/shuffled list
+     * @return The sorted list
      */
     @SuppressWarnings("unchecked") /* ugly way to make this generic */
-    protected List sortByQueueMode(List list) {
+    protected List sortBySendQueueMode(List list) {
         return sortByMode(list, sendQueueMode);
     }
 
     /**
-     * Sorts/shuffles the given list according to the current drop queue
+     * Sorts the given list according to the current drop policy
      * mode. The list can contain either Message or Tuple<Message, Connection>
      * objects. Other objects cause error.
      *
      * @param list The list to sort or shuffle
-     * @return The sorted/shuffled list
+     * @return The sorted list
      */
     @SuppressWarnings("unchecked") /* ugly way to make this generic */
-    protected List sortByDropMode(List list) {
+    protected List sortByDropPolicyMode(List list) {
         return sortByMode(list, dropPolicyMode);
     }
 
@@ -701,17 +905,17 @@ public abstract class MessageRouter {
     private int compareByMode(Message m1, Message m2, int mode) {
         switch (mode) {
             case Q_MODE_RANDOM:
-            /* return randomly (enough) but consistently -1, 0 or 1 */
+                 /* return randomly (enough) but consistently -1, 0 or 1 */
                 return (m1.hashCode() / 2 + m2.hashCode() / 2) % 3 - 1;
-            case Q_ORDER_BY_ARRIVAL_TIME:
+            case Q_ORDER_BY_ARRIVAL_TIME_ASC:
                 return Double.compare(m1.getReceiveTime(), m2.getReceiveTime());
-            case Q_ORDER_BY_REPLICATIONS:
+            case Q_ORDER_BY_REPLICATIONS_ASC:
                 return Integer.compare(m1.getReplications(), m2.getReplications());
-            case Q_ORDER_BY_PACKET_SIZE:
+            case Q_ORDER_BY_PACKET_SIZE_ASC:
                 return Integer.compare(m1.getSize(), m2.getSize());
-            case Q_ORDER_BY_HOP_COUNT:
+            case Q_ORDER_BY_HOP_COUNT_ASC:
                 return Integer.compare(m1.getHopCount(), m2.getHopCount());
-            case Q_ORDER_BY_TTL:
+            case Q_ORDER_BY_TTL_ASC:
                 return Integer.compare(m1.getTtl(), m2.getTtl());
             case Q_ORDER_BY_ARRIVAL_TIME_DESC:
                 return Double.compare(m2.getReceiveTime(), m1.getReceiveTime());
@@ -732,27 +936,27 @@ public abstract class MessageRouter {
 
     /**
      * Gives the order of the two given messages as defined by the current
-     * queue mode
+     * send queue mode.
      *
      * @param m1 The first message
      * @param m2 The second message
      * @return -1 if the first message should come first, 1 if the second
      * message should come first, or 0 if the ordering isn't defined
      */
-    protected int compareByQueueMode(Message m1, Message m2) {
+    protected int compareBySendQueueMode(Message m1, Message m2) {
         return compareByMode(m1, m2, sendQueueMode);
     }
 
     /**
      * Gives the order of the two given messages as defined by the current
-     * drop mode
+     * drop policy mode.
      *
      * @param m1 The first message
      * @param m2 The second message
      * @return -1 if the first message should come first, 1 if the second
      * message should come first, or 0 if the ordering isn't defined
      */
-    protected int compareByDropMode(Message m1, Message m2) {
+    protected int compareByDropPolicyMode(Message m1, Message m2) {
         return compareByMode(m1, m2, dropPolicyMode);
     }
 

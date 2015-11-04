@@ -312,6 +312,28 @@ public class Message implements Comparable<Message> {
         return id;
     }
 
+    public String toDetailedString() {
+        return String.format(
+                "{ \"id\": \"%s\", " +
+                "\"from\": \"%s\", " +
+                "\"to\": \"%s\", " +
+                "\"ttl\": %d, " +
+                "\"replications\": %d, " +
+                "\"creation_time\": %f, " +
+                "\"arrival_time\": %f, " +
+                "\"hop_count\": %d, " +
+                "\"size\": %d }",
+                getId(),
+                getFrom(),
+                getTo(),
+                getTtl(),
+                getReplications(),
+                getCreationTime(),
+                getReceiveTime(),
+                getHopCount(),
+                getSize());
+    }
+
     /**
      * Deep copies message data from other message. If new fields are
      * introduced to this class, most likely they should be copied here too

@@ -11,7 +11,7 @@ import routing.MessageRouter;
 
 /**
  * Tests for EpidemicRouter and, due the simple nature of Epidemic router,
- * also ActiveRouter in general. 
+ * also ActiveRouter in general.
  */
 public class EpidemicRouterTest extends AbstractRouterTest {
 
@@ -546,8 +546,9 @@ public class EpidemicRouterTest extends AbstractRouterTest {
 
     /**
      * Runs a message exchange between node h1 and another node
+     *
      * @param withDestination If true, the other node is the final destination
-     *        of the messages, if false, the other node is not the final dst
+     *                        of the messages, if false, the other node is not the final dst
      * @return The order of the messages in a space delimited string
      */
     private String runMessageExchange(boolean withDestination) {
@@ -600,7 +601,7 @@ public class EpidemicRouterTest extends AbstractRouterTest {
 
     public void testFifoSendingQ() throws Exception {
         ts.putSetting(MessageRouter.SEND_QUEUE_MODE_S,
-                      "" + MessageRouter.Q_MODE_FIFO);
+                      "" + MessageRouter.Q_ORDER_BY_ARRIVAL_TIME_ASC);
         this.setUp();
 
         String expectedIds = "1 2 3 4 5 ";

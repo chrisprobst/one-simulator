@@ -52,6 +52,7 @@ Scenario.nrofHostGroups = 6
 
 
 # Common settings for all groups
+Group.logActions = true
 Group.movementModel = ShortestPathMapBasedMovement
 Group.router = EpidemicRouter
 Group.bufferSize = 5M
