@@ -35,7 +35,7 @@ public abstract class MessageRouter {
 
         private String getFromToAction(String action, Message m, DTNHost from, DTNHost to, String embed) {
             return String.format(
-                    "{ \"Time\": %f, \"Action\": \"%s\", \"From\": \"%s\", \"To\": \"%s\", \"Message\": \"%s\"%s }\n",
+                    "{ \"Time\": %f, \"Action\": \"%s\", \"From\": %s, \"To\": %s, \"Message\": %s%s }\n",
                     SimClock.getTime(),
                     action,
                     from.toDetailedString(),
