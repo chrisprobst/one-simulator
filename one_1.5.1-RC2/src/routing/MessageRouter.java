@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
  */
 public abstract class MessageRouter {
 
-    private class LoggingMessageListener implements MessageListener {
+    private static class LoggingMessageListener implements MessageListener {
 
         private String getFromToAction(String action, Message m, DTNHost from, DTNHost to, String embed) {
             return String.format(
@@ -149,6 +149,8 @@ public abstract class MessageRouter {
             }
         }
     }
+
+    private static final LoggingMessageListener INSTANCE = new LoggingMessageListener();
 
     /**
      * Message buffer size -setting id ({@value}). Integer value in bytes.
@@ -388,14 +390,8 @@ public abstract class MessageRouter {
         this.mListeners = mListeners;
         this.host = host;
 
-        if (DTNSim.isLogActions()) {
-            if (this.mListeners == null) {
-                this.mListeners = new ArrayList<>();
-            } else {
-                this.mListeners = new ArrayList<>(this.mListeners);
-            }
-
-            this.mListeners.add(new LoggingMessageListener());
+        if (DTNSim.isLogActions() && !this.mListeners.contains(INSTANCE)) {
+            this.mListeners.add(INSTANCE);
         }
     }
 
