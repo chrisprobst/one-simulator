@@ -9,22 +9,42 @@ import ui.DTNSimTextUI;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
- * Simulator's main class 
+ * Simulator's main class
  */
 public class DTNSim {
-    /** If this option ({@value}) is given to program, batch mode and
-     * Text UI are used*/
+    /**
+     * If this option ({@value}) is given to program, actions of routers are logged
+     */
+    public static final String LOG_ACTIONS_MODE_FLAG = "-l";
+    private static boolean logActions = false;
+
+    public static boolean isLogActions() {
+        return logActions;
+    }
+
+    /**
+     * If this option ({@value}) is given to program, batch mode and
+     * Text UI are used
+     */
     public static final String BATCH_MODE_FLAG = "-b";
-    /** Delimiter for batch mode index range values (colon) */
+    /**
+     * Delimiter for batch mode index range values (colon)
+     */
     public static final String RANGE_DELIMETER = ":";
 
-    /** Name of the static method that all resettable classes must have
-     * @see #registerForReset(String) */
+    /**
+     * Name of the static method that all resettable classes must have
+     *
+     * @see #registerForReset(String)
+     */
     public static final String RESET_METHOD_NAME = "reset";
-    /** List of class names that should be reset between batch runs */
+    /**
+     * List of class names that should be reset between batch runs
+     */
     private static List<Class<?>> resetList = new ArrayList<Class<?>>();
 
     /**
@@ -37,17 +57,23 @@ public class DTNSim {
      * {@link Settings#setRunIndex(int)}). Following arguments are the settings
      * files for the simulation run (if any). For GUI mode, the number before
      * settings files (if given) is the run index to use for that run.
+     *
      * @param args Command line arguments
      */
     public static void main(String[] args) {
         boolean batchMode = false;
-        int nrofRuns[] = { 0, 1 };
+        int nrofRuns[] = {0, 1};
         String confFiles[];
         int firstConfIndex = 0;
         int guiIndex = 0;
 
 		/* set US locale to parse decimals in consistent way */
         java.util.Locale.setDefault(java.util.Locale.US);
+
+        if (args.length > 0 && args[0].equals(LOG_ACTIONS_MODE_FLAG)) {
+            logActions = true;
+            args = Arrays.copyOfRange(args, 1, args.length - 1);
+        }
 
         if (args.length > 0) {
             if (args[0].equals(BATCH_MODE_FLAG)) {
@@ -68,7 +94,7 @@ public class DTNSim {
             }
             confFiles = args;
         } else {
-            confFiles = new String[] { null };
+            confFiles = new String[]{null};
         }
 
         initSettings(confFiles, firstConfIndex);
@@ -91,7 +117,8 @@ public class DTNSim {
 
     /**
      * Initializes Settings
-     * @param confFiles File name paths where to read additional settings
+     *
+     * @param confFiles  File name paths where to read additional settings
      * @param firstIndex Index of the first config file name
      */
     private static void initSettings(String[] confFiles, int firstIndex) {
@@ -131,8 +158,9 @@ public class DTNSim {
      * this method. The given class must have a static implementation
      * for the resetting method (a method called {@value #RESET_METHOD_NAME}
      * without any parameters).
+     *
      * @param className Full name (i.e., containing the packet path)
-     * of the class to register. For example: <code>core.SimClock</code>
+     *                  of the class to register. For example: <code>core.SimClock</code>
      */
     public static void registerForReset(String className) {
         Class<?> c = null;
@@ -171,11 +199,12 @@ public class DTNSim {
     /**
      * Parses the number of runs, and an optional starting run index, from a
      * command line argument
+     *
      * @param arg The argument to parse
      * @return The first and (last_run_index - 1) in an array
      */
     private static int[] parseNrofRuns(String arg) {
-        int val[] = { 0, 1 };
+        int val[] = {0, 1};
         try {
             if (arg.contains(RANGE_DELIMETER)) {
                 val[0] = Integer.parseInt(arg.substring(0,
@@ -210,6 +239,7 @@ public class DTNSim {
 
     /**
      * Prints text to stdout
+     *
      * @param txt Text to print
      */
     private static void print(String txt) {

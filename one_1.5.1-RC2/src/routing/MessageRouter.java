@@ -7,6 +7,7 @@ package routing;
 import core.Application;
 import core.Connection;
 import core.DTNHost;
+import core.DTNSim;
 import core.Message;
 import core.MessageListener;
 import core.Settings;
@@ -213,8 +214,6 @@ public abstract class MessageRouter {
      */
     public static final String DROP_POLICY_MODE_S = "dropPolicy";
 
-    public static final String LOG_ACTIONS_S = "logActions";
-
     /**
      * Setting value for random mode.
      */
@@ -320,10 +319,6 @@ public abstract class MessageRouter {
      * Drop mode for sending messages
      */
     private int dropPolicyMode;
-    /**
-     * Whether or not to log actions
-     */
-    private boolean logActions;
 
     /**
      * applications attached to the host
@@ -375,13 +370,6 @@ public abstract class MessageRouter {
             // if nothing is set directly (Keep the old defaults!)
             dropPolicyMode = Q_ORDER_BY_ARRIVAL_TIME_ASC;
         }
-
-        if (s.contains(LOG_ACTIONS_S)) {
-            logActions = s.getBoolean(LOG_ACTIONS_S);
-        } else {
-            // Default to false, just as before!
-            logActions = false;
-        }
     }
 
     /**
@@ -400,7 +388,7 @@ public abstract class MessageRouter {
         this.mListeners = mListeners;
         this.host = host;
 
-        if (logActions) {
+        if (DTNSim.isLogActions()) {
             if (this.mListeners == null) {
                 this.mListeners = new ArrayList<>();
             } else {
@@ -421,7 +409,6 @@ public abstract class MessageRouter {
         this.msgTtl = r.msgTtl;
         this.sendQueueMode = r.sendQueueMode;
         this.dropPolicyMode = r.dropPolicyMode;
-        this.logActions = r.logActions;
 
         this.applications = new HashMap<String, Collection<Application>>();
         for (Collection<Application> apps : r.applications.values()) {
@@ -429,10 +416,6 @@ public abstract class MessageRouter {
                 addApplication(app.replicate());
             }
         }
-    }
-
-    public boolean isLogActions() {
-        return logActions;
     }
 
     public int getSendQueueMode() {
