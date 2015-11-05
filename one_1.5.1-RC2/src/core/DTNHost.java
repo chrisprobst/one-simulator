@@ -546,7 +546,7 @@ public class DTNHost implements Comparable<DTNHost> {
     }
 
     public String toDetailedString() {
-        return String.format("{ \"name\": \"%s\", \"messageBuffer\": %s }", name, getRouter().messageBufferToString());
+        return String.format("{ \"name\": \"%s\", \"messageBuffer\": %s }", name, getRouter().messageBufferToDetailedString());
     }
 
     /**

@@ -7,7 +7,6 @@ package routing;
 import core.Application;
 import core.Connection;
 import core.DTNHost;
-import core.DTNSim;
 import core.Message;
 import core.MessageListener;
 import core.Settings;
@@ -31,126 +30,6 @@ import java.util.stream.Collectors;
  * Superclass for message routers.
  */
 public abstract class MessageRouter {
-
-    private static class LoggingMessageListener implements MessageListener {
-
-        private String getFromToAction(String action, Message m, DTNHost from, DTNHost to, String embed) {
-            return String.format(
-                    "{ \"Time\": %f, \"Action\": \"%s\", \"From\": %s, \"To\": %s, \"Message\": %s%s }\n",
-                    SimClock.getTime(),
-                    action,
-                    from.toDetailedString(),
-                    to.toDetailedString(),
-                    m.toDetailedString(),
-                    embed);
-        }
-
-        private String getFromToAction(String action, Message m, DTNHost from, DTNHost to) {
-            return getFromToAction(action, m, from, to, "");
-        }
-
-        private String getWhereAction(String action, Message m, DTNHost where) {
-            return String.format("{ \"Time\": %f, \"Action\": \"%s\", \"Where\": \"%s\", \"Message\": \"%s\" }\n",
-                                 SimClock.getTime(),
-                                 action,
-                                 where.toDetailedString(),
-                                 m.toDetailedString());
-        }
-
-        /**
-         * Method is called when a new message is created
-         *
-         * @param m Message that was created
-         */
-        public void newMessage(Message m) {
-
-        }
-
-        /**
-         * Method is called when a message's transfer is started
-         *
-         * @param m    The message that is going to be transferred
-         * @param from Node where the message is transferred from
-         * @param to   Node where the message is transferred to
-         */
-        public void messageTransferStarted(Message m, DTNHost from, DTNHost to) {
-            if (m.getFrom() == from) {
-                // SEND
-                System.err.printf(getFromToAction("StartSend", m, from, to));
-            } else if (m.getTo() == to) {
-                // DELIVER
-                System.err.printf(getFromToAction("StartDeliver", m, from, to));
-            } else {
-                // FORWARDED
-                System.err.printf(getFromToAction("StartForward", m, from, to));
-            }
-        }
-
-        /**
-         * Method is called when a message is deleted
-         *
-         * @param m       The message that was deleted
-         * @param where   The host where the message was deleted
-         * @param dropped True if the message was dropped, false if removed
-         */
-        public void messageDeleted(Message m, DTNHost where, boolean dropped) {
-            if (dropped) {
-                // DROP
-                System.err.printf(getWhereAction("Drop", m, where));
-            }
-        }
-
-        /**
-         * Method is called when a message's transfer was aborted before
-         * it finished
-         *
-         * @param m    The message that was being transferred
-         * @param from Node where the message was being transferred from
-         * @param to   Node where the message was being transferred to
-         */
-        public void messageTransferAborted(Message m, DTNHost from, DTNHost to) {
-            if (m.getFrom() == from) {
-                // ABORT_SEND
-                System.err.printf(getFromToAction("AbortSend", m, from, to));
-            } else if (m.getTo() == to) {
-                // ABORT_DELIVER
-                System.err.printf(getFromToAction("AbortDeliver", m, from, to));
-            } else {
-                // ABORT_FORWARDED
-                System.err.printf(getFromToAction("AbortForward", m, from, to));
-            }
-        }
-
-        /**
-         * Method is called when a message is successfully transferred from
-         * a node to another.
-         *
-         * @param m             The message that was transferred
-         * @param from          Node where the message was transferred from
-         * @param to            Node where the message was transferred to
-         * @param firstDelivery Was the target node final destination of the message
-         *                      and received this message for the first time.
-         */
-        public void messageTransferred(Message m, DTNHost from, DTNHost to,
-                                       boolean firstDelivery) {
-            if (m.getFrom() == from) {
-                // COMPLETE_SEND
-                System.err.printf(getFromToAction("CompletedSend", m, from, to));
-            } else if (m.getTo() == to) {
-                // COMPLETE_DELIVER
-                System.err.printf(getFromToAction("CompleteDeliver",
-                                                  m,
-                                                  from,
-                                                  to,
-                                                  String.format(", \"FirstDelivery\": %b", firstDelivery)));
-            } else {
-                // COMPLETE_FORWARDED
-                System.err.printf(getFromToAction("CompleteForward", m, from, to));
-            }
-        }
-    }
-
-    private static final LoggingMessageListener INSTANCE = new LoggingMessageListener();
 
     /**
      * Message buffer size -setting id ({@value}). Integer value in bytes.
@@ -389,10 +268,6 @@ public abstract class MessageRouter {
         this.blacklistedMessages = new HashMap<String, Object>();
         this.mListeners = mListeners;
         this.host = host;
-
-        if (DTNSim.isLogActions() && !this.mListeners.contains(INSTANCE)) {
-            this.mListeners.add(INSTANCE);
-        }
     }
 
     /**
@@ -435,7 +310,7 @@ public abstract class MessageRouter {
     }
 
 
-    public String messageBufferToString() {
+    public String messageBufferToDetailedString() {
         List<Message> sendQueue = getMessagesSortedBySendQueueMode();
         List<Message> dropQueue = getMessagesSortedByDropPolicyMode();
 

@@ -9,22 +9,12 @@ import ui.DTNSimTextUI;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * Simulator's main class
  */
 public class DTNSim {
-    /**
-     * If this option ({@value}) is given to program, actions of routers are logged
-     */
-    public static final String LOG_ACTIONS_MODE_FLAG = "-l";
-    private static boolean logActions = false;
-
-    public static boolean isLogActions() {
-        return logActions;
-    }
 
     /**
      * If this option ({@value}) is given to program, batch mode and
@@ -69,11 +59,6 @@ public class DTNSim {
 
 		/* set US locale to parse decimals in consistent way */
         java.util.Locale.setDefault(java.util.Locale.US);
-
-        if (args.length > 0 && args[0].equals(LOG_ACTIONS_MODE_FLAG)) {
-            logActions = true;
-            args = Arrays.copyOfRange(args, 1, args.length - 1);
-        }
 
         if (args.length > 0) {
             if (args[0].equals(BATCH_MODE_FLAG)) {
