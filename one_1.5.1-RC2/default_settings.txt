@@ -7,8 +7,7 @@ Scenario.name = default_scenario
 Scenario.simulateConnections = true
 Scenario.updateInterval = 0.1
 # 43200s == 12h
-Scenario.endTime = 400
-# 43200
+Scenario.endTime = 43200
 
 
 ## Interface-specific settings:
@@ -155,14 +154,13 @@ MapBasedMovement.mapFile4 = data/shops.wkt
 ## Reports - all report names have to be valid report classes
 
 # how many reports to load
-Report.nrofReports = 2
+Report.nrofReports = 1
 # length of the warm up period (simulated seconds)
 Report.warmup = 0
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/
 # Report classes to load
 Report.report1 = MessageStatsReport
-Report.report2 = DetailedEventLogReport
 
 ## Default settings for some routers settings
 ProphetRouter.secondsInTimeUnit = 30

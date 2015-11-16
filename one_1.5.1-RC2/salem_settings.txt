@@ -1,0 +1,7 @@
+Scenario.name = Salem
+Group.router = EpidemicRouter
+
+Scenario.endTime = 1000
+
+Report.nrofReports = 2
+Report.report2 = DetailedEventLogReport
