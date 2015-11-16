@@ -5,3 +5,26 @@ Scenario.endTime = 1000
 
 Report.nrofReports = 2
 Report.report2 = DetailedEventLogReport
+
+
+# Q_RANDOM_MODE                 = 1;
+
+# Q_ORDER_BY_ARRIVAL_TIME       = 2;
+# Q_ORDER_BY_REPLICATIONS       = 3;
+# Q_ORDER_BY_HOP_COUNT          = 4;
+# Q_ORDER_BY_TTL                = 5;
+# Q_ORDER_BY_PACKET_SIZE        = 6;
+
+# Q_ORDER_BY_ARRIVAL_TIME_DESC  = 7;
+# Q_ORDER_BY_REPLICATIONS_DESC  = 8;
+# Q_ORDER_BY_HOP_COUNT_DESC     = 9;
+# Q_ORDER_BY_TTL_DESC           = 10;
+# Q_ORDER_BY_PACKET_SIZE_DESC   = 11;
+
+# Scheme
+# Scenario.name = [qm_11; qm_12; qm_13; qm_14; qm_15; qm_16; qm_21; qm_22; qm_23; ... ]
+# Group.sendQueue =  [1; 1; 1; 1; 1; 1;  2; 2; 2; ... ]
+# Group.dropPolicy = [1; 2; 3; 4; 5; 6;  1; 2; 3; ... ]
+
+Group.sendQueue = 1
+Group.dropPolicy = 1
