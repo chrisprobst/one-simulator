@@ -86,7 +86,7 @@ public class Message implements Comparable<Message> {
     /**
      * Here we store the number of replications.
      */
-    private int replications;
+    private int replications = -1;
 
     static {
         reset();
@@ -418,17 +418,20 @@ public class Message implements Comparable<Message> {
     public Message replicate() {
         Message m = new Message(from, to, id, size);
         m.copyFrom(this);
-        replications++;
         return m;
     }
 
+    public void increaseReplications() {
+    	replications++;
+    }
+    
     /**
      * Returns the number of replications.
      *
      * @return The number of replications.
      */
     public int getReplications() {
-        return replications;
+        return Math.max(replications, 0);
     }
 
     /**

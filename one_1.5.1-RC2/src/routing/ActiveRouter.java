@@ -662,6 +662,8 @@ public abstract class ActiveRouter extends MessageRouter {
      * @param con The connection whose transfer was finalized
      */
     protected void transferDone(Connection con) {
+    	// Lookup message on this host and increase successful replications
+    	getMessage(con.getMessage().getId()).increaseReplications();
     }
 
     @Override

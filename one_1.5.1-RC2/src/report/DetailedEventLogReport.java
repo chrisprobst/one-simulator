@@ -6,6 +6,12 @@ import core.MessageListener;
 import core.SimClock;
 
 /**
+ * 
+ * Time   from    to     Host   Replica    Snd-Q   Dr-Po  creation-time    Arrival-time   Hopcount   TTL    Size
+ * (id Cr-Time Ar-Time Rep Hopcount Size TTL)
+ * 
+ * 
+ * 
  * Created by chrisprobst on 05.11.15.
  */
 public class DetailedEventLogReport extends Report implements MessageListener {
