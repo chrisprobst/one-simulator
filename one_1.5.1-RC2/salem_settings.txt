@@ -1,0 +1,8 @@
+## Scenario settings
+Scenario.name = salem_scenario
+Scenario.endTime = 5000
+
+## Reports - all report names have to be valid report classes
+Report.nrofReports = 2
+Report.report1 = MessageStatsReport
+Report.report2 = DetailedEventLogReport
