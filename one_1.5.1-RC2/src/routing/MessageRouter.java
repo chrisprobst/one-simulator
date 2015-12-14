@@ -790,7 +790,7 @@ public abstract class MessageRouter {
                 return Comparator
                 		.comparingInt(Message::getReplications)
                 		.thenComparingInt(Message::getHopCount)
-                		.compare(m1, m2);
+                		.compare(m2, m1);
                 
         /* add more queue modes here */
             default:
