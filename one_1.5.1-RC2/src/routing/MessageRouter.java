@@ -118,8 +118,13 @@ public abstract class MessageRouter {
     public static final int Q_ORDER_BY_TTL_DESC = 10;
     public static final int Q_ORDER_BY_PACKET_SIZE_DESC = 11;
 
+	/**
+	 * Composite modes.
+	 */
+    public static final int Q_MOFO = 12;
+    
     public static final int Q_FIRST_MODE = Q_MODE_RANDOM;
-    public static final int Q_LAST_MODE = Q_ORDER_BY_PACKET_SIZE_DESC;
+    public static final int Q_LAST_MODE = Q_MOFO;
     public static final int Q_MODE_COUNT = Q_LAST_MODE - Q_FIRST_MODE + 1;
 
 	/* Return values when asking to start a transmission:
@@ -781,7 +786,12 @@ public abstract class MessageRouter {
                 return Integer.compare(m2.getHopCount(), m1.getHopCount());
             case Q_ORDER_BY_TTL_DESC:
                 return Integer.compare(m2.getTtl(), m1.getTtl());
-
+            case Q_MOFO:
+                return Comparator
+                		.comparingInt(Message::getReplications)
+                		.thenComparingInt(Message::getHopCount)
+                		.compare(m1, m2);
+                
         /* add more queue modes here */
             default:
                 throw new SimError("Unknown queue mode " + mode);
