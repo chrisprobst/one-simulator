@@ -34,16 +34,16 @@ public class DetailedEventLogReport extends Report implements MessageListener {
 		// embed);
 
 		String mainLine = String.format(
-				"Time: %f, Action: %s, From: %s, To: %s, Current: %s, Send-Policy: %s, Drop-Policy: %s, Message-ID: %s, Creation-Time: %f, Arrival-Time: %f, Replications: %d, Hop-Count: %d, TTL: %d, Size: %d, Utility1: %f%s\n",
+				"Time: %f, Action: %s, From: %s, To: %s, Current: %s, Send-Policy: %s, Drop-Policy: %s, Message-ID: %s, Creation-Time: %f, Arrival-Time: %f, Replications: %d, Hop-Count: %d, TTL: %d, Size: %d, Utility13: %f, Utility14: %f%s\n",
 				SimClock.getTime(), action, m.getFrom().toString(), m.getTo().toString(), current.toString(), 
 				current.getRouter().getSendQueueMode(), current.getRouter().getDropPolicyMode(),m.getId(),
-				m.getCreationTime(), m.getReceiveTime(), m.getReplications(), m.getHopCount(), m.getTtl(), m.getSize(), MessageRouter.getUtilitySalem1(m), embed);
+				m.getCreationTime(), m.getReceiveTime(), m.getReplications(), m.getHopCount(), m.getTtl(), m.getSize(), MessageRouter.getUtilitySalem1(m), MessageRouter.getUtilitySalem2(m), embed);
 
 		List<String> bufferLines = current.getRouter().getMessageCollection().stream()
 				.map(msg -> String.format(
-						"    (ID: %s, Creation-Time: %f, Arrival-Time: %f, Replications: %d, Hop-Count: %d, TTL: %d, Size: %d, Utility1: %f)\n",
+						"    (ID: %s, Creation-Time: %f, Arrival-Time: %f, Replications: %d, Hop-Count: %d, TTL: %d, Size: %d, Utility13: %f, Utility14: %f)\n",
 						msg.getId(), msg.getCreationTime(), msg.getReceiveTime(), msg.getReplications(),
-						msg.getHopCount(), msg.getTtl(), msg.getSize(), MessageRouter.getUtilitySalem1(m)))
+						msg.getHopCount(), msg.getTtl(), msg.getSize(), MessageRouter.getUtilitySalem1(m), MessageRouter.getUtilitySalem2(m)))
 				.collect(Collectors.toList());
 		
 		return mainLine + String.join("", bufferLines) + "\n";

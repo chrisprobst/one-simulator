@@ -133,7 +133,6 @@ public abstract class MessageRouter {
     static {
     	fourDigits.setRoundingMode(RoundingMode.CEILING);	
     }
-    
     public static double getUtilitySalem1(Message m) {
 //    	U(m) =(  (TTL residual /  TTL  Initial)     /   (Replication + HopCount)  )  and  make  it  if  it  is  possible  as number  13
 //
@@ -147,11 +146,23 @@ public abstract class MessageRouter {
     	return Double.parseDouble(fourDigits.format(utility));
     }
     
+    public static final int Q_SALEM_UTILITY_2 = 14;
+    public static double getUtilitySalem2(Message m) {
+//        U(m)= (Buffer time / Residual  TTL)  +  (1/(replication +hop  count+1))
+//        		U(m)= ((Sim Clock - Receive time) / Residual  TTL)  +  (1/(replication +hop  count+1))
+//
+//        		The  message  with  low  U(m)  will  sent   first  
+//        		minimum  U(m)   will  be  in  the  first  of  send  queue 
+	
+        double utility = ((SimClock.getTime() - m.getReceiveTime()) / (double) m.getTtl()) + (1 / (double) (m.getReplications() + m.getHopCount() + 1));      
+    	return utility;
+    }
+    
     /**
 	 * Border modes.
 	 */
     public static final int Q_FIRST_MODE = Q_MODE_RANDOM;
-    public static final int Q_LAST_MODE = Q_SALEM_UTILITY_1;
+    public static final int Q_LAST_MODE = Q_SALEM_UTILITY_2;
     public static final int Q_MODE_COUNT = Q_LAST_MODE - Q_FIRST_MODE + 1;
 
 	/* Return values when asking to start a transmission:
@@ -818,7 +829,9 @@ public abstract class MessageRouter {
                 		.thenComparingInt(Message::getHopCount)
                 		.compare(m2, m1);
             case Q_SALEM_UTILITY_1:
-            	return Comparator.comparingDouble(MessageRouter::getUtilitySalem1).compare(m1,  m2);            	
+            	return Comparator.comparingDouble(MessageRouter::getUtilitySalem1).compare(m1,  m2);   
+            case Q_SALEM_UTILITY_2:
+            	return Comparator.comparingDouble(MessageRouter::getUtilitySalem2).compare(m1,  m2);        
             	
         /* add more queue modes here */
             default:
