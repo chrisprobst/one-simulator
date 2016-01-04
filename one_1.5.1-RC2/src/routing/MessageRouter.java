@@ -16,6 +16,8 @@ import core.SimError;
 import routing.util.RoutingInfo;
 import util.Tuple;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -123,8 +125,33 @@ public abstract class MessageRouter {
 	 */
     public static final int Q_MOFO = 12;
     
+    /**
+	 * Salems modes.
+	 */
+    public static final int Q_SALEM_UTILITY_1 = 13;
+    private static final DecimalFormat fourDigits = new DecimalFormat("#.####");
+    static {
+    	fourDigits.setRoundingMode(RoundingMode.CEILING);	
+    }
+    
+    public static double getUtilitySalem1(Message m) {
+//    	U(m) =(  (TTL residual /  TTL  Initial)     /   (Replication + HopCount)  )  and  make  it  if  it  is  possible  as number  13
+//
+//    	The message with low  utility  will  drop  first
+//
+//    	notes :-  1- the utility  value  format  should  be    formatted   as  4 digit real  (0.DDDD)
+//    	          2-  the  value  of  U(M)  should  be  accedes  by  any  report  class  such  as  replications  of  the  message
+//    	          3- if  it  is  possible  make it  as  choice  for  sending  queue
+    	
+        double utility = (m.getTtl() / (double) (m.getTtl() + m.getHopCount())) / (double) (m.getReplications() + m.getHopCount());      
+    	return Double.parseDouble(fourDigits.format(utility));
+    }
+    
+    /**
+	 * Border modes.
+	 */
     public static final int Q_FIRST_MODE = Q_MODE_RANDOM;
-    public static final int Q_LAST_MODE = Q_MOFO;
+    public static final int Q_LAST_MODE = Q_SALEM_UTILITY_1;
     public static final int Q_MODE_COUNT = Q_LAST_MODE - Q_FIRST_MODE + 1;
 
 	/* Return values when asking to start a transmission:
@@ -752,7 +779,6 @@ public abstract class MessageRouter {
         return sortByMode(list, dropPolicyMode);
     }
 
-
     /**
      * Gives the order of the two given messages as defined by the given mode.
      *
@@ -791,7 +817,9 @@ public abstract class MessageRouter {
                 		.comparingInt(Message::getReplications)
                 		.thenComparingInt(Message::getHopCount)
                 		.compare(m2, m1);
-                
+            case Q_SALEM_UTILITY_1:
+            	return Comparator.comparingDouble(MessageRouter::getUtilitySalem1).compare(m1,  m2);            	
+            	
         /* add more queue modes here */
             default:
                 throw new SimError("Unknown queue mode " + mode);
