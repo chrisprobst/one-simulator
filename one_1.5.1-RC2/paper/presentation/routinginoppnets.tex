@@ -2,16 +2,14 @@
 
 
 \begin{frame}
-  \frametitle{Used Routing Protocol}  
+  \frametitle{Used Routing Protocol}
   \begin{itemize}
     \item Epidemic
     \vspace{0.3cm}
     \begin{itemize}
-      \item Flooding
+      \item Basically flooding
       \vspace{0.1cm}
-      \item Best, in terms of delivery ratio
-      \vspace{0.1cm}
-      \item Worst, in terms of overhead
+      \item High delivery probability + overhead
       \vspace{0.1cm}
       \item Exchange summary vectors with nearby nodes
       \vspace{0.1cm}
@@ -20,14 +18,14 @@
       	\item Based on queue policy
       \end{itemize}
       \vspace{0.1cm}
-      \item Drop messages, in case of congestion
+      \item Drop messages if congested
       \begin{itemize}
       	\item Based on drop policy
       \end{itemize}
       \vspace{0.1cm}
       \item Routing performance inherently based on Buffer Management
       \begin{itemize}
-      	\item Therefore, used by this study
+      	\item Good fit for first study
       \end{itemize}
     \end{itemize}
   \end{itemize}
@@ -36,12 +34,15 @@
 
 
 \begin{frame}
-  \frametitle{Other Routing Protocols}  
+  \frametitle{Other Routing Protocols}
   \begin{itemize}
 	\item PRoPHET
     \begin{itemize}
       	\item Probability-based
       	\item Overrides queue policy
+        \begin{itemize}
+          	\item Fallback if probabilities are equal
+        \end{itemize}
     \end{itemize}
     \vspace{0.3cm}
     \item First Contact
@@ -55,23 +56,23 @@
     \end{itemize}
     \vspace{0.3cm}
     \item etc.
-    \vspace{0.3cm}    
+    \vspace{0.3cm}
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{Buffer Management Policy}  
+  \frametitle{Buffer Management Policy}
   \begin{itemize}
     \item \{Queue, Drop\} Policy == Sorting order
     \vspace{0.3cm}
     \item Popular policies
     \begin{itemize}
       \item FIFO - Arrival-time (ascending)
-      \item LIFO - Arrival-time (descending)    
-    \end{itemize}    
+      \item LIFO - Arrival-time (descending)
+    \end{itemize}
     \vspace{0.3cm}
-    \item Further policies used
+    \item Further policies
     \begin{itemize}
       \item Random
       \item Replications (ascending / descending)
@@ -84,6 +85,5 @@
     \begin{itemize}
       \item 121 different combinations
     \end{itemize}
-  \end{itemize}    
+  \end{itemize}
 \end{frame}
-
